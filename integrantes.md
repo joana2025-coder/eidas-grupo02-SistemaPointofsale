@@ -1,7 +1,10 @@
 # Integrantes del grupo
 
-| Nombre | Apellido | DNI |
-|--------|----------|-----|
-| | | |
-| | | |
-| | | |
+|Nombre|Apellido|DNI|
+|-|-|-|
+|Andrea|Barreto|35585050|
+||||
+||||
+
+
+
