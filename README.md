@@ -1,4 +1,4 @@
-# [Nombre del Sistema] — Grupo [N]
+# Sistema Point of Sale] — Grupo [2]
 
 > Materia: Diseño de Sistemas Web — Analista Funcional de Sistemas  
 > Institución: Terciario Urquiza — Rosario  
