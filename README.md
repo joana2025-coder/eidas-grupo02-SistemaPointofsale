@@ -11,7 +11,11 @@ Ver [integrantes.md](integrantes.md)
 
 ## Descripción del proyecto
 
-_Breve descripción del sistema que el grupo está analizando y documentando._
+El sistema POS (Point of Sale o Punto de Venta) es utilizado en el bar ubicado dentro del supermercado Carrefour, el cual cuenta con 24 mesas para la atención de clientes.
+Es una herramienta informática que permite registrar, administrar las operaciones y centralizar la gestión de mesas, pedidos, productos, ventas y pagos.
+También permite organizar el trabajo del personal, conocer el estado de cada mesa, controlar los productos vendidos y obtener información útil para la administración del negocio.
+El objetivo principal del sistema POS es gestionar de manera rápida, ordenada y segura el proceso completo de atención al cliente, desde la apertura de una mesa, el registro del pago y su posterior liberación.
+
 
 ## Caso de estudio
 
