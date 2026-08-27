@@ -1,4 +1,6 @@
-# Stakeholders
+# Stakeholders- Sistema POS Bar Carrefour
+
+Identificación y justificación de las partes interesadas relevantes para el sistema POS del bar ubicado dentro de Carrefour. Para cada una se describe su rol y por qué es clave para el proyecto.
 
 _Identificar y justificar las partes interesadas relevantes para el sistema._
 _Para cada una: describir su rol y por qué es clave para el proyecto._
