@@ -2,9 +2,55 @@
 
 ## Descripción del sistema
 
-El sistema Point of Sale (POS) está destinado a gestionar las operaciones del bar ubicado dentro de Carrefour. Permite a las encargadas administrar las 24 mesas, registrar los pedidos asociados a cada mesa, gestionar los pagos y consultar el historial de ventas y consumos. El sistema busca agilizar la atención, facilitar la gestión de las mesas y reducir errores en el registro y cobro de los pedidos.
+El Sistema POS (Point of Sale) es una solución informática destinada a gestionar de manera integral las operaciones del bar ubicado dentro del supermercado Carrefour, que cuenta con 24 mesas para la atención de clientes.
 
-# Requisitos del sistema
+Su objetivo principal es digitalizar y centralizar el proceso de atención y venta, permitiendo al personal gestionar en un único sistema el estado de las mesas, los pedidos, los consumos, los pagos y las ventas realizadas.
+
+El sistema permitirá visualizar en tiempo real las 24 mesas, identificando cuáles se encuentran libres u ocupadas. Al iniciar una atención, el personal podrá asociar una mesa con los pedidos realizados por los clientes, agregar o modificar productos y consultar el consumo acumulado.
+
+El sistema calculará automáticamente el total de la cuenta, reduciendo errores y agilizando la atención. Una vez finalizado el consumo, se podrá registrar el medio de pago —efectivo, tarjeta o código QR—, emitir el comprobante correspondiente y cerrar la operación.
+
+Luego del pago, la mesa volverá a estar disponible para una nueva atención.
+
+El sistema también conservará un historial de las operaciones realizadas, permitiendo consultar ventas y consumos anteriores y facilitando el control administrativo del establecimiento.
+
+El acceso estará protegido mediante autenticación y roles de usuario, de manera que cada integrante del personal pueda utilizar únicamente las funcionalidades correspondientes a sus permisos.
+
+En síntesis, el POS permitirá transformar la gestión manual del bar en un proceso digital, centralizado, rápido y trazable, mejorando la organización del personal, reduciendo errores y optimizando la experiencia de atención al cliente.
+
+### Flujo principal del sistema
+
+**Mesa → Pedido → Consumo → Cálculo del total → Pago → Comprobante → Cierre → Mesa disponible**
+
+## Descripción del sistema y contexto real
+
+El establecimiento cuenta con 24 mesas destinadas a la atención de clientes y trabaja con dos turnos diarios:
+
+- **Turno mañana:** 1 moza y 1 encargada.
+- **Turno tarde:** 1 moza y 1 encargada.
+
+La atención comienza cuando la moza recibe al cliente y toma su pedido. Luego, transmite la información a la encargada, quien se encarga de registrar el pedido en el sistema POS y asociarlo a la mesa correspondiente.
+
+El sistema permite visualizar las mesas y conocer su estado, registrar los productos consumidos, calcular automáticamente el importe total, registrar diferentes medios de pago, emitir tickets y mantener un historial de las ventas realizadas.
+
+El proceso finaliza cuando se registra el pago correspondiente al consumo y se libera la mesa, dejándola disponible para una nueva atención.
+
+El sistema POS tiene como finalidad centralizar y organizar la información relacionada con mesas, pedidos, productos, consumos y pagos, reduciendo errores de registración, agilizando la atención y facilitando el control de las operaciones realizadas durante cada turno.
+
+## Objetivos específicos
+
+- Gestionar el estado de las 24 mesas del establecimiento.
+- Registrar y consultar los pedidos asociados a cada mesa.
+- Mantener actualizado el consumo de cada cliente.
+- Calcular automáticamente los importes correspondientes.
+- Registrar los pagos realizados mediante los medios habilitados.
+- Emitir tickets correspondientes a las operaciones finalizadas.
+- Mantener un historial de ventas y consumos.
+- Facilitar la tarea de las encargadas durante la atención.
+- Mejorar la organización de la información generada durante cada turno.
+- Permitir al responsable del negocio consultar información relacionada con las ventas.
+- Garantizar el acceso a las funcionalidades según el rol de cada usuario.
+
 
 ## Requisitos funcionales
 
