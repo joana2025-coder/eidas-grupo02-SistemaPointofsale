@@ -1,55 +1,98 @@
-# Stakeholders- Sistema POS Bar Carrefour
+# Stakeholders
 
-Identificación y justificación de las partes interesadas relevantes para el sistema POS del bar ubicado dentro de Carrefour. Para cada una se describe su rol y por qué es clave para el proyecto.
+## 1. Definición
 
----
+Un stakeholder es toda persona, grupo o área que tiene interés en el sistema, interactúa con él, influye en su funcionamiento o se ve afectada por sus resultados.
 
-## Encargadas
+Para el Sistema POS (Point of Sale) del bar ubicado dentro del supermercado Carrefour se identificaron los siguientes stakeholders.
 
-**Tipo:** Interno  
-**Rol:** Operan el sistema para gestionar mesas, pedidos y cobros.  
-**Por qué es clave:** Son las principales usuarias del sistema y necesitan que sea rápido, claro y sencillo de utilizar durante la atención.
+## 2. Identificación de Stakeholders
 
----
+| Stakeholder                        | Tipo                            | Interés / Necesidad                                                                                                                            | Funcionalidades relacionadas                                                                                                             | Nivel de impacto |
+| ---------------------------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------------- |
+| **Dueño / Responsable del bar**    | Interesado                      | Supervisar el funcionamiento general del bar, controlar las ventas y obtener información que permita conocer el desempeño del negocio.         | Consultar ventas, consultar productos vendidos, acceder a información resumida de las operaciones y controlar la actividad comercial.    | **Alto**         |
+| **Encargado/a del bar**             | Usuario directo                 | Gestionar y supervisar las operaciones diarias, controlar los pedidos, las mesas y las ventas realizadas durante el turno.                     | Visualizar mesas, registrar y modificar pedidos, consultar consumos, gestionar productos, consultar ventas y supervisar las operaciones. | **Alto**         |
+| **Mozo/a**                          | Usuario directo / operativo     | Registrar y gestionar correctamente la atención de los clientes y mantener actualizada la información de los pedidos.                          | Visualizar el estado de las mesas, abrir mesas, registrar pedidos, modificar pedidos y consultar consumos.                               | **Alto**         |
+| **Administrador/a del sistema**    | Usuario administrador / técnico | Administrar el acceso al sistema y garantizar que cada usuario tenga los permisos correspondientes.                                            | Gestionar usuarios, roles y permisos, configurar el sistema y realizar tareas de mantenimiento.                                          | **Alto**         |
+| **Área administrativa / contable** | Usuario indirecto / interesado  | Obtener información confiable sobre las ventas y operaciones realizadas para facilitar el control administrativo y contable.                   | Consultar ventas, consultar operaciones e historial de ventas y obtener información resumida.                                            | **Medio**        |
+| **Clientes del bar**               | Usuario indirecto / externo     | Recibir una atención ágil y correcta, que sus pedidos sean registrados correctamente y que el importe de su consumo sea calculado sin errores. | Sus pedidos y consumos son registrados en el sistema; cálculo del total, registro del medio de pago y emisión del comprobante.           | **Medio**        |
 
-## Mozas
+## 3. Intereses y expectativas
 
-**Tipo:** Interno  
-**Rol:** Atienden a los clientes y transmiten los pedidos a las encargadas.  
-**Por qué es clave:** Utilizan la información del sistema para comunicar correctamente los pedidos y brindar una atención eficiente.
+### 3.1 Dueño / Responsable del bar
 
----
+Su principal interés es contar con información que le permita supervisar el funcionamiento del establecimiento y controlar las ventas.
 
-## Dueño
+Espera que el sistema facilite la consulta de las operaciones realizadas y proporcione información resumida para conocer la actividad comercial del bar.
 
-**Tipo:** Interno  
-**Rol:** Supervisa el funcionamiento del establecimiento y controla las ventas.  
-**Por qué es clave:** Necesita información confiable sobre las ventas y el funcionamiento del sistema para tomar decisiones y controlar el negocio.
+### 3.2 Encargado/a del bar
 
----
+Es uno de los principales usuarios del sistema. Necesita una herramienta que le permita controlar las operaciones durante cada turno, gestionar pedidos y mesas, consultar consumos y supervisar las ventas realizadas.
 
-## Técnico de Soporte
+Espera que la información se encuentre actualizada y que las operaciones puedan realizarse de manera rápida y sencilla.
 
-**Tipo:** Externo  
-**Rol:** Realiza el mantenimiento y la resolución de problemas del sistema.  
-**Por qué es clave:** Garantiza el correcto funcionamiento del sistema y ayuda a resolver inconvenientes técnicos.
+### 3.3 Mozo/a
 
----
+Interactúa directamente con el sistema durante la atención de los clientes.
 
-## Clientes
+Necesita visualizar el estado de las mesas y disponer de una forma sencilla de registrar y modificar los pedidos, manteniendo actualizada la información del consumo.
 
-**Tipo:** Externo  
-**Rol:** Consumen los productos y realizan los pagos.  
-**Por qué es clave:** Son los destinatarios finales del servicio y su experiencia depende de que la gestión de pedidos y cobros sea correcta.
+Espera que el sistema sea claro, rápido y fácil de utilizar durante la atención.
 
----
+### 3.4 Administrador/a del sistema
 
-## Tabla resumen
+Su interés está relacionado con la administración y el correcto funcionamiento del sistema.
 
-| Stakeholder | Tipo | Nivel de impacto |
-|-------------|------|-----------------|
-| Encargadas | Interno | Alto |
-| Mozas | Interno | Alto |
-| Dueño | Interno | Alto |
-| Técnico de Soporte | Externo | Medio |
-| Clientes | Externo | Alto |
+Es responsable de gestionar usuarios, roles y permisos, procurando que cada integrante del personal pueda acceder únicamente a las funcionalidades que le corresponden.
+
+También puede intervenir ante problemas relacionados con el funcionamiento del sistema.
+
+### 3.5 Área administrativa / contable
+
+Necesita acceder a información confiable sobre las ventas y operaciones realizadas.
+
+El historial de operaciones y las consultas de ventas permiten facilitar el control administrativo y la revisión de la información generada por el sistema.
+
+### 3.6 Clientes del bar
+
+Aunque no utilizan directamente el sistema, son afectados por su funcionamiento.
+
+Una correcta registración de los pedidos, el cálculo automático del total, el registro del medio de pago y la emisión del comprobante contribuyen a brindar una atención más rápida y reducir errores.
+
+## 4. Relación de los stakeholders con el sistema
+
+Los stakeholders se relacionan con diferentes etapas del flujo principal del sistema POS:
+
+**Mesa → Pedido → Consumo → Cálculo del total → Pago → Comprobante → Cierre → Mesa disponible**
+
+* El **mozo/a** participa principalmente en la gestión de mesas, pedidos y consumos.
+* El **encargado/a** gestiona y supervisa las operaciones del turno.
+* El **administrador/a del sistema** administra usuarios, roles y permisos.
+* El **dueño/responsable** consulta información relacionada con las ventas y el funcionamiento del negocio.
+* El **área administrativa/contable** utiliza la información generada por las operaciones para el control administrativo.
+* El **cliente** es el destinatario final del proceso de atención y se beneficia de una gestión más rápida y precisa.
+
+## 5. Necesidades principales
+
+Los principales stakeholders requieren que el sistema:
+
+* Mantenga actualizado el estado de las mesas.
+* Permita registrar y consultar pedidos y consumos.
+* Permita modificar los pedidos cuando sea necesario.
+* Calcule automáticamente los importes.
+* Permita registrar diferentes medios de pago.
+* Emita los comprobantes correspondientes.
+* Mantenga un historial de ventas y operaciones.
+* Permita consultar información resumida de las ventas.
+* Controle el acceso según los roles de cada usuario.
+* Mantenga la información íntegra y trazable.
+* Sea claro, intuitivo y rápido de utilizar.
+* Permita reducir errores en la registración de pedidos y cobros.
+
+## 6. Importancia de los stakeholders
+
+La identificación de los stakeholders permite comprender las necesidades de las diferentes personas y áreas relacionadas con el sistema.
+
+Cada stakeholder aporta una perspectiva diferente: mientras los usuarios operativos necesitan rapidez y facilidad de uso, los responsables del negocio requieren información confiable para supervisar las ventas y las áreas administrativas necesitan acceder a los datos generados por las operaciones.
+
+Por este motivo, las necesidades de los stakeholders serán consideradas durante la definición de los requisitos y funcionalidades del sistema POS.
