@@ -259,12 +259,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | La eliminación es una acción puntual dentro de un pedido activo. |
-| **Negociable** | Sí | Puede variar el diseño del mensaje de confirmación sin modificar la regla de negocio. |
+| **Independiente** | Sí | Eliminar un producto es una acción puntual. |
+| **Negociable** | Sí | Se puede cambiar cómo aparece el mensaje de confirmación. |
 | **Valiosa** | Sí | Permite corregir productos cargados erróneamente antes del cobro. |
-| **Estimable** | Sí | Las condiciones de eliminación, confirmación, cancelación y actualización del total están definidas. |
+| **Estimable** | Sí | Está definido qué pasa al confirmar o cancelar la eliminación. |
 | **Pequeña** | Sí | Se limita a eliminar un producto de un pedido activo. |
-| **Verificable** | Sí | Puede probarse confirmando y cancelando la eliminación, y comprobando el nuevo total. |
+| **Verificable** | Sí | Se puede probar confirmando y cancelando la eliminación. |
 
 ---
 
@@ -293,12 +293,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede desarrollarse como una consulta sobre pedidos de prueba ya cargados. |
+| **Independiente** | Sí | Se puede consultar un pedido de prueba sin realizar todo el proceso. |
 | **Negociable** | Sí | La disposición visual de productos, subtotales y total puede ajustarse. |
 | **Valiosa** | Sí | Permite informar correctamente al cliente los productos consumidos y el importe a pagar. |
-| **Estimable** | Sí | Se define qué información debe visualizarse y cómo se calcula el total. |
+| **Estimable** | Sí | Sabemos qué información debe aparecer y cómo calcular el total. |
 | **Pequeña** | Sí | Se limita a consultar el consumo y su importe actualizado. |
-| **Verificable** | Sí | Puede probarse comparando productos, cantidades, subtotales y total esperado. |
+| **Verificable** | Sí | Se puede comparar el total mostrado con la suma de los productos. |
 
 ---
 
@@ -328,12 +328,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse con una mesa de prueba que tenga un pedido activo y total calculado. |
-| **Negociable** | Sí | La interfaz de selección del medio de pago puede ajustarse sin modificar las reglas definidas. |
+| **Independiente** | Sí | Se puede probar con una mesa que tenga un consumo cargado. |
+| **Negociable** | Sí | En la interfaz, se puede cambiar la forma de seleccionar el medio de pago. |
 | **Valiosa** | Sí | Permite confirmar el cobro, registrar la venta y avanzar al cierre de mesa. |
-| **Estimable** | Sí | Los medios de pago, pago único, vuelto, validaciones y resultado esperado están definidos. |
-| **Pequeña** | Sí | Se limita a registrar un pago único y generar automáticamente la venta asociada. |
-| **Verificable** | Sí | Puede probarse con efectivo, tarjeta, QR, falta de medio de pago e importe insuficiente. |
+| **Estimable** | Sí | Están definidos los medios de pago y las condiciones necesarias. |
+| **Pequeña** | Sí | Se limita en registrar un pago y generar la venta. |
+| **Verificable** | Sí | Se puede probar pagando con efectivo, tarjeta o QR. |
 
 ---
 
@@ -361,12 +361,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede desarrollarse y verificarse sobre una venta confirmada de prueba. |
+| **Independiente** | Sí | Se puede probar usando una venta ya confirmada. |
 | **Negociable** | Sí | El diseño, tamaño y formato visual del comprobante pueden ajustarse. |
-| **Valiosa** | Sí | Brinda al cliente una constancia de la venta y del pago realizado. |
-| **Estimable** | Sí | Se especificaron los datos mínimos y los medios de visualización e impresión. |
-| **Pequeña** | Sí | Solo contempla generar, visualizar e imprimir el comprobante. |
-| **Verificable** | Sí | Puede comprobarse que el comprobante tenga número único y datos coincidentes con la venta. |
+| **Valiosa** | Sí | Brinda al cliente una constancia de pago por la venta realizada. |
+| **Estimable** | Sí | Sabemos qué datos debe tener el comprobante. |
+| **Pequeña** | Sí | Solo genera, muestra o imprime el comprobante. |
+| **Verificable** | Sí |Se puede comprobar que tenga los datos correctos de la venta. |
 
 ---
 
@@ -394,12 +394,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede desarrollarse como una operación puntual sobre mesas con pago confirmado. |
-| **Negociable** | Sí | La forma de confirmar el cierre puede ajustarse sin cambiar el resultado esperado. |
+| **Independiente** | Sí | Puede trabajarse sobre una mesa con el pago confirmado. |
+| **Negociable** | Sí | Se puede cambiar la forma de confirmar el cierre. |
 | **Valiosa** | Sí | Libera la mesa para atender nuevos clientes. |
-| **Estimable** | Sí | Están definidos el estado previo, la confirmación, el cambio de estado y la trazabilidad. |
+| **Estimable** | Sí | Está definido qué estado debe tener la mesa y qué sucede al cerrarla. |
 | **Pequeña** | Sí | Se limita a cerrar una mesa ya pagada. |
-| **Verificable** | Sí | Puede probarse cerrando mesas pendientes de cierre y verificando que pasen a Disponible. |
+| **Verificable** | Sí | Puede probarse con ventas de distintas fechas. |
 
 ---
 
@@ -427,12 +427,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Es una consulta administrativa diferenciada de la operación diaria de mesas y pedidos. |
+| **Independiente** | Sí | Es una consulta separada de la atención de las mesas.  |
 | **Negociable** | Sí | La forma visual de presentar ventas y filtros puede adaptarse. |
-| **Valiosa** | Sí | Permite controlar y revisar las operaciones realizadas por el bar. |
-| **Estimable** | Sí | Los campos mostrados, filtros, ordenamiento y comportamiento sin resultados están definidos. |
-| **Pequeña** | Sí | Se limita al historial general; no incluye consulta por mesa ni resumen. |
-| **Verificable** | Sí | Puede probarse con ventas de distintos días y verificar el filtrado y ordenamiento. |
+| **Valiosa** | Sí | Permite revisar las ventas realizadas. |
+| **Estimable** | Sí | Están definidos los datos y filtros que se necesitan. |
+| **Pequeña** | Sí | Solo consulta el historial general de ventas. |
+| **Verificable** | Sí | Se puede probar buscando ventas de diferentes fechas. |
 
 ---
 
@@ -461,12 +461,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | El resumen es una funcionalidad de consulta separada del historial detallado. |
+| **Independiente** | Sí | El resumen puede consultarse como una función separada. |
 | **Negociable** | Sí | El diseño de los indicadores, tarjetas o gráficos puede modificarse. |
-| **Valiosa** | Sí | Permite a la encargada controlar la actividad comercial durante un período. |
-| **Estimable** | Sí | Se definieron los indicadores: total vendido, cantidad de ventas, medios de pago y producto más vendido. |
-| **Pequeña** | Sí | Se limita a un resumen del período elegido y no incorpora reportes complejos. |
-| **Verificable** | Sí | Puede contrastarse cada indicador con las ventas existentes en el historial. |
+| **Valiosa** | Sí | Ayuda a controlar cómo fueron las ventas durante un período. |
+| **Estimable** | Sí | Sabemos qué información debe mostrar: total, cantidad de ventas, medios de pago y producto más vendido. |
+| **Pequeña** | Sí | Se limita a mostrar un resumen y no informes complejos. |
+| **Verificable** | Sí | Se pueden comparar los resultados con las ventas registradas. |
 
 ---
 
@@ -496,11 +496,11 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Aunque recibe información de varios módulos, se desarrolla como una consulta específica de auditoría. |
+| **Independiente** | Sí | Es una consulta específica para controlar las operaciones. |
 | **Negociable** | Sí | La forma de mostrar filtros, fechas y registros puede ajustarse. |
-| **Valiosa** | Sí | Permite identificar qué usuario realizó una operación y cuándo la realizó. |
-| **Estimable** | Sí | Están definidos los eventos auditados, los datos guardados y los filtros disponibles. |
-| **Pequeña** | Sí | Se limita a registrar y consultar trazabilidad; no modifica las operaciones originales. |
+| **Valiosa** | Sí | Permite saber quién hizo una operación y cuándo. |
+| **Estimable** | Sí | Están definidos los datos que deben guardarse y consultarse. |
+| **Pequeña** | Sí | Solo registra y consulta las operaciones realizadas. |
 | **Verificable** | Sí | Puede probarse realizando operaciones y verificando que queden registradas con usuario, fecha y hora. |
 
 ---
@@ -531,15 +531,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Es un módulo administrativo propio, aunque luego sea utilizado para la gestión de pedidos. |
-| **Negociable** | Sí | La interfaz de carga, categorías y visualización de productos puede ajustarse. |
-| **Valiosa** | Sí | Mantiene actualizado el catálogo de productos disponibles para la atención. |
-| **Estimable** | Sí | Los campos, validaciones, modificación de precios, disponibilidad y desactivación están definidos. |
-| **Pequeña** | Sí | Se limita al mantenimiento del catálogo de productos, sin incluir control de stock o proveedores. |
-| **Verificable** | Sí | Puede probarse con altas, códigos duplicados, precios inválidos, modificaciones y desactivaciones. |
+| **Independiente** | Sí | Es un módulo propio para administrar los productos. |
+| **Negociable** | Sí | En la interfaz, se puede cambiar cómo se cargan y muestran los productos. |
+| **Valiosa** | Sí | Mantiene actualizado el listado de productos disponibles. |
+| **Estimable** | Sí | Sabemos qué datos y validaciones necesita cada producto. |
+| **Pequeña** | Sí | Se limita al mantenimiento del catálogo de productos, no a proveedores. |
+| **Verificable** | Sí | Se puede probar creando, modificando y desactivando productos. |
 
 
-## Fin de las Historias de Usuario
 
-**Sistema:** Point of Sale (POS) — Bar Carrefour  
-**Cantidad de Historias de Usuario:** 16
