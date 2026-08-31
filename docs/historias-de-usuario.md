@@ -24,10 +24,10 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede desarrollarse y probarse de forma separada, utilizando usuarios de prueba definidos. |
+| **Independiente** | Sí | Se puede trabajar el inicio de sesión por separado usando usuarios de prueba.  |
 | **Negociable** | Sí | El diseño visual, mensajes de error y duración de sesión pueden ajustarse sin modificar el objetivo. |
-| **Valiosa** | Sí | Permite el acceso seguro de los usuarios al sistema según su rol. |
-| **Estimable** | Sí | Tiene criterios claros y una estimación de 3 puntos. |
+| **Valiosa** | Sí | Permite que cada usuario entre de forma segura y tenga acceso según su rol. |
+| **Estimable** | Sí | Sabemos qué debe hacer: pedir usuario y contraseña y validar los datos. |
 | **Pequeña** | Sí | Se limita a validar credenciales, iniciar sesión e identificar el rol. |
 | **Verificable** | Sí | Puede probarse con credenciales válidas, inválidas, usuarios inactivos y cierre de sesión. |
 
@@ -58,12 +58,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede trabajarse como un módulo específico de administración de usuarios. |
-| **Negociable** | Sí | La interfaz y forma de carga de datos pueden definirse durante el desarrollo. |
+| **Independiente** | Sí | La gestión de usuarios puede hacerse como una función propia. |
+| **Negociable** | Sí | Se puede decidir cómo se cargan y muestran los usuarios. |
 | **Valiosa** | Sí | Permite mantener actualizadas las personas autorizadas a utilizar el sistema. |
 | **Estimable** | Sí | Los datos obligatorios, validaciones y acciones permitidas están definidos. |
-| **Pequeña** | Sí | Se limita a registrar, modificar y desactivar usuarios; no incluye permisos individuales. |
-| **Verificable** | Sí | Puede comprobarse mediante altas, modificaciones, intentos de usuario duplicado y desactivaciones. |
+| **Pequeña** | Sí | Se limita a administrar usuarios, sin incluir otras funciones. |
+| **Verificable** | Sí | Se puede probar creando, modificando y desactivando usuarios. |
 
 ---
 
@@ -91,12 +91,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | La asignación de roles constituye una funcionalidad administrativa diferenciada. |
-| **Negociable** | Sí | Puede negociarse cómo se visualizan los roles y permisos sin modificar la matriz definida. |
-| **Valiosa** | Sí | Evita que usuarios no autorizados accedan a funciones restringidas. |
-| **Estimable** | Sí | Los roles, permisos y comportamiento ante accesos no autorizados están definidos. |
-| **Pequeña** | Sí | Se limita a asignar roles y aplicar la matriz de permisos predefinida. |
-| **Verificable** | Sí | Puede probarse iniciando sesión con usuarios de cada rol e intentando acceder a distintas funciones. |
+| **Independiente** | Sí | La asignación de roles es una función administrativa específica. |
+| **Negociable** | Sí | Se puede cambiar la forma de mostrar los roles y permisos. |
+| **Valiosa** | Sí | Evita que una persona acceda a funciones que no le corresponden. |
+| **Estimable** | Sí | Los roles y permisos que debe tener cada usuario están definidos. |
+| **Pequeña** | Sí | Solo se ocupa de asignar roles y controlar los permisos. |
+| **Verificable** | Sí | Se puede probar entrando con diferentes roles y comprobando sus permisos. |
 
 ---
 
@@ -124,11 +124,11 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | La visualización del salón puede desarrollarse como una pantalla específica. |
+| **Independiente** | Sí | Se puede desarrollar la pantalla de mesas por separado. |
 | **Negociable** | Sí | Puede modificarse el diseño de las mesas, colores e íconos sin cambiar el objetivo. |
-| **Valiosa** | Sí | Permite conocer rápidamente la disponibilidad del salón. |
-| **Estimable** | Sí | Se conocen la cantidad de mesas, los estados y el comportamiento esperado. |
-| **Pequeña** | Sí | Solo contempla mostrar las 24 mesas y sus estados. |
+| **Valiosa** | Sí | Permite conocer rápidamente la disponibilidad de las mesas. |
+| **Estimable** | Sí | Sabemos que deben mostrarse 24 mesas y sus estados. |
+| **Pequeña** | Sí | Solo muestra las mesas y su estado. |
 | **Verificable** | Sí | Puede comprobarse que se visualicen las 24 mesas y que sus estados se actualicen correctamente. |
 
 ---
@@ -158,12 +158,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Aunque utiliza la pantalla de mesas, la apertura es una operación puntual y diferenciada. |
+| **Independiente** | Sí | La apertura es una operación puntual y diferenciada. |
 | **Negociable** | Sí | Puede definirse si se abre con botón, doble clic o ventana de confirmación. |
 | **Valiosa** | Sí | Permite comenzar una atención y habilitar el registro de consumo. |
-| **Estimable** | Sí | Están definidas la condición inicial, el cambio de estado y la creación del pedido. |
-| **Pequeña** | Sí | Solo abre una mesa y crea su pedido activo asociado. |
-| **Verificable** | Sí | Puede probarse con una mesa disponible, una mesa ocupada y una mesa pendiente de cierre. |
+| **Estimable** | Sí | Sabemos qué debe pasar: seleccionar una mesa libre, abrirla y crear el pedido. |
+| **Pequeña** | Sí | Solo se ocupa de abrir la mesa y generar su pedido. |
+| **Verificable** | Sí | Se puede probar con una mesa disponible y con una mesa que ya está ocupada. |
 
 ---
 
@@ -192,12 +192,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede desarrollarse como una función específica utilizando una mesa y productos de prueba. |
-| **Negociable** | Sí | La forma de buscar y seleccionar productos puede modificarse sin afectar la necesidad. |
+| **Independiente** | Sí | Se puede probar agregando productos a un pedido de prueba. |
+| **Negociable** | Sí | Se puede cambiar la forma de buscar o seleccionar los productos. |
 | **Valiosa** | Sí | Permite registrar el consumo solicitado por los clientes. |
-| **Estimable** | Sí | Están definidos productos disponibles, cantidad válida, precio vigente y actualización de total. |
+| **Estimable** | Sí | Están definidas las cantidades, productos y actualización del total. |
 | **Pequeña** | Sí | Se limita a incorporar productos a un pedido activo. |
-| **Verificable** | Sí | Puede comprobarse que se agreguen productos, se almacene el precio y se actualice el total. |
+| **Verificable** | Sí | Se puede comprobar que el producto se agregue y que el total se actualice. |
 
 ---
 
@@ -225,12 +225,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse sobre un pedido existente sin incluir otras operaciones del flujo. |
+| **Independiente** | Sí | Puede probarse sobre un pedido existente. |
 | **Negociable** | Sí | Puede negociarse la interfaz para aumentar o disminuir cantidades. |
 | **Valiosa** | Sí | Permite corregir cambios solicitados por el cliente antes del pago. |
-| **Estimable** | Sí | Las reglas de cantidades permitidas, actualización de total y estado de mesa están definidas. |
-| **Pequeña** | Sí | Solo contempla la modificación de cantidades de productos ya cargados. |
-| **Verificable** | Sí | Puede probarse con cantidades válidas, cero, negativas y pedidos ya pagados. |
+| **Estimable** | Sí | Sabemos qué cantidades se permiten y cómo debe cambiar el total. |
+| **Pequeña** | Sí | Solo modifica la cantidad de productos ya cargados. |
+| **Verificable** | Sí | Se puede probar aumentando, disminuyendo o ingresando cantidades inválidas.. |
 
 ---
 
