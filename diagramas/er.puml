@@ -1,31 +1,70 @@
 @startuml
-title Modelo Entidad-Relación - [Nombre del Sistema]
 
-' --- Entidades ---
-entity Entidad1 {
-  * id_entidad1 : integer <<PK>>
-  --
-  atributo1 : varchar
-  atributo2 : varchar
+title Modelo Entidad-Relación - Sistema POS Bar Carrefour
+
+entity Usuario {
+    * id_usuario : INT <<PK>>
+    --
+    nombre : VARCHAR
+    usuario : VARCHAR
+    contraseña : VARCHAR
+    rol : VARCHAR
 }
 
-entity Entidad2 {
-  * id_entidad2 : integer <<PK>>
-  --
-  atributo1 : varchar
-  id_entidad1 : integer <<FK>>
+entity Mesa {
+    * id_mesa : INT <<PK>>
+    --
+    numero_mesa : INT
+    estado : VARCHAR
 }
 
-entity Entidad3 {
-  * id_entidad3 : integer <<PK>>
-  --
-  atributo1 : varchar
-  id_entidad1 : integer <<FK>>
+entity Pedido {
+    * id_pedido : INT <<PK>>
+    --
+    fecha : DATETIME
+    subtotal : DECIMAL
+    id_mesa : INT <<FK>>
+    id_usuario : INT <<FK>>
 }
 
-' --- Relaciones ---
-' Sintaxis: EntidadA [cardinalidad] -- [cardinalidad] EntidadB : "etiqueta"
-Entidad1 ||--o{ Entidad2 : "relación"
-Entidad1 ||--o{ Entidad3 : "relación"
+entity Detalle_Pedido {
+    * id_detalle : INT <<PK>>
+    --
+    cantidad : INT
+    subtotal : DECIMAL
+    id_pedido : INT <<FK>>
+    id_producto : INT <<FK>>
+}
+
+entity Producto {
+    * id_producto : INT <<PK>>
+    --
+    nombre : VARCHAR
+    precio : DECIMAL
+    stock : INT
+}
+
+entity Pago {
+    * id_pago : INT <<PK>>
+    --
+    metodo_pago : VARCHAR
+    total : DECIMAL
+    fecha : DATETIME
+    id_pedido : INT <<FK>>
+}
+
+entity Ticket {
+    * id_ticket : INT <<PK>>
+    --
+    fecha_emision : DATETIME
+    id_pago : INT <<FK>>
+}
+
+Usuario ||--o{ Pedido : registra
+Mesa ||--o{ Pedido : tiene
+Pedido ||--|{ Detalle_Pedido : contiene
+Producto ||--o{ Detalle_Pedido : corresponde
+Pedido ||--|| Pago : genera
+Pago ||--|| Ticket : emite
 
 @enduml
