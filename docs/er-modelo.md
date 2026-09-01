@@ -2,8 +2,7 @@
 
 ## Diagrama
 
-_Incluir el código PlantUML en `diagramas/er.puml`._
-_Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/)._
+**Diagrama ER:** [Ver diagrama en PlantUML](https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa700001)
 
 ## Entidades
 
