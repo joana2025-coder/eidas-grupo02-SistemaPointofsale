@@ -1,10 +1,6 @@
 # Casos de uso
 
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#casos-de-uso)
-
 ## Diagrama general
-
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#diagrama-general)
 
 El diagrama representa los principales casos de uso del Sistema POS del Bar Carrefour.
 
@@ -26,20 +22,16 @@ El código PlantUML se encuentra en `diagramas/casos-de-uso.puml`.
 
 ## CU-01 — Registrar pedido
 
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#cu-01--registrar-pedido)
-
-| **Campo**       | **Detalle**                                                                                                                                                                                                                       |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Identificador   | CU-01                                                                                                                                                                                                                             |
-| Nombre          | Registrar pedido                                                                                                                                                                                                                  |
-| Descripción     | Permite cargar los productos consumidos por una mesa.                                                                                                                                                                             |
-| Actores         | Principal: Encargada / Secundario: No aplica                                                                                                                                                                                      |
-| Precondiciones  | La encargada debe haber iniciado sesión. La mesa debe encontrarse ocupada. El sistema debe estar disponible.                                                                                                                      |
-| Postcondiciones | Éxito: El pedido queda registrado, los productos quedan asociados a la mesa, el subtotal se actualiza automáticamente y se descuenta el stock. / Fallo: La operación se cancela o se impide agregar productos según la excepción. |
+| **Campo**           | **Detalle**                                                                                                                                                                                                                       |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Identificador**   | CU-01                                                                                                                                                                                                                             |
+| **Nombre**          | Registrar pedido                                                                                                                                                                                                                  |
+| **Descripción**     | Permite cargar los productos consumidos por una mesa.                                                                                                                                                                             |
+| **Actores**         | Principal: Encargada / Secundario: No aplica                                                                                                                                                                                      |
+| **Precondiciones**  | La encargada debe haber iniciado sesión. La mesa debe encontrarse ocupada. El sistema debe estar disponible.                                                                                                                      |
+| **Postcondiciones** | Éxito: El pedido queda registrado, los productos quedan asociados a la mesa, el subtotal se actualiza automáticamente y se descuenta el stock. / Fallo: La operación se cancela o se impide agregar productos según la excepción. |
 
 ### Secuencia normal
-
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#secuencia-normal)
 
 | **#** | **Acción (actor)**                                | **Reacción (sistema)**                                               |
 | ----- | ------------------------------------------------- | -------------------------------------------------------------------- |
@@ -57,31 +49,27 @@ El código PlantUML se encuentra en `diagramas/casos-de-uso.puml`.
 | E2    | Se pierde la conexión.                        | El sistema notifica el error y cancela la operación.  |
 | E3    | Un producto no tiene stock suficiente.        | El sistema impide agregarlo y sugiere un reemplazo.   |
 
-| **Campo**   | **Detalle**                                                        |
-| ----------- | ------------------------------------------------------------------ |
-| Rendimiento | Respuesta inmediata al agregar productos y actualizar el subtotal. |
-| Frecuencia  | Alta: se utiliza cada vez que se registra un pedido.               |
-| Importancia | Alta: es una función principal del sistema.                        |
-| Urgencia    | Alta: se necesita para registrar los pedidos durante la atención.  |
+| **Campo**       | **Detalle**                                                        |
+| --------------- | ------------------------------------------------------------------ |
+| **Rendimiento** | Respuesta inmediata al agregar productos y actualizar el subtotal. |
+| **Frecuencia**  | Alta: se utiliza cada vez que se registra un pedido.               |
+| **Importancia** | Alta: es una función principal del sistema.                        |
+| **Urgencia**    | Alta: se necesita para registrar los pedidos durante la atención.  |
 
 ---
 
 ## CU-02 — Registrar pago
 
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#cu-02--registrar-pago)
-
-| **Campo**       | **Detalle**                                                                                                                                                                   |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Identificador   | CU-02                                                                                                                                                                         |
-| Nombre          | Registrar pago                                                                                                                                                                |
-| Descripción     | Permite registrar el pago correspondiente al consumo de una mesa.                                                                                                             |
-| Actores         | Principal: Encargada / Secundario: Proveedor de Pago                                                                                                                          |
-| Precondiciones  | Debe existir una mesa con un consumo registrado y un total a pagar.                                                                                                           |
-| Postcondiciones | Éxito: El sistema registra el pago, libera la mesa y emite el ticket. / Fallo: El pago no se registra y la mesa permanece ocupada hasta completar correctamente la operación. |
+| **Campo**           | **Detalle**                                                                                                                                                                   |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Identificador**   | CU-02                                                                                                                                                                         |
+| **Nombre**          | Registrar pago                                                                                                                                                                |
+| **Descripción**     | Permite registrar el pago correspondiente al consumo de una mesa.                                                                                                             |
+| **Actores**         | Principal: Encargada / Secundario: Proveedor de Pago                                                                                                                          |
+| **Precondiciones**  | Debe existir una mesa con un consumo registrado y un total a pagar.                                                                                                           |
+| **Postcondiciones** | Éxito: El sistema registra el pago, libera la mesa y emite el ticket. / Fallo: El pago no se registra y la mesa permanece ocupada hasta completar correctamente la operación. |
 
 ### Secuencia normal
-
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#secuencia-normal-1)
 
 | **#** | **Acción (actor)**                                                 | **Reacción (sistema)**                                                                     |
 | ----- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
@@ -98,31 +86,27 @@ El código PlantUML se encuentra en `diagramas/casos-de-uso.puml`.
 | E2    | El proveedor de pago no responde.   | El sistema informa el error y permite reintentar la operación. |
 | E3    | No se selecciona un método de pago. | El sistema solicita seleccionar un método de pago.             |
 
-| **Campo**   | **Detalle**                                                     |
-| ----------- | --------------------------------------------------------------- |
-| Rendimiento | Respuesta inmediata al registrar el pago.                       |
-| Frecuencia  | Alta: se utiliza al finalizar cada consumo.                     |
-| Importancia | Alta: permite completar la venta.                               |
-| Urgencia    | Alta: se necesita para finalizar la atención y liberar la mesa. |
+| **Campo**       | **Detalle**                                                     |
+| --------------- | --------------------------------------------------------------- |
+| **Rendimiento** | Respuesta inmediata al registrar el pago.                       |
+| **Frecuencia**  | Alta: se utiliza al finalizar cada consumo.                     |
+| **Importancia** | Alta: permite completar la venta.                               |
+| **Urgencia**    | Alta: se necesita para finalizar la atención y liberar la mesa. |
 
 ---
 
 ## CU-03 — Gestionar stock de productos
 
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#cu-03--gestionar-stock-de-productos)
-
-| **Campo**       | **Detalle**                                                                                                                                                                                                                 |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Identificador   | CU-03                                                                                                                                                                                                                       |
-| Nombre          | Gestionar stock de productos                                                                                                                                                                                                |
-| Descripción     | Permite dar de alta, modificar productos y reponer stock cuando el sistema emite una alerta de stock bajo. En este caso de uso se desarrolla principalmente la reposición de stock.                                         |
-| Actores         | Principal: Encargada / Secundario: No aplica                                                                                                                                                                                |
-| Precondiciones  | Debe existir un producto registrado en el sistema y el sistema debe estar disponible.                                                                                                                                       |
-| Postcondiciones | Éxito: El stock disponible queda actualizado y el producto vuelve a estar habilitado para la venta si estaba deshabilitado por falta de stock. / Fallo: El stock no se actualiza y el producto mantiene su estado anterior. |
+| **Campo**           | **Detalle**                                                                                                                                                                                                                 |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Identificador**   | CU-03                                                                                                                                                                                                                       |
+| **Nombre**          | Gestionar stock de productos                                                                                                                                                                                                |
+| **Descripción**     | Permite dar de alta, modificar productos y reponer stock cuando el sistema emite una alerta de stock bajo. En este caso de uso se desarrolla principalmente la reposición de stock.                                         |
+| **Actores**         | Principal: Encargada / Secundario: No aplica                                                                                                                                                                                |
+| **Precondiciones**  | Debe existir un producto registrado en el sistema y el sistema debe estar disponible.                                                                                                                                       |
+| **Postcondiciones** | Éxito: El stock disponible queda actualizado y el producto vuelve a estar habilitado para la venta si estaba deshabilitado por falta de stock. / Fallo: El stock no se actualiza y el producto mantiene su estado anterior. |
 
 ### Secuencia normal
-
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#secuencia-normal-2)
 
 | **#** | **Acción (actor)**                                               | **Reacción (sistema)**                                                                               |
 | ----- | ---------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -137,31 +121,27 @@ El código PlantUML se encuentra en `diagramas/casos-de-uso.puml`.
 | E1    | La cantidad ingresada para la reposición no es válida. | El sistema informa el error y solicita ingresar una cantidad válida. |
 | E2    | No se puede actualizar el stock.                       | El sistema informa el error y mantiene el stock anterior.            |
 
-| **Campo**   | **Detalle**                                                              |
-| ----------- | ------------------------------------------------------------------------ |
-| Rendimiento | Respuesta inmediata al actualizar el stock.                              |
-| Frecuencia  | Media: se utiliza cuando se repone mercadería o se modifica un producto. |
-| Importancia | Alta: permite mantener actualizada la disponibilidad de productos.       |
-| Urgencia    | Media: se realiza cuando se detecta la necesidad de reposición.          |
+| **Campo**       | **Detalle**                                                              |
+| --------------- | ------------------------------------------------------------------------ |
+| **Rendimiento** | Respuesta inmediata al actualizar el stock.                              |
+| **Frecuencia**  | Media: se utiliza cuando se repone mercadería o se modifica un producto. |
+| **Importancia** | Alta: permite mantener actualizada la disponibilidad de productos.       |
+| **Urgencia**    | Media: se realiza cuando se detecta la necesidad de reposición.          |
 
 ---
 
 ## CU-04 — Generar cierre de turno
 
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#cu-04--generar-cierre-de-turno)
-
-| **Campo**       | **Detalle**                                                                                                                                                                                                  |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Identificador   | CU-04                                                                                                                                                                                                        |
-| Nombre          | Generar cierre de turno                                                                                                                                                                                      |
-| Descripción     | Permite generar un reporte con las ventas realizadas durante el turno, discriminadas por método de pago, y dejarlo disponible para consulta del dueño.                                                       |
-| Actores         | Principal: Encargada / Secundario: Dueño                                                                                                                                                                     |
-| Precondiciones  | Debe haber ventas registradas durante el turno.                                                                                                                                                              |
-| Postcondiciones | Éxito: El sistema totaliza las ventas del turno discriminadas por método de pago y genera el reporte. / Fallo: El cierre no se genera y las ventas del turno permanecen disponibles para una nueva consulta. |
+| **Campo**           | **Detalle**                                                                                                                                                                                                  |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Identificador**   | CU-04                                                                                                                                                                                                        |
+| **Nombre**          | Generar cierre de turno                                                                                                                                                                                      |
+| **Descripción**     | Permite generar un reporte con las ventas realizadas durante el turno, discriminadas por método de pago, y dejarlo disponible para consulta del dueño.                                                       |
+| **Actores**         | Principal: Encargada / Secundario: Dueño                                                                                                                                                                     |
+| **Precondiciones**  | Debe haber ventas registradas durante el turno.                                                                                                                                                              |
+| **Postcondiciones** | Éxito: El sistema totaliza las ventas del turno discriminadas por método de pago y genera el reporte. / Fallo: El cierre no se genera y las ventas del turno permanecen disponibles para una nueva consulta. |
 
 ### Secuencia normal
-
-[svg](https://github.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/blob/main/docs/casos-de-uso.md#secuencia-normal-3)
 
 | **#** | **Acción (actor)**                                               | **Reacción (sistema)**                                                     |
 | ----- | ---------------------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -176,9 +156,10 @@ El código PlantUML se encuentra en `diagramas/casos-de-uso.puml`.
 | E1    | No existen ventas registradas durante el turno. | El sistema informa que no hay ventas para incluir en el cierre. |
 | E2    | Se produce un error al generar el reporte.      | El sistema informa el error y permite volver a intentar.        |
 
-| **Campo**   | **Detalle**                                                     |
-| ----------- | --------------------------------------------------------------- |
-| Rendimiento | Generación del reporte en pocos segundos.                       |
-| Frecuencia  | Alta: se utiliza al finalizar cada turno.                       |
-| Importancia | Alta: permite controlar las ventas realizadas durante el turno. |
-| Urgencia    | Media: se realiza al finalizar el turno.                        |
+| **Campo**       | **Detalle**                                                     |
+| --------------- | --------------------------------------------------------------- |
+| **Rendimiento** | Generación del reporte en pocos segundos.                       |
+| **Frecuencia**  | Alta: se utiliza al finalizar cada turno.                       |
+| **Importancia** | Alta: permite controlar las ventas realizadas durante el turno. |
+| **Urgencia**    | Media: se realiza al finalizar el turno.                        |
+|                 |                                                                 |
