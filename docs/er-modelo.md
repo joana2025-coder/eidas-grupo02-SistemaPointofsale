@@ -1,7 +1,7 @@
 # Modelo Entidad-Relación
 
 ## Diagrama
-*Incluir el código PlantUML en `diagramas/er.puml`.*
+
 
 *Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/).*
 
