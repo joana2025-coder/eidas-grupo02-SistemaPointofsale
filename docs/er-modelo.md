@@ -1,8 +1,12 @@
 # Modelo Entidad-Relación
 
 ## Diagrama
+*Incluir el código PlantUML en `diagramas/er.puml`.*
 
-**Diagrama ER:** [Ver diagrama en PlantUML](https://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa700001)
+*Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/).*
+
+**Diagrama ER:** [Ver diagrama ER](https://www.plantuml.com/plantuml/svg/bPDHRXCn48RVVGe_8-q5ggfgI8E88B1A5rwZwNeQhDgUQ3pxWB8S2d64Nep6Yv6pn4ZDI-J_dvt_yzY-ZG8iWtTAYHM7UaC67UbL46l0D5jqqDldNq4t-jv6GG-w_NoltmBh9J3Z8msi50Qnybr_YGEm9NrK-kNtHbkp6_v8LthzgTFNr-s7cvlaDatw2-GV65_ihuljylrYcyJyqRdQKn26YCy_OUOmkKBvyPTdWn5A68yHwYI3HwQY9gaO1GnTxDwYiORA_eUaL1CUiVzswdstw5RTUhDAOXmUX0JSILyjrvl5noJFQT_bNiLCIw_WkaC1vt3tBv-Pd2fW3zEn5_kluiqtMm8UcCpGIvMmpNuvkwozwgOS67jBCxWer3zDVSfGs9y7mhuUvb78KAuf4sVJg1niTKG5K6Vx9vGIIPBo__kpGs-ZfJ2FAtTKXkKtEOvDGqVTPYJ6lOt2eD8ZcRjYCQ2QbiaSZ_DxTPKUPAhBvvdRNAXandYWOCwRZhgTcFSOa46TLjdfyZ3GMq6bRZ6OmRlV)
+
 
 ## Entidades
 
