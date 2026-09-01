@@ -1,26 +1,34 @@
 @startuml
-title Diagrama de Casos de Uso - [Nombre del Sistema]
+title Diagrama de Casos de Uso
+Sistema POS — Bar Carrefour
 
 left to right direction
 
-' --- Actores ---
-actor "[Actor principal]" as A1
-actor "[Actor secundario]" as A2
+actor "Encargada" as ENC
+actor "Dueño" as DUE
+actor "Proveedor de Pago" as PAG
 
-' --- Sistema ---
-rectangle "[Nombre del Sistema]" {
-  usecase "[Caso de uso 1]" as UC1
-  usecase "[Caso de uso 2]" as UC2
-  usecase "[Caso de uso 3]" as UC3
+rectangle "Sistema POS Bar Carrefour" {
+  usecase "Autenticar usuario" as UC0
+  usecase "Registrar pedido" as UC1
+  usecase "Consultar disponibilidad\nde stock" as UC2
+  usecase "Procesar pago" as UC3
+  usecase "Reponer stock\na demanda" as UC4
+  usecase "Emitir ticket" as UC5
+  usecase "Consultar historial\nde ventas" as UC6
 }
 
-' --- Relaciones actor-caso de uso ---
-A1 --> UC1
-A1 --> UC2
-A2 --> UC3
+ENC --> UC1
+ENC --> UC4
+PAG --> UC3
+DUE --> UC6
 
-' --- Relaciones entre casos de uso ---
-' UC2 .> UC1 : <<include>>
-' UC3 .> UC1 : <<extend>>
+UC1 .> UC0 : <<include>>
+UC1 .> UC2 : <<include>>
+UC6 .> UC0 : <<include>>
+
+UC3 .> UC1 : <<extend>>
+UC4 .> UC2 : <<extend>>
+UC5 .> UC3 : <<extend>>
 
 @enduml
