@@ -1,115 +1,542 @@
 # Historias de usuario
-
-_Presentar al menos una historia de usuario representativa por módulo._
-_Cada historia debe incluir formato clásico, criterios de aceptación y validación INVEST._
-
 ---
+# H-U 1 — Inicio de sesión
 
-## HU-01 — Registrar Pedidos
+**Como** usuario del sistema,  
+**quiero** iniciar sesión mediante usuario y contraseña,  
+**para** acceder de forma segura a las funcionalidades habilitadas según mi rol.
 
-| Campo | Detalle |
-|-------|---------|
-| Historia | Como encargada, quiero registrar pedidos asociados a una mesa para mantener organizado el consumo de cada cliente. |
-| Módulo | Gestión en pedidos |
-| Requisitos relacionados | RF-04, RF-05, RF-06 |
+**Módulo:** Inicio de Sesión
+
+**Requisitos relacionados:** RF-01
+
+**Requisitos no funcionales:** RNF-05, RNF-07 y RNF-19
 
 ### Criterios de aceptación
 
-1. La encargada debe poder seleccionar una mesa y registrar uno o varios productos.
-2. El sistema debe guardar el pedido asociado a la mesa seleccionada.
-3. El sistema debe permitir modificar o eliminar productos del pedido antes de confirmarlo.
+1. El sistema permite ingresar nombre de usuario y contraseña.
+2. Si las credenciales son correctas y el usuario se encuentra activo, el sistema permite iniciar sesión.
+3. Si las credenciales son incorrectas, el sistema rechaza el acceso e informa un mensaje de error.
+4. Al iniciar sesión, el sistema identifica el rol del usuario.
+5. Al cerrar sesión, el usuario no puede continuar utilizando funciones restringidas.
 
-### Validación INVEST
+### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
-|----------|-------------|-------------|
-| Independiente | Si | Puede desarrollarse de manera independiente|
-| Negociable | Si | Los detalles del registro pueden acordarse|
-| Valiosa | Si | Permite organizar el consumo de cada mesa|
-| Estimable |Si | Se puede estimar el tiempo de desarrollo|
-| Pequeña | Si | Tiene un alcance concreto y reducido|
-| Verificable | Si | Se puede verificar que el pedido quede asociado a la mesa correcta|
+|---|---|---|
+| **Independiente** | Sí | Se puede trabajar el inicio de sesión por separado usando usuarios de prueba.  |
+| **Negociable** | Sí | El diseño visual, mensajes de error y duración de sesión pueden ajustarse sin modificar el objetivo. |
+| **Valiosa** | Sí | Permite que cada usuario entre de forma segura y tenga acceso según su rol. |
+| **Estimable** | Sí | Sabemos qué debe hacer: pedir usuario y contraseña y validar los datos. |
+| **Pequeña** | Sí | Se limita a validar credenciales, iniciar sesión e identificar el rol. |
+| **Verificable** | Sí | Puede probarse con credenciales válidas, inválidas, usuarios inactivos y cierre de sesión. |
 
 ---
 
-## HU-02 — Registrar Pagos
+# H-U 2 — Gestión de usuarios
 
-| Campo | Detalle |
-|-------|---------|
-| Historia | Como encargada, quiero registrar pagos en efectivo, tarjeta o QR para facilitar el cobro a los clientes.  |
-| Módulo |Gestión de pagos |
-| Requisitos relacionados | RF-07, RF-08 |
+**Como** encargada,  
+**quiero** registrar, modificar y desactivar usuarios,  
+**para** mantener actualizada la información de las personas autorizadas a utilizar el sistema.
+
+**Módulo:** Gestión de usuarios
+
+**Requisitos relacionados:** RF-02
+
+**Requisitos no funcionales:** RNF-05, RNF-07, RNF-08 y RNF-22
 
 ### Criterios de aceptación
 
-1. El sistema debe permitir seleccionar el pedido o consumo que se desea cobrar.
-2. La encargada debe poder seleccionar el medio de pago: efectivo, tarjeta o QR.
-3. Al confirmar el pago, el sistema debe registrar el pago y actualizar el estado del consumo como pagado.
+1. La encargada puede registrar un usuario con nombre de usuario, rol y estado.
+2. El sistema no permite registrar dos usuarios con el mismo nombre de usuario.
+3. La encargada puede modificar los datos de un usuario existente.
+4. La administradora puede desactivar un usuario sin eliminar su historial de operaciones.
+5. El sistema solicita confirmación antes de desactivar un usuario.
+6. Un usuario desactivado no puede iniciar sesión.
 
-### Validación INVEST
+### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
-|----------|-------------|-------------|
-| Independiente | Si | Puede desarrollarse de manera independiente|
-| Negociable | Si | Los medios y detalle del pago pueden acordarse|
-| Valiosa | Si | Facilita el cobro y registros de los pagos|
-| Estimable | Si | Se puede estimar el tiempo y esfuerzo necesario|                                                                                                                                        
-| Pequeña | Si | Tiene un alcance concreto y reducido|
-| Verificable | Si | Se puede fijar pago de registro correctamente|
+|---|---|---|
+| **Independiente** | Sí | La gestión de usuarios puede hacerse como una función propia. |
+| **Negociable** | Sí | Se puede decidir cómo se cargan y muestran los usuarios. |
+| **Valiosa** | Sí | Permite mantener actualizadas las personas autorizadas a utilizar el sistema. |
+| **Estimable** | Sí | Los datos obligatorios, validaciones y acciones permitidas están definidos. |
+| **Pequeña** | Sí | Se limita a administrar usuarios, sin incluir otras funciones. |
+| **Verificable** | Sí | Se puede probar creando, modificando y desactivando usuarios. |
 
 ---
 
-## HU-03 — Acciones del pedido de la moza
+# H-U 3 — Asignación de roles
 
-| Campo | Detalle |
-|-------|---------|
-| Historia | Como moza, quiero visualizar las mesas y su estado actual para organizar mejor la atención de los clientes.  |
-| Módulo | Gestión de mesas|
-| Requisitos relacionados | RF-02, RF-03 |
+**Como** encargada,  
+**quiero** asignar un rol a cada usuario,  
+**para** controlar las funciones a las que puede acceder dentro del sistema.
+
+**Módulo:** Asignación de roles y permisos
+
+**Requisitos relacionados:** RF-02 y RF-22
+
+**Requisitos no funcionales:** RNF-05, RNF-06, RNF-19 y RNF-22
 
 ### Criterios de aceptación
 
-1. La moza debe poder visualizar todas las mesas disponibles.
-2. El sistema debe mostrar el estado actual de cada mesa, por ejemplo: libre, ocupada o reservada.
-3. El estado de una mesa debe actualizarse cuando se registra o finaliza un pedido.
+1. El sistema muestra los roles disponibles: Moza, Encargada y Administradora del sistema.
+2. La encargada puede asignar o modificar el rol de un usuario activo.
+3. El sistema no permite asignar un rol inexistente.
+4. Un usuario no puede acceder a una funcionalidad que no esté autorizada para su rol.
+5. Ante un intento de acceso no autorizado, el sistema informa que el usuario no posee permisos suficientes.
 
-### Validación INVEST
+### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
-|----------|-------------|-------------|
-| Independiente | Si | Puede desarrollarse de manera independiente|
-| Negociable | Si | Los estados de las mesas pueden definirse y acordarse|
-| Valiosa | Si | Ayuda a organizar la atención de los clientes|
-| Estimable | Si | Se puede estimar el tiempo y esfuerzo necesario|
-| Pequeña | Si | Tiene un alcance concreto y reducido|
-| Verificable | Si | Se puede verificar que los estados se muestren y actualicen correctamente|
+|---|---|---|
+| **Independiente** | Sí | La asignación de roles es una función administrativa específica. |
+| **Negociable** | Sí | Se puede cambiar la forma de mostrar los roles y permisos. |
+| **Valiosa** | Sí | Evita que una persona acceda a funciones que no le corresponden. |
+| **Estimable** | Sí | Los roles y permisos que debe tener cada usuario están definidos. |
+| **Pequeña** | Sí | Solo se ocupa de asignar roles y controlar los permisos. |
+| **Verificable** | Sí | Se puede probar entrando con diferentes roles y comprobando sus permisos. |
 
 ---
 
-## HU-04 — Control de historial
+# H-U 4 — Visualización de mesas
 
-| Campo | Detalle |
-|-------|---------|
-| Historia | Como dueño, quiero consultar el historial de ventas y consumos para controlar la recaudación diaria del negocio. |
-| Módulo | Reportes e historial |
-| Requisitos relacionados | RF-10, RF-11 |
+**Como** moza,  
+**quiero** visualizar las 24 mesas y su estado actual,  
+**para** conocer rápidamente la disponibilidad del salón.
+
+**Módulo:** Visualización de mesas
+
+**Requisitos relacionados:** RF-03, RF-04 y RF-23
+
+**Requisitos no funcionales:** RNF-01, RNF-03, RNF-04, RNF-12, RNF-16 y RNF-20
 
 ### Criterios de aceptación
 
-1. El dueño debe poder consultar las ventas y consumos registrados.
-2. El sistema debe permitir consultar la información por fecha.
-3. El historial debe mostrar datos como mesa, importe, medio de pago y fecha de la venta.
+1. El sistema muestra las 24 mesas numeradas del 1 al 24.
+2. Cada mesa muestra uno de los estados definidos: Disponible, Ocupada o Pendiente de cierre.
+3. Las mesas disponibles se diferencian visualmente de las ocupadas y pendientes de cierre.
+4. El estado visualizado se actualiza cuando se abre, paga o cierra una mesa.
+5. La pantalla puede utilizarse correctamente desde una computadora o tablet.
 
-### Validación INVEST
+### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
-|----------|-------------|-------------|
-| Independiente | Si | Puede desarrollarse de manera independiente|
-| Negociable | Si | Los datos y filtros del historial pueden acordarse|
-| Valiosa | Si | Permiten controlar las ventas y la recaudación|
-| Estimable | Si | Se puede estimar el tiempo y esfuerzo necesario|
-| Pequeña | Si | Tiene un alcance concreto y reducido|
-| Verificable | Si | Se puede verificar que el historial muestre los datos correctamente|
+|---|---|---|
+| **Independiente** | Sí | Se puede desarrollar la pantalla de mesas por separado. |
+| **Negociable** | Sí | Puede modificarse el diseño de las mesas, colores e íconos sin cambiar el objetivo. |
+| **Valiosa** | Sí | Permite conocer rápidamente la disponibilidad de las mesas. |
+| **Estimable** | Sí | Sabemos que deben mostrarse 24 mesas y sus estados. |
+| **Pequeña** | Sí | Solo muestra las mesas y su estado. |
+| **Verificable** | Sí | Puede comprobarse que se visualicen las 24 mesas y que sus estados se actualicen correctamente. |
 
-| Pequeña | | |
-| Verificable | | |
+---
+
+# H-U 5 — Apertura de mesa
+
+**Como** moza,  
+**quiero** abrir una mesa disponible,  
+**para** comenzar a registrar el consumo de los clientes.
+
+**Módulo:** Apertura de mesas
+
+**Requisitos relacionados:** RF-05, RF-06, RF-21 y RF-24
+
+**Requisitos no funcionales:** RNF-01, RNF-02, RNF-08, RNF-10, RNF-16 y RNF-18
+
+### Criterios de aceptación
+
+1. La moza puede seleccionar únicamente mesas con estado Disponible.
+2. El sistema solicita confirmación antes de abrir la mesa.
+3. Al confirmar la apertura, la mesa cambia automáticamente al estado Ocupada.
+4. Al abrir una mesa, el sistema crea un pedido activo asociado a esa mesa.
+5. El sistema registra el usuario, fecha y hora de apertura.
+6. El sistema no permite abrir una mesa que ya esté Ocupada o Pendiente de cierre.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | La apertura es una operación puntual y diferenciada. |
+| **Negociable** | Sí | Puede definirse si se abre con botón, doble clic o ventana de confirmación. |
+| **Valiosa** | Sí | Permite comenzar una atención y habilitar el registro de consumo. |
+| **Estimable** | Sí | Sabemos qué debe pasar: seleccionar una mesa libre, abrirla y crear el pedido. |
+| **Pequeña** | Sí | Solo se ocupa de abrir la mesa y generar su pedido. |
+| **Verificable** | Sí | Se puede probar con una mesa disponible y con una mesa que ya está ocupada. |
+
+---
+
+# H-U 6 — Agregar productos al pedido
+
+**Como** moza,  
+**quiero** agregar productos al pedido de una mesa ocupada,  
+**para** registrar el consumo solicitado por los clientes.
+
+**Módulo:** Agregar productos al pedido
+
+**Requisitos relacionados:** RF-07 y RF-26
+
+**Requisitos no funcionales:** RNF-01, RNF-02, RNF-03, RNF-08, RNF-16 y RNF-18
+
+### Criterios de aceptación
+
+1. La moza puede seleccionar una mesa con pedido activo.
+2. El sistema muestra únicamente productos con estado Disponible.
+3. La moza puede agregar uno o más productos indicando una cantidad mayor a cero.
+4. Cada producto agregado queda asociado al pedido de la mesa seleccionada.
+5. El sistema registra el precio vigente del producto al momento de agregarlo.
+6. Al agregar un producto, el sistema actualiza automáticamente el total del pedido.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Se puede probar agregando productos a un pedido de prueba. |
+| **Negociable** | Sí | Se puede cambiar la forma de buscar o seleccionar los productos. |
+| **Valiosa** | Sí | Permite registrar el consumo solicitado por los clientes. |
+| **Estimable** | Sí | Están definidas las cantidades, productos y actualización del total. |
+| **Pequeña** | Sí | Se limita a incorporar productos a un pedido activo. |
+| **Verificable** | Sí | Se puede comprobar que el producto se agregue y que el total se actualice. |
+
+---
+
+# H-U 7 — Modificación de pedidos
+
+**Como** moza,  
+**quiero** modificar la cantidad de un producto incluido en un pedido activo,  
+**para** corregir cambios solicitados por los clientes antes del pago.
+
+**Módulo:** Modificación de pedidos
+
+**Requisitos relacionados:** RF-08, RF-21, RF-24 y RF-26
+
+**Requisitos no funcionales:** RNF-03, RNF-08, RNF-10, RNF-16 y RNF-18
+
+### Criterios de aceptación
+
+1. La moza puede modificar la cantidad de un producto únicamente si la mesa está en estado Ocupada.
+2. El sistema no permite cantidades iguales a cero o negativas.
+3. Al modificar una cantidad, el sistema actualiza el subtotal del producto y el total del pedido.
+4. El sistema no permite modificar productos de una mesa que tenga el pago confirmado.
+5. El sistema registra el usuario, fecha y hora de la modificación.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Puede probarse sobre un pedido existente. |
+| **Negociable** | Sí | Puede negociarse la interfaz para aumentar o disminuir cantidades. |
+| **Valiosa** | Sí | Permite corregir cambios solicitados por el cliente antes del pago. |
+| **Estimable** | Sí | Sabemos qué cantidades se permiten y cómo debe cambiar el total. |
+| **Pequeña** | Sí | Solo modifica la cantidad de productos ya cargados. |
+| **Verificable** | Sí | Se puede probar aumentando, disminuyendo o ingresando cantidades inválidas.. |
+
+---
+
+# H-U 8 — Eliminación de productos
+
+**Como** moza,  
+**quiero** eliminar un producto de un pedido activo,  
+**para** corregir productos cargados por error antes de confirmar el pago.
+
+**Módulo:** Eliminación de productos
+
+**Requisitos relacionados:** RF-09, RF-25 y RF-26
+
+**Requisitos no funcionales:** RNF-01, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18
+
+### Criterios de aceptación
+
+1. La moza puede seleccionar un producto perteneciente a un pedido activo.
+2. El sistema solicita confirmación antes de eliminar el producto.
+3. Si la moza confirma la eliminación, el producto se elimina del pedido.
+4. Si la moza cancela la operación, el pedido no presenta modificaciones.
+5. Luego de eliminar un producto, el sistema actualiza el total del pedido.
+6. El sistema registra el usuario, fecha y hora de la eliminación.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Eliminar un producto es una acción puntual. |
+| **Negociable** | Sí | Se puede cambiar cómo aparece el mensaje de confirmación. |
+| **Valiosa** | Sí | Permite corregir productos cargados erróneamente antes del cobro. |
+| **Estimable** | Sí | Está definido qué pasa al confirmar o cancelar la eliminación. |
+| **Pequeña** | Sí | Se limita a eliminar un producto de un pedido activo. |
+| **Verificable** | Sí | Se puede probar confirmando y cancelando la eliminación. |
+
+---
+
+# H-U 9 — Consulta de consumo
+
+**Como** moza,  
+**quiero** consultar el detalle del consumo de una mesa y su importe total actualizado,  
+**para** informar correctamente al cliente cuánto debe abonar.
+
+**Módulo:** Consulta de consumo
+
+**Requisitos relacionados:** RF-10, RF-11 y RF-14
+
+**Requisitos no funcionales:** RNF-01, RNF-03, RNF-08, RNF-12, RNF-16 y RNF-18
+
+### Criterios de aceptación
+
+1. La moza puede seleccionar una mesa con estado Ocupada.
+2. El sistema muestra los productos asociados al pedido de la mesa.
+3. Para cada producto, el sistema muestra cantidad, precio unitario y subtotal.
+4. El sistema calcula y muestra el importe total del consumo.
+5. El total mostrado coincide con la suma de los subtotales de los productos.
+6. El importe se actualiza automáticamente cuando se agregan, modifican o eliminan productos.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Se puede consultar un pedido de prueba sin realizar todo el proceso. |
+| **Negociable** | Sí | La disposición visual de productos, subtotales y total puede ajustarse. |
+| **Valiosa** | Sí | Permite informar correctamente al cliente los productos consumidos y el importe a pagar. |
+| **Estimable** | Sí | Sabemos qué información debe aparecer y cómo calcular el total. |
+| **Pequeña** | Sí | Se limita a consultar el consumo y su importe actualizado. |
+| **Verificable** | Sí | Se puede comparar el total mostrado con la suma de los productos. |
+
+---
+
+# H-U 10 — Registro de pago
+
+**Como** moza,  
+**quiero** registrar el pago de una mesa y seleccionar el medio utilizado,  
+**para** confirmar el cobro y generar el registro de la venta.
+
+**Módulo:** Registro de pago
+
+**Requisitos relacionados:** RF-12, RF-13 y RF-15
+
+**Requisitos no funcionales:** RNF-03, RNF-08, RNF-10, RNF-16, RNF-18 y RNF-22
+
+### Criterios de aceptación
+
+1. La moza puede registrar un pago únicamente para una mesa Ocupada con al menos un producto cargado.
+2. El sistema muestra el importe total antes de confirmar el pago.
+3. La moza puede seleccionar efectivo, tarjeta o código QR como medio de pago.
+4. El sistema no permite confirmar un pago si no se seleccionó un medio de pago.
+5. Al confirmar el pago, el sistema genera automáticamente la venta.
+6. La venta almacena detalle de productos, total, medio de pago, usuario, fecha y hora.
+7. Después de confirmar el pago, la mesa cambia al estado Pendiente de cierre.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Se puede probar con una mesa que tenga un consumo cargado. |
+| **Negociable** | Sí | En la interfaz, se puede cambiar la forma de seleccionar el medio de pago. |
+| **Valiosa** | Sí | Permite confirmar el cobro, registrar la venta y avanzar al cierre de mesa. |
+| **Estimable** | Sí | Están definidos los medios de pago y las condiciones necesarias. |
+| **Pequeña** | Sí | Se limita en registrar un pago y generar la venta. |
+| **Verificable** | Sí | Se puede probar pagando con efectivo, tarjeta o QR. |
+
+---
+
+# H-U 11 — Emisión de comprobante
+
+**Como** moza,  
+**quiero** emitir o visualizar el comprobante de una venta confirmada,  
+**para** entregar al cliente una constancia del pago realizado.
+
+**Módulo:** Emisión de comprobante
+
+**Requisitos relacionados:** RF-27
+
+**Requisitos no funcionales:** RNF-01, RNF-03, RNF-12 y RNF-18
+
+### Criterios de aceptación
+
+1. El sistema permite emitir un comprobante únicamente para ventas confirmadas.
+2. El comprobante incluye número de venta, fecha, hora, número de mesa, detalle de productos, total abonado y medio de pago.
+3. El comprobante identifica al usuario que registró el pago, con un número único asociado.
+4. El comprobante puede visualizarse en pantalla e imprimirse.
+5. El sistema no permite emitir un comprobante para una venta inexistente o no confirmada.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Se puede probar usando una venta ya confirmada. |
+| **Negociable** | Sí | El diseño, tamaño y formato visual del comprobante pueden ajustarse. |
+| **Valiosa** | Sí | Brinda al cliente una constancia de pago por la venta realizada. |
+| **Estimable** | Sí | Sabemos qué datos debe tener el comprobante. |
+| **Pequeña** | Sí | Solo genera, muestra o imprime el comprobante. |
+| **Verificable** | Sí |Se puede comprobar que tenga los datos correctos de la venta. |
+
+---
+
+# H-U 12 — Cierre de mesa
+
+**Como** moza,  
+**quiero** cerrar una mesa después de confirmar el pago,  
+**para** dejarla disponible para nuevos clientes.
+
+**Módulo:** Cierre de mesa
+
+**Requisitos relacionados:** RF-16 y RF-17
+
+**Requisitos no funcionales:** RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18
+
+### Criterios de aceptación
+
+1. La moza puede cerrar únicamente una mesa que se encuentre en estado Pendiente de cierre.
+2. El sistema solicita confirmación antes de cerrar la mesa.
+3. Si la moza confirma el cierre, la mesa cambia al estado Disponible.
+4. Si la moza cancela el cierre, la mesa permanece Pendiente de cierre.
+5. El sistema registra el usuario, fecha y hora del cierre.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Puede trabajarse sobre una mesa con el pago confirmado. |
+| **Negociable** | Sí | Se puede cambiar la forma de confirmar el cierre. |
+| **Valiosa** | Sí | Libera la mesa para atender nuevos clientes. |
+| **Estimable** | Sí | Está definido qué estado debe tener la mesa y qué sucede al cerrarla. |
+| **Pequeña** | Sí | Se limita a cerrar una mesa ya pagada. |
+| **Verificable** | Sí | Puede probarse con ventas de distintas fechas. |
+
+---
+
+# H-U 13 — Historial de ventas
+
+**Como** encargada,  
+**quiero** consultar el historial de ventas registradas,  
+**para** revisar las operaciones realizadas por el bar.
+
+**Módulo:** Consulta e historial de ventas
+
+**Requisitos relacionados:** RF-18, RF-19 y RF-28
+
+**Requisitos no funcionales:** RNF-01, RNF-03, RNF-10, RNF-12 y RNF-22
+
+### Criterios de aceptación
+
+1. La encargada puede consultar todas las ventas confirmadas.
+2. El sistema permite filtrar ventas por fecha desde y fecha hasta.
+3. Cada venta muestra número de venta, fecha, hora, mesa, total, medio de pago y usuario responsable, desde la más reciente hasta la más antigua.
+4. Si no existen ventas para el período consultado, el sistema informa que no se encontraron registros.
+5. El historial es de solo lectura y no permite modificar ventas registradas.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Es una consulta separada de la atención de las mesas.  |
+| **Negociable** | Sí | La forma visual de presentar ventas y filtros puede adaptarse. |
+| **Valiosa** | Sí | Permite revisar las ventas realizadas. |
+| **Estimable** | Sí | Están definidos los datos y filtros que se necesitan. |
+| **Pequeña** | Sí | Solo consulta el historial general de ventas. |
+| **Verificable** | Sí | Se puede probar buscando ventas de diferentes fechas. |
+
+---
+
+# H-U 14 — Resumen de ventas
+
+**Como** encargada,  
+**quiero** obtener información resumida de las ventas realizadas,  
+**para** controlar la actividad comercial del bar durante un período determinado.
+
+**Módulo:** Consulta de ventas
+
+**Requisitos relacionados:** RF-20
+
+**Requisitos no funcionales:** RNF-01, RNF-03, RNF-08, RNF-12 y RNF-22
+
+### Criterios de aceptación
+
+1. La encargada puede seleccionar un período de fechas para consultar el resumen.
+2. El sistema muestra el importe total vendido durante el período seleccionado.
+3. El sistema muestra la cantidad de ventas realizadas.
+4. El sistema muestra el total cobrado por efectivo, tarjeta y código QR.
+5. El sistema muestra el producto más vendido del período.
+6. Los importes del resumen coinciden con las ventas almacenadas en el historial.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | El resumen puede consultarse como una función separada. |
+| **Negociable** | Sí | El diseño de los indicadores, tarjetas o gráficos puede modificarse. |
+| **Valiosa** | Sí | Ayuda a controlar cómo fueron las ventas durante un período. |
+| **Estimable** | Sí | Sabemos qué información debe mostrar: total, cantidad de ventas, medios de pago y producto más vendido. |
+| **Pequeña** | Sí | Se limita a mostrar un resumen y no informes complejos. |
+| **Verificable** | Sí | Se pueden comparar los resultados con las ventas registradas. |
+
+---
+
+# H-U 15 — Consulta de trazabilidad
+
+**Como** encargada,  
+**quiero** consultar qué usuario realizó una operación relevante y cuándo la realizó,  
+**para** mantener la trazabilidad y facilitar el control de las operaciones.
+
+**Módulo:** Consulta de trazabilidad
+
+**Requisitos relacionados:** RF-21 y RF-24
+
+**Requisitos no funcionales:** RNF-08, RNF-10 y RNF-22
+
+### Criterios de aceptación
+
+1. El sistema registra trazabilidad para altas, modificaciones y desactivaciones de usuarios.
+2. El sistema registra la apertura y cierre de mesas.
+3. El sistema registra la incorporación, modificación y eliminación de productos en pedidos.
+4. El sistema registra pagos confirmados y ventas generadas.
+5. Cada registro de trazabilidad incluye tipo de operación, elemento afectado, usuario, fecha y hora.
+6. La encargada puede consultar la trazabilidad por fecha, usuario y tipo de operación.
+7. Los registros de trazabilidad no pueden ser modificados ni eliminados.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Es una consulta específica para controlar las operaciones. |
+| **Negociable** | Sí | La forma de mostrar filtros, fechas y registros puede ajustarse. |
+| **Valiosa** | Sí | Permite saber quién hizo una operación y cuándo. |
+| **Estimable** | Sí | Están definidos los datos que deben guardarse y consultarse. |
+| **Pequeña** | Sí | Solo registra y consulta las operaciones realizadas. |
+| **Verificable** | Sí | Puede probarse realizando operaciones y verificando que queden registradas con usuario, fecha y hora. |
+
+---
+
+# H-U 16 — Gestión de productos
+
+**Como** encargada,  
+**quiero** registrar, modificar y desactivar productos ofrecidos por el bar,  
+**para** mantener actualizada la información utilizada al registrar pedidos.
+
+**Módulo:** Gestión de productos
+
+**Requisitos relacionados:** RF-30
+
+**Requisitos no funcionales:** RNF-06, RNF-08, RNF-12, RNF-17 y RNF-18
+
+### Criterios de aceptación
+
+1. La encargada puede registrar un producto con código, nombre, categoría, precio y estado.
+2. El sistema no permite registrar productos con código repetido.
+3. El sistema no permite registrar productos sin nombre, sin categoría o con precio igual a cero o negativo.
+4. La encargada puede modificar el nombre, categoría, precio y disponibilidad de un producto existente.
+5. La encargada puede desactivar un producto para impedir que sea agregado a nuevos pedidos.
+6. El sistema solicita confirmación antes de desactivar un producto.
+7. Los productos desactivados siguen figurando en ventas históricas, pero no aparecen como disponibles para pedidos nuevos.
+
+### INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|---|---|---|
+| **Independiente** | Sí | Es un módulo propio para administrar los productos. |
+| **Negociable** | Sí | En la interfaz, se puede cambiar cómo se cargan y muestran los productos. |
+| **Valiosa** | Sí | Mantiene actualizado el listado de productos disponibles. |
+| **Estimable** | Sí | Sabemos qué datos y validaciones necesita cada producto. |
+| **Pequeña** | Sí | Se limita al mantenimiento del catálogo de productos, no a proveedores. |
+| **Verificable** | Sí | Se puede probar creando, modificando y desactivando productos. |
+
+
+
