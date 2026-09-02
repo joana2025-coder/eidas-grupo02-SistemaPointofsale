@@ -11,8 +11,8 @@
 
 ### Historia 1 — [Visualizar y dar apertura a una mesa disponible]
 
-| Campo | Detalle |
-|Como moza, quiero visualizar las mesas y abrir una mesa disponible, para comenzar la atención y generar un pedido asociado.| Requisitos relacionados: RF-03, RF-04, RF-05, RF-06, RF-21, RF-23, RF-24 y RF-25.  
+|Como moza, quiero visualizar las mesas y abrir una mesa disponible, para comenzar la atención y generar un pedido asociado.| 
+| Requisitos relacionados: RF-03, RF-04, RF-05, RF-06, RF-21, RF-23, RF-24 y RF-25.  
 RNF-01, RNF-02, RNF-03, RNF-04, RNF-08, RNF-10, RNF-16 y RNF-18. |
 
 **Criterios de aceptación**
@@ -25,11 +25,9 @@ RNF-01, RNF-02, RNF-03, RNF-04, RNF-08, RNF-10, RNF-16 y RNF-18. |
 
 ### Historia 2 — [Registrar y modificar un pedido]
 
-| Campo | Detalle |
-|-------|---------|
-Como moza, quiero agregar, modificar y eliminar productos de un pedido activo, para registrar correctamente el consumo solicitado por los clientes. 
-Requisitos relacionados:RF-07, RF-08, RF-09, RF-10, RF-21, RF-24, RF-25 y RF-26. 
-                          RNF-01, RNF-02, RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18. 
+| Como moza, quiero agregar, modificar y eliminar productos de un pedido activo, para registrar correctamente el consumo solicitado por los clientes. | 
+| Requisitos relacionados:RF-07, RF-08, RF-09, RF-10, RF-21, RF-24, RF-25 y RF-26. 
+RNF-01, RNF-02, RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18. | 
 
 **Criterios de aceptación**
 1- La moza puede agregar productos disponibles a un pedido activo con cantidades válidas.
@@ -42,11 +40,9 @@ Requisitos relacionados:RF-07, RF-08, RF-09, RF-10, RF-21, RF-24, RF-25 y RF-26.
 
 ### Historia 3 — [Consultar el consumo y el importe]
 
-| Campo | Detalle |
-|-------|---------|
-Como moza, quiero consultar el detalle y el total actualizado del pedido de una mesa, para informar al cliente el importe que debe abonar. 
-Requisitos relacionados: RF-10, RF-11 y RF-14. 
-                        RNF-01, RNF-03, RNF-08, RNF-12, RNF-16 y RNF-18.  
+| Como moza, quiero consultar el detalle y el total actualizado del pedido de una mesa, para informar al cliente el importe que debe abonar. | 
+| Requisitos relacionados: RF-10, RF-11 y RF-14. 
+ RNF-01, RNF-03, RNF-08, RNF-12, RNF-16 y RNF-18. | 
 
 **Criterios de aceptación**
 1- El sistema muestra el detalle del pedido: productos, cantidades, precios unitarios y subtotales.
@@ -58,11 +54,9 @@ Requisitos relacionados: RF-10, RF-11 y RF-14.
 
 ### Historia 4 — [Registrar el pago y generar la venta]
 
-| Campo | Detalle |
-|-------|---------|
-Como moza, quiero registrar el pago de una mesa, para confirmar el cobro y generar la venta correspondiente. 
-Requisitos relacionados: RF-12, RF-13, RF-14, RF-15, RF-21 y RF-24. 
-                         RNF-03, RNF-08, RNF-10, RNF-13, RNF-16, RNF-18 y RNF-22.
+| Como moza, quiero registrar el pago de una mesa, para confirmar el cobro y generar la venta correspondiente. | 
+| Requisitos relacionados: RF-12, RF-13, RF-14, RF-15, RF-21 y RF-24. 
+RNF-03, RNF-08, RNF-10, RNF-13, RNF-16, RNF-18 y RNF-22. | 
 
 **Criterios de aceptación**
 1- Solo se puede registrar un pago para una mesa Ocupada con consumo cargado.
@@ -75,11 +69,9 @@ Requisitos relacionados: RF-12, RF-13, RF-14, RF-15, RF-21 y RF-24.
 
 ### Historia 5 — [Emitir el comprobante]
 
-| Campo | Detalle |
-|-------|---------|
-Como moza, quiero emitir el comprobante de una venta confirmada, para entregar al cliente una constancia del pago realizado. 
-Requisitos relacionados: RF-27. 
-                      RNF-01, RNF-03, RNF-12 y RNF-18. 
+| Como moza, quiero emitir el comprobante de una venta confirmada, para entregar al cliente una constancia del pago realizado. | 
+| Requisitos relacionados: RF-27. 
+ RNF-01, RNF-03, RNF-12 y RNF-18. | 
 
 **Criterios de aceptación**
 1- El sistema permite emitir comprobantes únicamente para ventas confirmadas.
@@ -91,11 +83,9 @@ Requisitos relacionados: RF-27.
 
 ### Historia 6 — [Cerrar una mesa pagada]
 
-| Campo | Detalle |
-|-------|---------|
-Como moza, quiero cerrar una mesa con pago confirmado, para dejarla disponible para nuevos clientes. 
-Requisitos relacionados: RF-16, RF-17, RF-21, RF-24 y RF-25. 
-                        RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18. 
+| Como moza, quiero cerrar una mesa con pago confirmado, para dejarla disponible para nuevos clientes. | 
+| Requisitos relacionados: RF-16, RF-17, RF-21, RF-24 y RF-25. 
+RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18. | 
 
 **Criterios de aceptación**
 1- Solo se puede cerrar una mesa en estado Pendiente de cierre.
