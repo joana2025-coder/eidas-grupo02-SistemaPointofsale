@@ -103,12 +103,10 @@ RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18. |
 | Pregunta | Qué hace el sistema | Quién decide (analista / negocio / técnica) |
 |----------|----------------------|-----------------------------------------------|
 | ¿Qué pasa si el saldo es insuficiente? | Rechaza el cobro, muestra la alerta "Monto o saldo insuficiente" y mantiene la mesa en estado Ocupada con el pedido activo.| Dueño / Responsable del bar y Encargada. Definen la política comercial (ej. si se rechaza el pago o si se permite pago parcial/dividido). |
-| ¿Qué pasa si el destinatario no existe o está dado de baja? | Si la mesa o el pedido no existe, está cerrado o no está activo, el sistema no permite registrar el pago. Informa que la operación no es válida, cancela la operación y emite un mensaje de error.| Analista Funcional, identifica y documenta la regla. 
-El dueño del bar define qué estados habilitan el cobro. |
+| ¿Qué pasa si el destinatario no existe o está dado de baja? | Si la mesa o el pedido no existe, está cerrado o no está activo, el sistema no permite registrar el pago. Informa que la operación no es válida, cancela la operación y emite un mensaje de error.| Analista Funcional, identifica y documenta la regla. El dueño del bar define qué estados habilitan el cobro. |
 | ¿Qué pasa si el sistema descuenta el saldo y falla antes de acreditarlo del otro lado? | El pago, el registro de la venta y el cambio de estado de la mesa deben confirmarse como una sola operación. Si falla una parte, el sistema no debe dejar pagos, ventas ni estados de mesa inconsistentes. | La encargada del bar o el dueño, establece la regla de que no puede haber una venta sin pago ni un pago sin venta. Los desarrolladores definen cómo lograrlo en el sistema mediante transacciones y recuperación ante errores. |
 | ¿Qué pasa si el usuario aprieta "Enviar" dos veces? | Si la moza presiona dos veces Confirmar pago, el sistema procesa un único pago y una única venta. Debe impedir comprobantes duplicados y mostrar que la operación se está procesando.| Los desarrolladores toman decisión de usabilidad y arquitectura para evitar que la Moza / Encargada cobre dos veces por accidente. |
-| ¿Qué pasa si se cae la conexión justo después de confirmar? | El sistema consulta si el pago ya fue registrado antes de permitir reintentar. Si la venta existe, informa que fue confirmada; si no existe, permite realizar nuevamente el cobro. No debe generar ventas duplicadas.| La encargada del bar válida. 
-El equipo técnico define el mecanismo de recuperación, consulta y reintento seguro. |
+| ¿Qué pasa si se cae la conexión justo después de confirmar? | El sistema consulta si el pago ya fue registrado antes de permitir reintentar. Si la venta existe, informa que fue confirmada; si no existe, permite realizar nuevamente el cobro. No debe generar ventas duplicadas.| La encargada del bar válida. El equipo técnico define el mecanismo de recuperación, consulta y reintento seguro. |
 
 ---
 
