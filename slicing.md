@@ -12,10 +12,8 @@
 ### Historia 1 — [Visualizar y dar apertura a una mesa disponible]
 
 | Campo | Detalle |
-|-------|---------|
-Como moza, quiero visualizar las mesas y abrir una mesa disponible, para comenzar la atención y generar un pedido asociado. 
-Requisitos relacionados: RF-03, RF-04, RF-05, RF-06, RF-21, RF-23, RF-24 y RF-25.  
-                        RNF-01, RNF-02, RNF-03, RNF-04, RNF-08, RNF-10, RNF-16 y RNF-18. 
+|Como moza, quiero visualizar las mesas y abrir una mesa disponible, para comenzar la atención y generar un pedido asociado.| Requisitos relacionados: RF-03, RF-04, RF-05, RF-06, RF-21, RF-23, RF-24 y RF-25.  
+RNF-01, RNF-02, RNF-03, RNF-04, RNF-08, RNF-10, RNF-16 y RNF-18. |
 
 **Criterios de aceptación**
 1- El sistema muestra las 24 mesas y su estado actual.
