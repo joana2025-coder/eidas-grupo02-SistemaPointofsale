@@ -8,8 +8,6 @@ Para el Sistema POS (Point of Sale) del bar ubicado dentro del supermercado Carr
 
 ## 2. Identificación de Stakeholders
 
-## 2. Identificación de Stakeholders
-
 | Stakeholder | Tipo | Interés / Necesidad | Funcionalidades relacionadas | Nivel de impacto | Justificación del impacto |
 |---|---|---|---|---|---|
 | **Dueño / Responsable del bar** | Interesado | Supervisar el funcionamiento general del bar, controlar las ventas y obtener información que permita conocer el desempeño del negocio. | Consultar ventas, consultar productos vendidos, acceder a información resumida de las operaciones y controlar la actividad comercial. | **Alto** | Sus decisiones y el control de las ventas dependen de la información generada por el sistema. |
