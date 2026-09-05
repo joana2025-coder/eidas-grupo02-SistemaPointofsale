@@ -56,15 +56,31 @@ El sistema POS tiene como finalidad centralizar y organizar la información rela
 
 Los requisitos funcionales indican qué debe hacer el sistema.
 
+### Módulo 1. Autenticación y gestión de usuarios
+
 **RF-01. Inicio de sesión:** El sistema deberá permitir a los usuarios iniciar sesión mediante usuario y contraseña.
 
 **RF-02. Gestión de usuarios y roles:** El sistema deberá permitir gestionar los usuarios registrados y asignarles un rol de acceso.
 
-**RF-03. Visualización de mesas:** El sistema deberá mostrar las 24 mesas disponibles del bar.
+**RF-22. Control de acceso:** El sistema deberá controlar el acceso a las funcionalidades de acuerdo con el rol del usuario.
 
-**RF-04. Estado de las mesas:** El sistema deberá mostrar el estado actual de cada mesa, por ejemplo: disponible, ocupada o pendiente de cierre.
+**RF-24. Identificación del usuario:** El sistema deberá registrar qué usuario realizó las operaciones relevantes sobre pedidos, pagos, ventas y mesas.
+
+### Módulo 2. Gestión de mesas
+
+**RF-03. Visualización de mesas:** El sistema deberá mostrar un tablero con las 24 mesas del bar y permitir identificar visualmente cada una.
+
+**RF-04. Estado de las mesas:** El sistema deberá mostrar el estado actual de cada mesa, utilizando como mínimo los estados "Disponible", "Ocupada" y "Pendiente de cierre".
 
 **RF-05. Apertura de mesa:** El sistema deberá permitir abrir una mesa que se encuentre disponible.
+
+**RF-16. Cierre de mesa:** El sistema deberá permitir cerrar una mesa una vez registrada la venta y confirmado el pago.
+
+**RF-17. Actualización del estado de la mesa:** El sistema deberá cambiar automáticamente el estado de una mesa a "Disponible" luego de su cierre.
+
+**RF-23. Actualización en tiempo real del estado:** El sistema deberá actualizar en tiempo real el estado de las 24 mesas cuando se produzca una apertura, cierre o cambio de estado.
+
+### Módulo 3. Gestión de pedidos y consumo
 
 **RF-06. Asociación de pedidos:** El sistema deberá permitir asociar un pedido a una mesa abierta.
 
@@ -78,41 +94,39 @@ Los requisitos funcionales indican qué debe hacer el sistema.
 
 **RF-11. Consulta de consumo:** El sistema deberá permitir consultar el detalle del consumo asociado a una mesa.
 
+**RF-25. Confirmación de operaciones:** El sistema deberá solicitar confirmación antes de realizar operaciones que puedan modificar o eliminar información relevante.
+
+**RF-26. Actualización de pedidos:** El sistema deberá actualizar automáticamente el total del pedido cuando se agreguen, modifiquen o eliminen productos.
+
+### Módulo 4. Pagos y comprobantes
+
 **RF-12. Registro del pago:** El sistema deberá permitir registrar el pago correspondiente al consumo de una mesa.
 
 **RF-13. Selección del medio de pago:** El sistema deberá permitir seleccionar el medio de pago utilizado, como efectivo, tarjeta o código QR.
 
 **RF-14. Cálculo del importe final:** El sistema deberá calcular y mostrar el importe final a pagar.
 
-**RF-15. Registro de venta:** El sistema deberá registrar la venta una vez efectuado y confirmado el pago.
-
-**RF-16. Cierre de mesa:** El sistema deberá permitir cerrar una mesa una vez registrada la venta y confirmado el pago.
-
-**RF-17. Actualización del estado de la mesa:** El sistema deberá cambiar automáticamente el estado de una mesa a "Disponible" luego de su cierre.
-
-**RF-18. Registro de ventas:** El sistema deberá mantener un registro de las ventas realizadas.
-
-**RF-19. Consulta de ventas:** El sistema deberá permitir consultar las ventas realizadas.
-
-**RF-20. Información resumida de ventas:** El sistema deberá permitir obtener información resumida de las ventas realizadas.
-
-**RF-21. Registro de fecha y hora:** El sistema deberá registrar la fecha y hora de las operaciones relevantes realizadas en el sistema.
-
-**RF-22. Control de acceso:** El sistema deberá controlar el acceso a las funcionalidades de acuerdo con el rol del usuario.
-
-**RF-23. Consulta del estado de las mesas:** El sistema deberá permitir consultar en tiempo real el estado de las 24 mesas.
-
-**RF-24. Identificación del usuario:** El sistema deberá registrar qué usuario realizó las operaciones relevantes sobre pedidos, pagos, ventas y mesas.
-
-**RF-25. Confirmación de operaciones:** El sistema deberá solicitar confirmación antes de realizar operaciones que puedan modificar o eliminar información relevante.
-
-**RF-26. Actualización de pedidos:** El sistema deberá actualizar el total del pedido automáticamente cuando se agreguen, modifiquen o eliminen productos.
+**RF-15. Confirmación de la venta:** El sistema deberá registrar y confirmar la venta una vez efectuado y validado el pago.
 
 **RF-27. Emisión de comprobante:** El sistema deberá permitir emitir o visualizar un comprobante correspondiente a la venta realizada.
 
-**RF-28. Consulta del historial:** El sistema deberá permitir consultar el historial de ventas registradas.
+### Módulo 5. Ventas e historial
+
+**RF-18. Historial de ventas:** El sistema deberá conservar las ventas confirmadas para permitir su consulta posterior.
+
+**RF-19. Consulta de ventas:** El sistema deberá permitir consultar las ventas realizadas dentro de un período determinado.
+
+**RF-20. Información resumida de ventas:** El sistema deberá permitir obtener información resumida de las ventas realizadas.
+
+**RF-28. Consulta del historial:** El sistema deberá permitir consultar las ventas históricas almacenadas, incluyendo información como fecha, hora, mesa, importe y medio de pago.
 
 **RF-29. Consulta por mesa:** El sistema deberá permitir consultar las ventas y consumos asociados a una mesa determinada.
+
+### Módulo 6. Trazabilidad de operaciones
+
+**RF-21. Registro de fecha y hora:** El sistema deberá registrar la fecha y hora de las operaciones relevantes realizadas en el sistema.
+
+### Módulo 7. Gestión de productos
 
 **RF-30. Gestión de productos:** El sistema deberá permitir administrar la información de los productos ofrecidos por el bar, según los permisos del usuario.
 
@@ -122,46 +136,60 @@ Los requisitos funcionales indican qué debe hacer el sistema.
 
 Los requisitos no funcionales establecen las características y condiciones de calidad que deberá cumplir el sistema.
 
-**RNF-01. Usabilidad:** El sistema deberá presentar una interfaz clara, intuitiva y fácil de utilizar.
+### Usabilidad y eficiencia
 
-**RNF-02. Eficiencia operativa:** Las operaciones frecuentes deberán requerir la menor cantidad posible de pasos.
+**RNF-01. Usabilidad:** El sistema deberá permitir realizar las operaciones frecuentes de apertura de mesa, registro de pedido y consulta de consumo utilizando un máximo de **3 pantallas**, sin contar la pantalla de inicio de sesión.
 
-**RNF-03. Tiempo de respuesta:** El sistema deberá responder a las operaciones habituales en un tiempo máximo de 3 segundos bajo condiciones normales de operación.
+**RNF-02. Eficiencia operativa:** El registro de un pedido de hasta **5 productos** deberá poder completarse en un máximo de **5 pasos de interacción**, sin considerar el ingreso de datos propios del pedido.
 
-**RNF-04. Acceso simultáneo:** El sistema deberá permitir el acceso simultáneo de los usuarios autorizados sin generar inconsistencias en la información.
+**RNF-03. Tiempo de respuesta:** El sistema deberá responder a las operaciones habituales en un tiempo máximo de **3 segundos** bajo condiciones normales de operación.
 
-**RNF-05. Autenticación:** El sistema deberá requerir autenticación para acceder a las funcionalidades restringidas.
+### Acceso y seguridad
+
+**RNF-04. Acceso simultáneo:** El sistema deberá permitir el acceso simultáneo de al menos **2 usuarios autorizados del personal operativo**, manteniendo la consistencia de la información de mesas, pedidos, pagos y ventas.
+
+**RNF-05. Autenticación:** El sistema deberá requerir autenticación mediante usuario y contraseña antes de permitir el acceso a las funcionalidades restringidas.
 
 **RNF-06. Autorización:** El sistema deberá controlar los permisos de acuerdo con el rol asignado a cada usuario.
 
-**RNF-07. Seguridad de contraseñas:** Las contraseñas de los usuarios deberán almacenarse de forma segura y no deberán conservarse en texto plano.
+**RNF-07. Seguridad de contraseñas:** Las contraseñas de los usuarios deberán almacenarse mediante un mecanismo de hash seguro y no deberán conservarse en texto plano.
 
 **RNF-08. Integridad de datos:** El sistema deberá garantizar la integridad de la información relacionada con pedidos, ventas, pagos, usuarios y mesas.
 
-**RNF-09. Respaldo:** El sistema deberá realizar respaldos periódicos de la información almacenada.
+**RNF-09. Respaldo:** El sistema deberá realizar al menos **un respaldo de la información por cada jornada de trabajo**.
 
-**RNF-10. Trazabilidad:** El sistema deberá mantener la trazabilidad de las operaciones relevantes realizadas por los usuarios.
+**RNF-10. Trazabilidad:** El sistema deberá mantener la trazabilidad de las operaciones relevantes realizadas por los usuarios, registrando como mínimo el usuario, la fecha y la hora de la operación.
+
+### Compatibilidad y presentación
 
 **RNF-11. Compatibilidad:** El sistema deberá ser compatible con los dispositivos utilizados por el personal del bar, incluyendo computadoras y tablets.
 
-**RNF-12. Legibilidad:** La información deberá visualizarse de manera clara, ordenada y legible.
+**RNF-12. Legibilidad:** La información deberá visualizarse de manera clara, ordenada y legible, sin pérdida de información en los dispositivos compatibles.
 
-**RNF-13. Recuperación ante errores:** El sistema deberá evitar la pérdida de información ante errores de operación o fallos durante una transacción.
+**RNF-20. Interfaz adaptable:** La interfaz deberá adaptarse correctamente a los diferentes tamaños de pantalla de computadoras y tablets, manteniendo visibles las funciones principales sin desplazamiento horizontal.
 
-**RNF-14. Disponibilidad:** El sistema deberá estar disponible durante el horario operativo del bar.
+### Recuperación y disponibilidad
 
-**RNF-15. Mantenimiento:** El sistema deberá permitir realizar tareas de mantenimiento y actualización sin afectar innecesariamente la información almacenada.
+**RNF-13. Recuperación ante errores:** Ante un error durante una operación, el sistema no deberá confirmar ni registrar parcialmente una transacción, evitando la pérdida o duplicación de información.
 
-**RNF-16. Consistencia:** El sistema deberá mantener actualizada y consistente la información sobre el estado de las mesas, pedidos, pagos y ventas.
+**RNF-14. Disponibilidad:** El sistema deberá estar disponible durante el **100 % del horario operativo planificado**, exceptuando los períodos de mantenimiento previamente programados.
 
-**RNF-17. Escalabilidad:** El sistema deberá permitir futuras ampliaciones de funcionalidades sin requerir modificaciones completas de la estructura existente.
+**RNF-15. Mantenimiento:** Las tareas de mantenimiento y actualización deberán poder realizarse sin modificar ni eliminar los datos históricos de pedidos, pagos y ventas.
 
-**RNF-18. Confiabilidad:** El sistema deberá procesar correctamente las operaciones de pedidos, pagos y ventas, minimizando la posibilidad de errores.
+**RNF-16. Consistencia:** Cuando se confirme el pago de una mesa, el sistema deberá actualizar de forma consistente el estado de la mesa, la venta y el registro del pago.
 
-**RNF-19. Control de sesiones:** El sistema deberá gestionar las sesiones de los usuarios de forma segura y evitar el acceso no autorizado a una sesión activa.
+**RNF-17. Escalabilidad:** La estructura del sistema deberá permitir incorporar nuevas funcionalidades sin modificar los datos históricos existentes ni afectar las funcionalidades actuales.
 
-**RNF-20. Interfaz adaptable:** La interfaz deberá adaptarse correctamente a los diferentes tamaños de pantalla de los dispositivos compatibles.
+**RNF-18. Confiabilidad:** Las operaciones de registro de pedidos, pagos y ventas deberán completarse correctamente, evitando la generación de registros duplicados ante una única confirmación de la operación.
 
-**RNF-21. Recuperación de información:** Ante un fallo del sistema, deberá ser posible recuperar la información almacenada a partir de los respaldos disponibles.
+### Gestión de sesiones y recuperación de información
 
-**RNF-22. Auditabilidad:** Las operaciones críticas deberán poder ser identificadas mediante el usuario, fecha y hora en que fueron realizadas.
+**RNF-19. Control de sesiones:** El sistema deberá cerrar automáticamente la sesión de un usuario después de **15 minutos de inactividad**, requiriendo nuevamente la autenticación para acceder a las funcionalidades restringidas.
+
+**RNF-21. Recuperación de información:** Ante un fallo del sistema, deberá ser posible recuperar la información almacenada a partir del respaldo correspondiente a la última jornada de trabajo.
+
+**RNF-22. Auditabilidad:** Las operaciones críticas deberán poder ser identificadas mediante el usuario, la fecha y la hora en que fueron realizadas.
+
+### Seguridad de la transmisión
+
+**RNF-23. Transmisión segura:** El sistema deberá utilizar **HTTPS mediante TLS** para proteger la transmisión de credenciales, información de pedidos, ventas y pagos entre los dispositivos de los usuarios y el servidor.
