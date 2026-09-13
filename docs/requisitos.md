@@ -140,13 +140,13 @@ Los requisitos no funcionales establecen las características y condiciones de c
 
 **RNF-01. Usabilidad:** El sistema deberá permitir realizar las operaciones frecuentes de apertura de mesa, registro de pedido y consulta de consumo utilizando un máximo de **3 pantallas**, sin contar la pantalla de inicio de sesión.
 
-**RNF-02. Eficiencia operativa:** El registro de un pedido de hasta **5 productos** deberá poder completarse en un máximo de **5 pasos de interacción**, sin considerar el ingreso de datos propios del pedido.
+**RNF-02. Eficiencia operativa:** El registro de un pedido de hasta **5 productos** deberá requerir, como máximo de **5 pasos de interacción**, sin considerar el ingreso de datos propios del pedido.
 
 **RNF-03. Tiempo de respuesta:** El sistema deberá responder a las operaciones habituales en un tiempo máximo de **3 segundos** bajo condiciones normales de operación.
 
 ### Acceso y seguridad
 
-**RNF-04. Acceso simultáneo:** El sistema deberá permitir el acceso simultáneo de al menos **2 usuarios autorizados del personal operativo**, manteniendo la consistencia de la información de mesas, pedidos, pagos y ventas.
+**RNF-04. Acceso simultáneo:** El sistema deberá permitir el acceso simultáneo de al menos **2 usuarios autorizados del personal operativo**, garantizando información de mesas, pedidos, pagos y ventas.
 
 **RNF-05. Autenticación:** El sistema deberá requerir autenticación mediante usuario y contraseña antes de permitir el acceso a las funcionalidades restringidas.
 
