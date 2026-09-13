@@ -184,7 +184,7 @@ Los requisitos no funcionales establecen las características y condiciones de c
 
 ### Gestión de sesiones y recuperación de información
 
-**RNF-19. Control de sesiones:** El sistema deberá cerrar automáticamente la sesión de un usuario después de **15 minutos de inactividad**, requiriendo nuevamente la autenticación para acceder a las funcionalidades restringidas.
+**RNF-19. Control de sesiones:** El sistema deberá cerrar automáticamente la sesión de un usuario después de **10 minutos de inactividad**, requiriendo nuevamente la autenticación para acceder a las funcionalidades restringidas.
 
 **RNF-21. Recuperación de información:** Ante un fallo del sistema, deberá ser posible recuperar la información almacenada a partir del respaldo correspondiente a la última jornada de trabajo.
 
