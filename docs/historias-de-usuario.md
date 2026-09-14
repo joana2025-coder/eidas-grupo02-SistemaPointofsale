@@ -198,7 +198,7 @@
 
 # H-U 7 — Modificación de pedidos
 
-**Como** moza,  
+**Como** encargada,  
 **quiero** modificar la cantidad de un producto incluido en un pedido activo,  
 **para** corregir cambios solicitados por los clientes antes del pago.
 
