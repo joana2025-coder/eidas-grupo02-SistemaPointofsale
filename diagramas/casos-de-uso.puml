@@ -1,34 +1,54 @@
+```plantuml
 @startuml
+
 title Diagrama de Casos de Uso
 Sistema POS — Bar Carrefour
 
 left to right direction
 
+actor "Usuario" as USU
 actor "Encargada" as ENC
+actor "Moza" as MOZ
 actor "Dueño" as DUE
-actor "Proveedor de Pago" as PAG
+actor "Administrador del sistema" as ADM
 
 rectangle "Sistema POS Bar Carrefour" {
-  usecase "Autenticar usuario" as UC0
-  usecase "Registrar pedido" as UC1
-  usecase "Consultar disponibilidad\nde stock" as UC2
-  usecase "Procesar pago" as UC3
-  usecase "Reponer stock\na demanda" as UC4
-  usecase "Emitir ticket" as UC5
-  usecase "Consultar historial\nde ventas" as UC6
+
+    usecase "Iniciar sesión" as UC01
+    usecase "Gestionar usuarios\ny roles" as UC02
+    usecase "Visualizar y abrir mesa" as UC03
+    usecase "Registrar y gestionar\npedido" as UC04
+    usecase "Consultar consumo" as UC05
+    usecase "Registrar pago" as UC06
+    usecase "Emitir comprobante" as UC07
+    usecase "Cerrar y liberar mesa" as UC08
+    usecase "Consultar historial\ny ventas" as UC09
+    usecase "Consultar trazabilidad" as UC10
+    usecase "Gestionar productos" as UC11
+
 }
 
-ENC --> UC1
-ENC --> UC4
-PAG --> UC3
-DUE --> UC6
+' Relaciones del actor Usuario
+USU --> UC01
 
-UC1 .> UC0 : <<include>>
-UC1 .> UC2 : <<include>>
-UC6 .> UC0 : <<include>>
+' Relaciones de la Encargada
+ENC --> UC02
+ENC --> UC03
+ENC --> UC04
+ENC --> UC06
+ENC --> UC07
+ENC --> UC08
+ENC --> UC11
 
-UC3 .> UC1 : <<extend>>
-UC4 .> UC2 : <<extend>>
-UC5 .> UC3 : <<extend>>
+' Relaciones de la Moza
+MOZ --> UC03
+MOZ --> UC05
+
+' Relaciones del Dueño
+DUE --> UC09
+
+' Relaciones del Administrador
+ADM --> UC10
 
 @enduml
+```
