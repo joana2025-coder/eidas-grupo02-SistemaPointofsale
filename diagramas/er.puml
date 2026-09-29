@@ -1,70 +1,53 @@
+```plantuml
 @startuml
 
-title Modelo Entidad-Relación - Sistema POS Bar Carrefour
+title Diagrama de Casos de Uso - Sistema POS - Bar Carrefour
 
-entity Usuario {
-    * id_usuario : INT <<PK>>
-    --
-    nombre : VARCHAR
-    usuario : VARCHAR
-    contraseña : VARCHAR
-    rol : VARCHAR
+left to right direction
+
+actor "Usuario" as USU
+actor "Encargada" as ENC
+actor "Moza" as MOZ
+actor "Dueño" as DUE
+actor "Administrador del sistema" as ADM
+
+rectangle "Sistema POS Bar Carrefour" {
+
+    usecase "Iniciar sesión" as UC01
+    usecase "Gestionar usuarios\ny roles" as UC02
+    usecase "Visualizar y abrir mesa" as UC03
+    usecase "Registrar y gestionar\npedido" as UC04
+    usecase "Consultar consumo" as UC05
+    usecase "Registrar pago" as UC06
+    usecase "Emitir comprobante" as UC07
+    usecase "Cerrar y liberar mesa" as UC08
+    usecase "Consultar historial\ny ventas" as UC09
+    usecase "Consultar trazabilidad" as UC10
+    usecase "Gestionar productos" as UC11
+
 }
 
-entity Mesa {
-    * id_mesa : INT <<PK>>
-    --
-    numero_mesa : INT
-    estado : VARCHAR
-}
+' Relaciones del actor Usuario
+USU --> UC01
 
-entity Pedido {
-    * id_pedido : INT <<PK>>
-    --
-    fecha : DATETIME
-    subtotal : DECIMAL
-    id_mesa : INT <<FK>>
-    id_usuario : INT <<FK>>
-}
+' Relaciones de la Encargada
+ENC --> UC02
+ENC --> UC03
+ENC --> UC04
+ENC --> UC06
+ENC --> UC07
+ENC --> UC08
+ENC --> UC11
 
-entity Detalle_Pedido {
-    * id_detalle : INT <<PK>>
-    --
-    cantidad : INT
-    subtotal : DECIMAL
-    id_pedido : INT <<FK>>
-    id_producto : INT <<FK>>
-}
+' Relaciones de la Moza
+MOZ --> UC03
+MOZ --> UC05
 
-entity Producto {
-    * id_producto : INT <<PK>>
-    --
-    nombre : VARCHAR
-    precio : DECIMAL
-    stock : INT
-}
+' Relaciones del Dueño
+DUE --> UC09
 
-entity Pago {
-    * id_pago : INT <<PK>>
-    --
-    metodo_pago : VARCHAR
-    total : DECIMAL
-    fecha : DATETIME
-    id_pedido : INT <<FK>>
-}
-
-entity Ticket {
-    * id_ticket : INT <<PK>>
-    --
-    fecha_emision : DATETIME
-    id_pago : INT <<FK>>
-}
-
-Usuario ||--o{ Pedido : registra
-Mesa ||--o{ Pedido : tiene
-Pedido ||--|{ Detalle_Pedido : contiene
-Producto ||--o{ Detalle_Pedido : corresponde
-Pedido ||--|| Pago : genera
-Pago ||--|| Ticket : emite
+' Relaciones del Administrador
+ADM --> UC10
 
 @enduml
+```
