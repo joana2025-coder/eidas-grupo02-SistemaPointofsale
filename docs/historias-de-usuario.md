@@ -1,6 +1,6 @@
 # Historias de usuario
 ---
-# H-U 1 — Inicio de sesión
+# HU - 1 — Inicio de sesión
 
 **Como** usuario del sistema,  
 **quiero** iniciar sesión mediante usuario y contraseña,  
@@ -14,9 +14,9 @@
 
 ### Criterios de aceptación
 
-1- El sistema permite ingresar nombre de usuario y contraseña.
+1- El sistema permite ingresar con usuario y contraseña.
 2- Si las credenciales son correctas y el usuario está activo, el sistema permite iniciar sesión.
-3- Si las credenciales son incorrectas, el sistema rechaza el acceso e informa un mensaje de error.
+3- Si las credenciales son incorrectas, el sistema rechaza el acceso e informa el error.
 4- El sistema identifica el rol del usuario al iniciar sesión.
 5- Al cerrar sesión, el usuario no puede continuar utilizando funciones restringidas.
 
@@ -25,19 +25,19 @@
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
 | **Independiente** | Sí | Se puede desarrollar y probar verificando el ingreso con credenciales válidas e inválidas, sin necesidad de completar las demás funcionalidades del sistema.  |
-| **Negociable** | Sí | La forma de ingresar los datos y la presentación de la pantalla puede modificarse, mediante usuario y contraseña. |
+| **Negociable** | Sí | La forma de ingresar los datos y la presentación de la pantalla puede modificarse. |
 | **Valiosa** | Sí | Permite que los usuarios autorizados accedan al sistema y evita el acceso de personas no habilitadas. |
-| **Estimable** | Sí | Sabemos qué debe hacer: pedir usuario y contraseña y validar los datos. |
+| **Estimable** | Sí | Se conocen credenciales, validación y rol. |
 | **Pequeña** | Sí | Se limita a validar credenciales, iniciar sesión e identificar el rol. |
 | **Verificable** | Sí | Puede probarse con credenciales válidas, inválidas, usuarios inactivos y cierre de sesión. |
 
 ---
 
-# H-U 2 — Gestión de usuarios
+# HU - 2 — Gestión de usuarios
 
 **Como** encargada,  
 **quiero** registrar, modificar y desactivar usuarios,  
-**para** mantener actualizada la información de las personas autorizadas a utilizar el sistema.
+**para** mantener actualizada la información de las personas autorizadas.
 
 **Módulo:** Gestión de usuarios
 
@@ -48,7 +48,7 @@
 ### Criterios de aceptación
 
 1- La encargada puede registrar un usuario con nombre de usuario y rol. 
-2- El sistema no permite registrar dos usuarios con el mismo nombre de usuario.
+2- El sistema no permite registrar dos usuarios con el mismo nombre.
 3- La encargada puede modificar los datos de un usuario existente.
 4- La encargada puede desactivar un usuario sin eliminar su historial de operaciones.
 5- El sistema solicita confirmación antes de desactivar un usuario.
@@ -58,16 +58,16 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse utilizando usuarios de prueba sin necesidad de completar el resto de las funcionalidades. |
-| **Negociable** | Sí | La forma de registrar, modificar o desactivar usuarios puede cambiar, siempre que se mantengan esas funciones.  |
-| **Valiosa** | Sí | Permite mantener controlados y actualizados los usuarios que tienen acceso al sistema.  |
-| **Estimable** | Sí | Los criterios definen las acciones principales: registrar, modificar y desactivar usuarios. |
+| **Independiente** | Sí | Puede probarse utilizando usuarios de prueba. |
+| **Negociable** | Sí | La forma de registrar, modificar o desactivar usuarios puede cambiarse. |
+| **Valiosa** | Sí | Mantiene actualizado el acceso al sistema. |
+| **Estimable** | Sí | Las acciones están definidas. |
 | **Pequeña** | Sí | Se limita a administrar usuarios, sin incluir otras funciones. |
 | **Verificable** | Sí | Se puede probar creando, modificando y desactivando usuarios. |
 
 ---
 
-# H-U 3 — Gestionar roles y permisos
+# HU - 3 — Gestionar roles y permisos
 
 **Como** encargada,  
 **quiero** asignar un rol a cada usuario,  
@@ -84,22 +84,22 @@
 1- La encargada puede asignar o modificar el rol de un usuario activo.
 2- El sistema aplica los permisos correspondientes al rol. 
 3- Un usuario no puede acceder a una funcionalidad que no	tiene habilitada.
-4- Ante un intento de acceso no autorizado, el sistema informa que el usuario no posee permisos suficientes.
+4- Ante un intento de acceso no autorizado, el sistema informa que no existen permisos.
 
 ### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse asignando distintos roles a usuarios de prueba y verificando sus accesos.  |
+| **Independiente** | Sí | Puede probarse asignando distintos roles a usuarios de prueba.  |
 | **Negociable** | Sí | Se puede cambiar la forma de mostrar los roles y permisos. |
-| **Valiosa** | Sí | Evita que una persona acceda a funciones que no le corresponden. |
+| **Valiosa** | Sí | Controla el acceso según función. |
 | **Estimable** | Sí | Los roles y permisos que debe tener cada usuario están definidos. |
-| **Pequeña** | Sí | Solo se ocupa de asignar roles y controlar los permisos.  |
+| **Pequeña** | Sí | Se concentra en asignar roles y controlar los permisos.  |
 | **Verificable** | Sí | Se puede probar entrando con diferentes roles y comprobando sus permisos. |
 
 ---
 
-# H-U 4 — Visualizar y abrir una mesa disponible
+# HU - 4 — Visualizar y abrir una mesa disponible
 
 **Como** moza o encargada,  
 **quiero** visualizar las 24 mesas y abrir una mesa disponible,
@@ -113,8 +113,8 @@
 
 ### Criterios de aceptación
 
-1- El sistema muestra las 24 mesas numeradas del 1 al 24 y su estado actual.
-2- El sistema permite abrir una mesa únicamente cuando está Disponible. 
+1- El sistema muestra las 24 mesas y su estado actual.
+2- El sistema permite abrir una mesa cuando está Disponible. 
 3- Antes de abrir la mesa, solicita confirmación.
 4- Al confirmar, la mesa pasa a Ocupada y se genera un pedido activo asociado.
 5- El sistema registra el usuario, la fecha y la hora de la apertura.
@@ -124,15 +124,15 @@
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
 | **Independiente** | Sí | Puede probarse sin realizar una venta. |
-| **Negociable** | Sí | La forma visual de representar las mesas, puede modificarse, siempre que la información sea clara y se mantenga la regla de que solo pueden abrirse mesas disponibles.  |
-| **Valiosa** | Sí | Permite conocer rápidamente e identificar una mesa disponible para iniciar correctamente la atención y cargar un pedido. |
-| **Estimable** | Sí | Sabemos que deben mostrarse 24 mesas y verificar la disponibilidad, confirmar la apertura y asociar la mesa a un pedido.  |
-| **Pequeña** | Sí | Se concentra en consultar el estado de las mesas y abrir una mesa disponible. |
-| **Verificable** | Sí | Puede probarse abriendo mesas disponibles y rechazando mesas ocupadas. |
+| **Negociable** | Sí | La representación visual de las mesas, puede modificarse. |
+| **Valiosa** | Sí | Permite conocer rápidamente e identificar una mesa disponible para iniciar la atención y cargar un pedido. |
+| **Estimable** | Sí | Sabemos que deben mostrarse 24 mesas ya que se conocen estados y condiciones |
+| **Pequeña** | Sí | Se limita a visualizar y abrir. |
+| **Verificable** | Sí | Puede probarse con mesas disponibles y ocupadas. |
 
 ---
 
-# H-U 5 — Asociar pedidos a una mesa
+# HU - 5 — Asociar pedidos a una mesa
 
 **Como** encargada,  
 **quiero** asociar pedidos a una mesa abierta,
@@ -146,8 +146,8 @@
 
 ### Criterios de aceptación
 
-1- La encargada puede seleccionar una mesa abierta y visualizar el pedido activo asociado.
-2- El sistema permite crear o visualizar el pedido activo asociado a esa mesa.
+1- Permite seleccionar una mesa abierta y visualizar su pedido activo
+2- El sistema permite crear o visualizar el pedido activo asociado
 3- El pedido queda vinculado a la mesa seleccionada.
 4- El sistema no permite asociar un pedido a una mesa cerrada, inexistente o sin autorización.
 
@@ -155,20 +155,20 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Requiere una mesa abierta con un pedido activo.  |
+| **Independiente** | Sí | Puede probarse con una mesa abierta. |
 | **Negociable** | Sí | Puede modificarse la forma de seleccionar la mesa o confirmar la asociación. |
-| **Valiosa** | Sí | Permite registrar el consumo de los clientes. |
-| **Estimable** | Sí | Se limita a seleccionar la mesa, agregar productos y actualizar el total.  |
-| **Pequeña** | Sí | No incluye cerrar la mesa, cobrar ni emitir comprobantes.  |
+| **Valiosa** | Sí | Permite relacionar correctamente mesa y pedido. |
+| **Estimable** | Sí | Se conocen las acciones necesarias para seleccionar una mesa abierta, crear o visualizar su pedido activo y asociarlo correctamente.  |
+| **Pequeña** | Sí | Se concentra únicamente en asociar un pedido a una mesa abierta, sin incluir la carga, modificación o eliminación de productos.|
 | **Verificable** | Sí | Puede probarse con mesas válidas, cerradas e inexistentes. |
 
 ---
 
-# H-U 6 — Agregar productos al pedido
+# HU - 6 — Agregar productos al pedido
 
 **Como** encargada,  
 **quiero** agregar productos al pedido de una mesa, 
-**para** registrar los productos solicitados por el cliente.
+**para** registrar los productos solicitados.
 
 **Módulo:** Agregar productos al pedido
 
@@ -187,22 +187,22 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Requiere una mesa con un pedido activo, que puede prepararse para la prueba.  |
+| **Independiente** | Sí | Puede probarse con un pedido activo.  |
 | **Negociable** | Sí | Puede modificarse la forma de seleccionar productos y cantidades.  |
 | **Valiosa** | Sí | Permite registrar el consumo real del cliente.  |
-| **Estimable** | Sí | Los criterios indican que se selecciona un producto y se incorpora al pedido con su cantidad.  |
-| **Pequeña** | Sí | Se limita a agregar productos y no incluye su modificación o eliminación. |
-| **Verificable** | Sí | Se puede comprobar que el producto seleccionado aparezca en el pedido con la cantidad correspondiente.  |
+| **Estimable** | Sí | Se conocen los datos necesarios para seleccionar un producto, indicar la cantidad y agregarlo al pedido. |
+| **Pequeña** | Sí | Se limita a agregar productos disponibles a un pedido activo y actualizar su total. |
+| **Verificable** | Sí | Se puede comprobar que el producto, cantidad y total.  |
 
 ---
 
-# H-U 7 — Modificación de pedidos
+# HU - 7 — Modificar cantidades
 
 **Como** encargada,  
-**quiero** modificar la cantidad de un producto incluido en un pedido activo,  
-**para** corregir cambios solicitados por los clientes antes del pago.
+**quiero** modificar los productos de un pedido activo,  
+**para** mantener actualizado el consumo real.
 
-**Módulo:** Modificación de pedidos
+**Módulo:** Modificar cantidades
 
 **Requisitos relacionados:** RF-08 y RF-26
 
@@ -210,7 +210,7 @@
 
 ### Criterios de aceptación
 
-1- La encargada puede modificar la cantidad de un producto del pedido activo
+1- Permite modificar la cantidad de un producto.
 2- El sistema valida que la cantidad ingresada sea válida.
 3- El sistema actualiza el detalle y el total del pedido.
 4- La modificación queda asociada al pedido correspondiente.
@@ -221,20 +221,20 @@
 |---|---|---|
 | **Independiente** | Sí | Puede probarse sobre un pedido existente. |
 | **Negociable** | Sí | Puede variar la forma de aumentar o disminuir cantidades. |
-| **Valiosa** | Sí | Permite corregir el consumo registrado. |
+| **Valiosa** | Sí | Permite corregir el consumo. |
 | **Estimable** | Sí | La modificación y el recálculo están definidos.  |
 | **Pequeña** | Sí | Solo modifica la cantidad de productos existentes.  |
-| **Verificable** | Sí | Se puede probar aumentando, disminuyendo o ingresando cantidades. |
+| **Verificable** | Sí | Se puede probar aumentando, disminuyendo cantidades. |
 
 ---
 
-# H-U 8 — Eliminación de productos
+# HU - 8 — Eliminar de productos
 
 **Como** encargada,  
 **quiero** eliminar un producto de un pedido activo,   
-**para** corregir el consumo cuando un producto ya no corresponde. 
+**para** corregir el consumo cuando ya no corresponde. 
 
-**Módulo:** Eliminación de productos
+**Módulo:** Eliminar de productos
 
 **Requisitos relacionados:** RF-09; RF-21; RF-24; RF-25 y RF-26 
 
@@ -242,18 +242,18 @@
 
 ### Criterios de aceptación
 
-1. La encargada puede seleccionar un producto del pedido para eliminarlo.
+1. Permite seleccionar producto para eliminar.
 2- El sistema solicita confirmación antes de eliminar el producto.
 3- Si confirma la eliminación, el producto se elimina del pedido.
 4- Si cancela, el pedido permanece sin modificaciones.
-5- El sistema registra el usuario, la fecha y la hora de la operación.
+5- El sistema registra el usuario, fecha y la hora de la operación.
 
 ### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
 | **Independiente** | Sí | Puede probarse con un pedido que tenga productos cargados. |
-| **Negociable** | Sí | La forma de solicitar la eliminación puede cambiar, pero debe mantenerse la confirmación antes de eliminar.  |
+| **Negociable** | Sí | La forma de solicitar la eliminación de un producto puede cambiar. |
 | **Valiosa** | Sí | Permite corregir errores en el pedido y mantener actualizado el consumo.  |
 | **Estimable** | Sí | La selección, confirmación, eliminación y recálculo están definidos.  |
 | **Pequeña** | Sí | Se limita a eliminar un producto de un pedido activo. |
@@ -261,13 +261,13 @@
 
 ---
 
-# H-U 9 — Consulta de consumo
+# HU - 9 — Consultar consumo
 
 **Como** moza,  
 **quiero** consultar el detalle del consumo de una mesa y obtener el importe actualizado, 
-**para**  conocer cuánto debe abonar el cliente.
+**para** conocer cuánto debe abonar el cliente.
 
-**Módulo:** Consulta de consumo
+**Módulo:** Consultar consumo
 
 **Requisitos relacionados:** RF-10; RF-11; RF-14 y RF-26
 
@@ -279,28 +279,28 @@
 2- El sistema muestra las cantidades y valores correspondientes. 
 3- El sistema calcula automáticamente el importe del consumo.
 4- Al modificarse el consumo, el importe se actualiza. 
-5- El importe mostrado coincide con la suma de los productos registrados 
+5- El importe total coincide con la suma de los productos
 
 ### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
 | **Independiente** | Sí | Puede probarse con una mesa que tenga productos cargados y un consumo registrado. |
-| **Negociable** | Sí | La forma de presentar el detalle y el importe puede cambiar, pero debe mostrarse la información necesaria. |
-| **Valiosa** | Sí | Permite conocer el consumo y el importe que debe pagar el cliente. |
-| **Estimable** | Sí | Se conocen los datos que deben mostrarse y calcularse. |
-| **Pequeña** | Sí | Se concentra en consultar y calcular el consumo, sin incluir el registro del pago.  |
+| **Negociable** | Sí | La forma de presentar el detalle y el importe puede cambiarse.|
+| **Valiosa** | Sí | Permite conocer el consumo y el importe total a pagar. |
+| **Estimable** | Sí | Se conocen los datos y pueden calcularse. |
+| **Pequeña** | Sí | No incluye el registro del pago.  |
 | **Verificable** | Sí | Se puede comparar el total mostrado con la suma de los productos.  |
 
 ---
 
-# H-U 10 — Registro de pago
+# HU - 10 — Registrar pago
 
 **Como** encargada,  
 **quiero** registrar el pago de una mesa y seleccionar el medio utilizado,  
 **para** registrar correctamente la venta. 
 
-**Módulo:** Registro de pago
+**Módulo:** Registrar pago
 
 **Requisitos relacionados:** RF-12; RF-13; RF-14; RF-15; RF-21 y RF-24
 
@@ -308,32 +308,32 @@
 
 ### Criterios de aceptación
 
-1- La encargada puede seleccionar una mesa con consumo pendiente.
+1- Permite seleccionar una mesa con consumo pendiente.
 2- El sistema muestra el importe final y los medios de pago habilitados.
 3- El pago queda registrado asociado a la mesa y al pedido correspondiente.
 4- La venta se confirma únicamente cuando el pago es válido.
-5- El sistema evita registrar pagos o ventas duplicadas ante una única confirmación.
+5- El sistema evita pagos/ventas duplicados ante una confirmación.
 
 ### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse en una mesa con consumo y un importe previamente calculado.  |
-| **Negociable** | Sí | La forma de seleccionar el medio de pago puede modificarse, manteniendo las opciones habilitadas.   |
+| **Independiente** | Sí | Puede probarse en una mesa con consumo e importe calculado.  |
+| **Negociable** | Sí | La forma de seleccionar el medio de pago puede modificarse.  |
 | **Valiosa** | Sí | Permite registrar el pago y completar la operación de venta.  |
-| **Estimable** | Sí | Los criterios establecen la selección del medio de pago, el importe y el registro de la venta. |
-| **Pequeña** | Sí | Se limita en registrar un pago y generar la venta.  |
+| **Estimable** | Sí | Importe, medio de pago y validación están definidos.  |
+| **Pequeña** | Sí | No incluye emisión de comprobante ni cierre.  |
 | **Verificable** | Sí | Se puede probar pagando con efectivo, tarjeta o QR. |
 
 ---
 
-# H-U 11 — Emisión de comprobante
+# HU - 11 — Emitir comprobante
 
 **Como** encargada,  
 **quiero** generar un comprobante después de registrar el pago, 
 **para** entregar al cliente una constancia de la operación realizada. 
 
-**Módulo:** Emisión de comprobante
+**Módulo:** Emitir comprobante
 
 **Requisitos relacionados:** RF-15 y RF-18 y RF-27
 
@@ -350,12 +350,12 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse utilizando una venta previamente registrada.  |
-| **Negociable** | Sí | El formato y la presentación del comprobante pueden modificarse, siempre que contenga la información requerida.  |
-| **Valiosa** | Sí | Permite entregar  una constancia de pago por la venta realizada. |
-| **Estimable** | Sí | Sabemos qué datos debe tener el comprobante. |
-| **Pequeña** | Sí | Solo genera, muestra o imprime el comprobante.  |
-| **Verificable** | Sí | Se puede comprobar que tenga los datos correctos de la venta.  |
+| **Independiente** | Sí | Puede probarse con una venta registrada.  |
+| **Negociable** | Sí | El formato y la presentación del comprobante pueden modificarse.  |
+| **Valiosa** | Sí | Permite entregar una constancia de pago realizado. |
+| **Estimable** | Sí | Los datos requeridos están definidos.. |
+| **Pequeña** | Sí | Solo genera, visualiza e imprime comprobante.  |
+| **Verificable** | Sí | Se verifica la información contra la venta.  |
 
 ---
 
