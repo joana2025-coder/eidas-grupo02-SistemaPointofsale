@@ -1,8 +1,6 @@
-```plantuml
 @startuml
 
-title Diagrama de Casos de Uso
-Sistema POS — Bar Carrefour
+title Diagrama de Casos de Uso - Sistema POS - Bar Carrefour
 
 left to right direction
 
@@ -51,4 +49,3 @@ DUE --> UC09
 ADM --> UC10
 
 @enduml
-```
