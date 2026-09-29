@@ -50,7 +50,7 @@ entity Pago {
     metodo_pago : VARCHAR
     total : DECIMAL
     fecha : DATETIME
-    id_pedido : INT <<FK>>
+    id_mesa : INT <<FK>>
 }
 
 entity Ticket {
@@ -60,11 +60,20 @@ entity Ticket {
     id_pago : INT <<FK>>
 }
 
+entity Trazabilidad {
+    * id_trazabilidad : INT <<PK>>
+    --
+    accion : VARCHAR
+    fecha_hora : DATETIME
+    id_usuario : INT <<FK>>
+}
+
 Usuario ||--o{ Pedido : registra
 Mesa ||--o{ Pedido : tiene
 Pedido ||--|{ Detalle_Pedido : contiene
 Producto ||--o{ Detalle_Pedido : corresponde
-Pedido ||--|| Pago : genera
+Mesa ||--o| Pago : recibe
 Pago ||--|| Ticket : emite
+Usuario ||--o{ Trazabilidad : realiza
 
 @enduml

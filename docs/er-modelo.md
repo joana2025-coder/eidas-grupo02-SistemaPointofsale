@@ -89,8 +89,8 @@ Se decidió separar las entidades `Pago` y `Ticket` para diferenciar la informac
 
 Como alternativa, se podría haber incluido la información del ticket directamente dentro de `Pago`, pero mantenerlas separadas permite diferenciar claramente ambas responsabilidades y facilita futuras modificaciones. Por este motivo, se optó por una relación 1:1 entre `Pago` y `Ticket`.
 
-### Decisión 3 — Uso de Detalle_Pedido para relacionar Pedido y Producto
+### Decisión 3 — Asociación del Pago con la Mesa
 
-Se decidió utilizar `Detalle_Pedido` como entidad intermedia entre `Pedido` y `Producto`, ya que permite registrar información propia de cada producto dentro de una orden, principalmente la cantidad y el subtotal.
+Se decidió asociar `Pago` con `Mesa` porque en el sistema el pago corresponde al consumo de una mesa y se registra antes de cerrar y liberar la mesa. De esta manera, una mesa puede tener un pago registrado al finalizar su consumo.
 
-La alternativa habría sido relacionar directamente `Pedido` con `Producto`, pero esa opción no permitiría representar adecuadamente los datos específicos de cada producto incluido en un pedido. Por este motivo, se utiliza `Detalle_Pedido` como entidad intermedia.
+Como alternativa, se podría haber asociado `Pago` directamente con `Pedido`, pero esto no representa correctamente el funcionamiento definido en los casos de uso, donde la encargada selecciona una mesa para registrar el pago correspondiente a su consumo. Por este motivo, se optó por relacionar `Pago` con `Mesa`. 
