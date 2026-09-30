@@ -27,13 +27,14 @@
 5. El sistema verifica que el usuario se encuentre activo.
 6. El sistema identifica el rol del usuario.
 7. El sistema permite el acceso a las funcionalidades correspondientes.
+8. El usuario comienza a utilizar el sistema.
 
 ### Flujos alternativos
 
 * **4a. Credenciales incorrectas:** el sistema informa que los datos ingresados no son válidos y solicita intentar nuevamente.
 * **5a. Usuario inactivo:** el sistema rechaza el acceso e informa que el usuario no se encuentra habilitado.
 * **3a. Cancelación:** el usuario puede cancelar el inicio de sesión.
-* **Inactividad:** luego del período establecido de inactividad, la sesión se cierra automáticamente.
+* **Inactividad:** luego del período establecido de inactividad, el sistema cierra automáticamente la sesión.
 
 **Requisitos funcionales relacionados:** RF-01, RF-22.
 
@@ -45,7 +46,7 @@
 
 **Actor:** Encargada
 
-**Objetivo:** Permitir a la encargada gestionar los usuarios del sistema y asignar o modificar sus roles según corresponda.
+**Objetivo:** Permite gestionar los usuarios del sistema y asignar o modificar sus roles según corresponda.
 
 ### Precondiciones
 
@@ -57,7 +58,7 @@
 
 * El usuario registrado, modificado o desactivado queda actualizado en el sistema.
 * El rol asignado o modificado queda registrado.
-* La información necesaria para el acceso y los permisos queda actualizada.
+* La información necesaria para el acceso y los permisos quedan actualizados.
 
 ### Flujo principal
 
@@ -70,8 +71,10 @@
 7. El sistema registra el usuario y el rol asignado.
 8. Para modificar un usuario o su rol, la encargada realiza los cambios correspondientes.
 9. El sistema valida y guarda los cambios.
-10. Para desactivar un usuario, la encargada selecciona la opción correspondiente y confirma la operación.
-11. El sistema actualiza el estado del usuario.
+10. La encargada puede seleccionar un usuario para desactivarlo.
+11. El sistema solicita confirmación.
+12. La encargada confirma la desactivación.
+13. El sistema actualiza el estado del usuario.
 
 ### Flujos alternativos
 
@@ -88,9 +91,9 @@
 
 ## CU-03 — Visualizar y abrir mesa
 
-**Actores:** Moza o Encargada
+**Actores:** Encargada
 
-**Objetivo:** Permitir visualizar el estado de las 24 mesas y abrir una mesa disponible para iniciar la atención.
+**Objetivo:** Permitir visualizar las 24 mesas y abrir una mesa disponible para iniciar la atención.
 
 ### Precondiciones
 
@@ -101,7 +104,7 @@
 ### Postcondiciones
 
 * La mesa seleccionada queda en estado **Ocupada**.
-* La mesa queda asociada a un pedido activo.
+* La apertura de la mesa queda asociada a un pedido activo.
 * La operación queda registrada con usuario, fecha y hora.
 
 ### Flujo principal
@@ -112,27 +115,26 @@
 4. El sistema solicita confirmación para abrir la mesa.
 5. El usuario confirma la operación.
 6. El sistema cambia el estado de la mesa a **Ocupada**.
-7. El sistema genera o habilita el pedido activo asociado a la mesa.
-8. El sistema registra el usuario, la fecha y la hora de la operación.
-9. El sistema actualiza la visualización del estado de la mesa.
+7. El sistema registra el usuario, la fecha y la hora de la operación.
+8. El sistema actualiza la visualización del estado de la mesa.
 
 ### Flujos alternativos
 
 * **3a. Mesa no disponible:** el sistema informa que no es posible abrir la mesa.
 * **4a. Cancelación:** si el usuario cancela la confirmación, la mesa mantiene su estado actual.
-* **6a. Error durante la operación:** si no es posible completar la apertura, la mesa mantiene su estado anterior y no se genera una operación incompleta.
+* **6a. Error durante la operación:** el sistema mantiene el estado anterior de la mesa y evita guardar una operación incompleta.
 
 **Requisitos funcionales relacionados:** RF-03, RF-04, RF-05, RF-23, RF-24 y RF-25.
 
-**Requisitos no funcionales relacionados:** RNF-01, RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18.
+**Requisitos no funcionales relacionados:** RNF-01, RNF-03, RNF-04, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18.
 
 ---
 
-## CU-04 — Registrar y gestionar pedido
+## CU-04 — Gestionar pedido
 
 **Actor:** Encargada
 
-**Objetivo:** Permitir a la encargada registrar un pedido asociado a una mesa y gestionar los productos del pedido, actualizando su detalle y total.
+**Objetivo:** Permitir asociar un pedido a una mesa abierta y gestionar los productos del pedido, manteniendo actualizado su detalle y total.
 
 ### Precondiciones
 
@@ -144,16 +146,17 @@
 ### Postcondiciones
 
 * El pedido queda asociado a la mesa correspondiente.
-* Los productos y sus cantidades quedan registrados.
+* Los productos y cantidades quedan registrados.
 * El detalle y el total del pedido quedan actualizados.
+* El total del pedido se actualiza automáticamente.
 * Las modificaciones realizadas quedan registradas.
 
 ### Flujo principal
 
 1. La encargada selecciona una mesa abierta.
 2. El sistema muestra el pedido activo asociado a la mesa.
-3. La encargada selecciona la opción para agregar productos.
-4. El sistema muestra los productos disponibles.
+3. La encargada asocia un pedido a la mesa.
+4. El sistema registra la asociación.
 5. La encargada selecciona un producto e indica la cantidad.
 6. El sistema registra el producto en el pedido.
 7. El sistema actualiza el detalle y el total del pedido.
@@ -172,7 +175,7 @@
 * **11a. Cancelación de eliminación:** si la encargada cancela la operación, el producto permanece en el pedido.
 * **14a. Error durante la operación:** si no es posible completar la operación, el sistema evita guardar información parcial o duplicada.
 
-**Requisitos funcionales relacionados:** RF-06, RF-07, RF-08, RF-09, RF-10, RF-25 y RF-26.
+**Requisitos funcionales relacionados:** RF-06, RF-07, RF-08, RF-09, RF-10, RF-21, RF-24, RF-25 y RF-26.
 
 **Requisitos no funcionales relacionados:** RNF-01, RNF-02, RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18.
 
@@ -192,19 +195,19 @@
 
 ### Postcondiciones
 
-* El detalle del consumo de la mesa seleccionada queda visualizado.
+* El detalle del consumo queda visualizado.
 * El total correspondiente al consumo queda mostrado.
 * La consulta no modifica la información registrada.
 
 ### Flujo principal
 
 1. La moza accede a la consulta de consumo.
-2. El sistema muestra las mesas que pueden ser consultadas.
+2. El sistema muestra las mesas con consumo registrado que pueden ser consultadas.
 3. La moza selecciona una mesa.
 4. El sistema obtiene el consumo asociado a la mesa.
 5. El sistema muestra los productos, cantidades y valores correspondientes.
 6. El sistema calcula y muestra el total del consumo.
-7. El sistema mantiene la información actualizada si el consumo de la mesa cambia.
+7. Si el consumo se modifica, el sistema actualiza el importe mostrado.
 
 ### Flujos alternativos
 
@@ -222,7 +225,7 @@
 
 **Actor:** Encargada
 
-**Objetivo:** Permitir a la encargada registrar el pago correspondiente al consumo de una mesa mediante efectivo, tarjeta o QR.
+**Objetivo:** Permitir a la encargada registrar el pago correspondiente al consumo de una mesa mediante efectivo, tarjeta o QR y confirmar la venta.
 
 ### Precondiciones
 
@@ -237,14 +240,14 @@
 * El pago queda registrado y asociado a la mesa y al consumo correspondiente.
 * El medio de pago seleccionado queda registrado.
 * La venta queda confirmada cuando el pago es válido.
-* La operación queda registrada con la información correspondiente.
+* La operación queda registrada con usuario, fecha y hora.
 
 ### Flujo principal
 
 1. La encargada selecciona la mesa cuyo consumo desea cobrar.
 2. El sistema muestra el importe final a pagar.
 3. La encargada selecciona el medio de pago.
-4. El sistema permite seleccionar entre **efectivo, tarjeta o QR**.
+4. El sistema muestra las opciones disponibles: efectivo, tarjeta o QR.
 5. La encargada confirma el pago.
 6. El sistema valida el pago.
 7. El sistema registra el pago asociado al consumo.
@@ -259,7 +262,7 @@
 * **7a. Pago ya registrado:** el sistema evita registrar nuevamente el mismo pago.
 * **7b. Error durante el registro:** el sistema evita guardar una operación incompleta o duplicada.
 
-**Requisitos funcionales relacionados:** RF-12, RF-13, RF-14, RF-15 y RF-24.
+**Requisitos funcionales relacionados:** RF-12, RF-13, RF-14, RF-15, RF-21 y RF-24.
 
 **Requisitos no funcionales relacionados:** RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18.
 
@@ -287,11 +290,12 @@
 ### Flujo principal
 
 1. La encargada accede a la operación correspondiente.
-2. El sistema verifica que el pago se encuentre registrado y la venta confirmada.
-3. El sistema genera el comprobante.
-4. El comprobante muestra la información correspondiente a la operación, incluyendo la mesa, el importe y el medio de pago.
-5. El sistema muestra el comprobante.
-6. La encargada puede visualizarlo y, si corresponde, imprimirlo.
+2. El sistema verifica que el pago haya sido confirmado.
+3. El sistema verifica que la venta se encuentre confirmada.
+4. El sistema genera el comprobante.
+5. El comprobante muestra la información correspondiente a la operación, incluyendo la mesa, el importe y el medio de pago.
+6. El sistema muestra el comprobante.
+7. La encargada puede visualizarlo y, si corresponde, imprimirlo.
 
 ### Flujos alternativos
 
@@ -299,7 +303,7 @@
 * **2b. Venta no confirmada:** el sistema informa que la operación todavía no puede generar un comprobante.
 * **6a. Cancelación de impresión:** si la encargada decide no imprimirlo, el comprobante permanece generado y disponible para su consulta.
 
-**Requisitos funcionales relacionados:** RF-15, RF-18 y RF-27.
+**Requisitos funcionales relacionados:** RF-15  y RF-27.
 
 **Requisitos no funcionales relacionados:** RNF-03, RNF-08, RNF-12 y RNF-18.
 
