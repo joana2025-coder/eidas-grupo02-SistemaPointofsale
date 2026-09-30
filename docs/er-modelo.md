@@ -11,13 +11,14 @@
 
 | Entidad | Descripción | Relaciones clave |
 |----------|-------------|------------------|
-| Usuario | Representa a los usuarios que utilizan el sistema y registra los pedidos realizados. | 1:N con Pedido |
-| Mesa | Representa las mesas disponibles del bar y permite conocer su estado. | 1:N con Pedido |
-| Pedido | Representa la orden realizada por un cliente y registra sus datos principales. | N:1 con Usuario y Mesa; 1:N con Detalle_Pedido; 1:1 con Pago |
+| Usuario | Representa a los usuarios que utilizan el sistema y registra los pedidos realizados. | 1\:N con Pedido; 1\:N con Trazabilidad |
+| Mesa | Representa las mesas disponibles del bar y permite conocer su estado. | 1\:N con Pedido; 1:0..1 con Pago |
+| Pedido | Representa la orden realizada por un cliente y registra sus datos principales. | N:1 con Usuario y Mesa; 1\:N con Detalle_Pedido |
 | Detalle_Pedido | Representa cada producto incluido dentro de un pedido, junto con su cantidad y subtotal. | N:1 con Pedido y Producto |
 | Producto | Representa los productos ofrecidos por el bar, incluyendo precio y stock disponible. | 1:N con Detalle_Pedido |
-| Pago | Representa el pago asociado a un pedido y registra el método, total y fecha. | 1:1 con Pedido; 1:1 con Ticket |
-| Ticket | Representa el comprobante emitido como resultado del pago de un pedido. | 1:1 con Pago |
+| Pago | Representa el pago asociado al consumo de una mesa y registra el método, total y fecha. | 1:0..1 con Mesa; 1:1 con Ticket |
+| Ticket | Representa el comprobante emitido como resultado del pago. | 1:1 con Pago |
+| Trazabilidad | Registra las operaciones realizadas en el sistema, identificando al usuario, la fecha y la hora. | N:1 con Usuario |
 ## Descripción de atributos principales
 
 _Para cada entidad, describir brevemente los atributos más relevantes y su propósito._
@@ -65,13 +66,19 @@ _Para cada entidad, describir brevemente los atributos más relevantes y su prop
 - `metodo_pago`: Indica el medio utilizado para realizar el pago.
 - `total`: Importe total abonado.
 - `fecha`: Registra la fecha y hora del pago.
-- `id_pedido` (FK): Identifica el pedido al que corresponde el pago.
+- `id_mesa` (FK): Identifica la mesa cuyo consumo corresponde al pago.
 
 ### Ticket
 
 - `id_ticket` (PK): Identifica de manera única cada ticket.
 - `fecha_emision`: Registra la fecha y hora en que se emite el ticket.
 - `id_pago` (FK): Identifica el pago asociado al ticket.
+### Trazabilidad
+
+- `id_trazabilidad` (PK): Identifica de manera única cada registro de trazabilidad.
+- `accion`: Describe la operación realizada en el sistema.
+- `fecha_hora`: Registra la fecha y hora en que se realizó la operación.
+- `id_usuario` (FK): Identifica al usuario que realizó la operación.
 ## Decisiones de diseño
 
 _Justificar al menos dos decisiones de diseño relevantes: por qué se modeló de esa manera,
