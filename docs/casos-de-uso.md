@@ -313,7 +313,7 @@
 
 **Actor:** Encargada
 
-**Objetivo:** Permitir a la encargada cerrar una mesa luego de que el pago haya sido confirmado y dejarla disponible para una nueva atención.
+**Objetivo:** Permitir a la encargada cerrar una mesa luego de confirmar el pago y dejarla disponible para una nueva atención.
 
 ### Precondiciones
 
@@ -337,9 +337,10 @@
 5. La encargada confirma el cierre.
 6. El sistema cierra la mesa.
 7. El sistema cambia el estado de la mesa a **Disponible**.
-8. El sistema conserva la información de la venta y el comprobante.
-9. El sistema registra el usuario, la fecha y la hora de la operación.
-10. El sistema actualiza el estado de la mesa.
+8. El sistema actualiza el estado de la mesa.  
+9. El sistema conserva la información de la venta y el comprobante.
+10. El sistema registra el usuario, la fecha y la hora de la operación.
+
 
 ### Flujos alternativos
 
@@ -355,7 +356,7 @@
 
 ## CU-09 — Consultar historial y ventas
 
-**Actores:** Encargada o Dueño
+**Actores:** Encargada 
 
 **Objetivo:** Permitir consultar información histórica de las ventas y obtener información resumida de las ventas y consumos registrados.
 
@@ -375,8 +376,8 @@
 1. El usuario accede a la consulta de historial y ventas.
 2. El sistema verifica los permisos del usuario.
 3. El usuario selecciona los criterios de consulta correspondientes.
-4. El sistema busca las ventas y consumos almacenados que coincidan con los criterios.
-5. El sistema muestra la información disponible.
+4. El sistema busca las ventas y consumos que coincidan con los criterios.
+5. El sistema muestra los resultados.
 6. El usuario puede consultar el detalle de las ventas y consumos.
 7. El sistema puede mostrar la información resumida correspondiente.
 
@@ -397,7 +398,7 @@
 
 **Actor:** Administrador del sistema
 
-**Objetivo:** Permitir al administrador consultar los registros de las operaciones realizadas en el sistema, identificando el usuario, la fecha y la hora correspondientes.
+**Objetivo:** Permitir consultar los registros de las operaciones realizadas, identificando el usuario, la fecha y la hora correspondientes.
 
 ### Precondiciones
 
@@ -434,7 +435,7 @@
 
 **Actor:** Encargada
 
-**Objetivo:** Permitir a la encargada registrar, modificar y desactivar productos que pueden utilizarse en los pedidos.
+**Objetivo:** Permitir a la encargada registrar, modificar y desactivar productos disponibles para utilizar en los pedidos.
 
 ### Precondiciones
 
