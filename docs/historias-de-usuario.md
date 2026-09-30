@@ -101,9 +101,9 @@
 
 # HU - 4 — Visualizar y abrir una mesa disponible
 
-**Como** moza o encargada,  
+**Como** encargada,  
 **quiero** visualizar las 24 mesas y abrir una mesa disponible,
-**para** comenzar la atención y asociar pedidos.
+**para** comenzar la atención.
 
 **Módulo:** Visualizar y abrir una mesa disponible
 
@@ -310,7 +310,7 @@
 
 1- Permite seleccionar una mesa con consumo pendiente.
 2- El sistema muestra el importe final y los medios de pago habilitados.
-3- El pago queda registrado asociado a la mesa y al pedido correspondiente.
+3- Registra pago asociado a mesa y pedido.
 4- La venta se confirma únicamente cuando el pago es válido.
 5- El sistema evita pagos/ventas duplicados ante una confirmación.
 
@@ -344,7 +344,7 @@
 1- El sistema permite generar el comprobante de una venta registrada. 
 2. El comprobante contiene el importe y los datos de la operación requeridos. 
 3. El comprobante identifica la mesa, el importe y el medio de pago.
-4- El comprobante puede visualizarse y, si corresponde, imprimirse.
+4- El comprobante puede visualizarse e imprimirse.
 
 ### INVEST
 
@@ -359,13 +359,13 @@
 
 ---
 
-# H-U 12 — Cerrar y liberar una mesa
+# HU - 12 — Cerrar mesa
 
 **Como** encargada,  
 **quiero** cerrar una mesa con el pago confirmado, 
 **para** dejarla disponible para nuevos clientes.  
 
-**Módulo:** Cerrar y liberar una mesa
+**Módulo:** Cerrar mesa
 
 **Requisitos relacionados:** RF-16; RF-17; RF-21; RF-24 y RF-25
 
@@ -383,22 +383,22 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse con una mesa que haya completado correctamente el proceso de pago.  |
+| **Independiente** | Sí | Puede probarse con una mesa que haya completado el proceso de pago.  |
 | **Negociable** | Sí | Puede cambiar la forma de confirmar el cierre.  |
-| **Valiosa** | Sí | Permite liberar correctamente la mesa para que pueda utilizarse nuevamente. |
-| **Estimable** | Sí | Los criterios establecen las condiciones de cierre y el cambio posterior del estado.  |
+| **Valiosa** | Sí | Permite liberar correctamente la mesa. |
+| **Estimable** | Sí | Condiciones y resultado están definidos. |
 | **Pequeña** | Sí | Se limita al cierre y liberar una mesa. |
 | **Verificable** | Sí | Puede probarse con una mesa pagada. |
 
 ---
 
-# H-U 13 — Consulta historial de ventas
+# HU - 13 — Consultar historial de ventas
 
 **Como** encargada,  
 **quiero** consultar el historial de ventas registradas,  
 **para** obtener información de operaciones realizadas anteriormente.
 
-**Módulo:** Consulta historial de ventas
+**Módulo:** Consultar historial de ventas
 
 **Requisitos relacionados:** RF-18; RF-19; RF-28 y RF-29
 
@@ -408,25 +408,25 @@
 
 1. La encargada puede consultar ventas registradas. 
 2. El sistema muestra la información disponible de cada venta. 
-3. El historial permite identificar la operación consultada. 
+3. El historial permite identificar la operación. 
 4. La consulta no modifica los datos históricos 
 
 ### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse utilizando ventas previamente registradas.  |
+| **Independiente** | Sí | Puede probarse utilizando ventas existentes.  |
 | **Negociable** | Sí | La forma de mostrar o filtrar el historial puede modificarse sin cambiar el objetivo.  |
-| **Valiosa** | Sí | Permite consultar operaciones anteriores y realizar un seguimiento de las ventas.  |
+| **Valiosa** | Sí | Permite consultar operaciones anteriores.  |
 | **Estimable** | Sí | Se conocen los filtros y datos que deben mostrarse.  |
 | **Pequeña** | Sí | Solo consulta el historial general de ventas. |
 | **Verificable** | Sí | Puede probarse con ventas de distintas fechas. |
 
 ---
 
-# H-U 14 — Consultar resumen de ventas
+# HU - 14 — Consultar resumen de ventas
 
-**Como** dueño o encargada,,  
+**Como** dueño,  
 **quiero** consultar un resumen de ventas y consumos, 
 **para** obtener una visión general de la actividad del bar.
 
@@ -439,16 +439,16 @@
 ### Criterios de aceptación
 
 1. El sistema muestra un resumen basado en las ventas y consumos registrados. 
-2. La información corresponde a los datos almacenados. 
-3- La información mostrada coincide con las ventas almacenadas.
-4- Si no existen ventas para el período seleccionado, el sistema informa que no hay resultados.
+2. Los datos corresponden a información almacenada.
+3- La información mostrada coincide con las ventas registradas.
+4- Si no hay ventas, informa que no existen resultados.
 
 ### INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse utilizando información histórica de ventas y consumos.  |
-| **Negociable** | Sí | La forma de presentar el resumen puede modificarse, siempre que muestre la información requerida.   |
+| **Independiente** | Sí | Puede probarse con información histórica de ventas. |
+| **Negociable** | Sí | La forma de presentar el resumen puede modificarse.  |
 | **Valiosa** | Sí | Facilita el control y permite obtener una visión general de la actividad. |
 | **Estimable** | Sí | El período y los datos del resumen están definidos. |
 | **Pequeña** | Sí | Se limita a mostrar un resumen y no informes complejos. |
@@ -456,13 +456,13 @@
 
 ---
 
-# H-U 15 — Consulta de trazabilidad de operaciones
+# HU - 15 — Consultar trazabilidad 
 
 **Como** administrador del sistema,   
-**quiero**  consultar la trazabilidad de las operaciones realizadas, 
+**quiero**  consultar la trazabilidad de las operaciones, 
 **para** saber qué usuario realizó una operación y cuándo fue realizada.
 
-**Módulo:** Consulta de trazabilidad de operaciones
+**Módulo:** Consultar trazabilidad 
 
 **Requisitos relacionados:** RF-21 y RF-24
 
@@ -479,23 +479,24 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse utilizando operaciones previamente registradas en el sistema.  |
+| **Independiente** | Sí | Puede probarse utilizando operaciones registradas en el sistema.  |
 | **Negociable** | Sí | La forma de consultar la información puede modificarse, pero deben mantenerse el usuario, la fecha y la hora.  |
-| **Valiosa** | Sí | Permite controlar quién realizó una operación y cuándo, mejorando el seguimiento de las actividades.  |
-| **Estimable** | Sí | Los criterios establecen claramente los datos que deben registrarse y consultarse.  |
+| **Valiosa** | Sí | Permite el seguimiento de las actividades.  |
+| **Estimable** | Sí | Los datos deben registrarse y consultarse.  |
 | **Pequeña** | Sí | Solo registra y consulta las operaciones realizadas.  |
-| **Verificable** | Sí | Puede comprobarse el registro de usuario, fecha y hora. |
+| **Verificable** | Sí | Puede comprobarse el usuario, fecha - hora y operación. |
 
 ---
 
-# H-U 16 — Gestión de productos
+# HU - 16 — Gestionar productos
 
 **Como** encargada,  
-**quiero** registrar, modificar y desactivar productos ofrecidos por el bar,  
-**para** mantener actualizada la información utilizada al registrar pedidos. 
-**Módulo:** Gestión de productos
+**quiero** gestionar los productos del bar, pudiendo registrarlos, modificarlos o desactivarlos,
+**para** mantener actualizado el catálogo disponible para la venta.
 
-**Requisitos relacionados:** RF-07 y RF-30
+**Módulo:** Gestionar productos
+
+**Requisitos relacionados:** RF-30
 
 **Requisitos no funcionales:** RNF-06; RNF-08; RNF-15
 
@@ -510,11 +511,11 @@
 
 | Criterio | ¿Se cumple? | Observación |
 |---|---|---|
-| **Independiente** | Sí | Puede probarse consultando el listado de productos sin necesidad de completar una venta.   |
+| **Independiente** | Sí | Puede probarse sin necesidad de completar una venta.   |
 | **Negociable** | Sí | Puede cambiar la forma de registrar y editar productos.  |
 | **Valiosa** | Sí | Mantiene actualizado el catálogo del bar.  |
-| **Estimable** | Sí | Los criterios indican que deben mostrarse los productos disponibles y que los productos no disponibles no puedan seleccionarse.  |
-| **Pequeña** | Sí | Se concentra en la consulta y disponibilidad de productos. |
+| **Estimable** | Sí | Las acciones están definidas. |
+| **Pequeña** | Sí | Se limita a registrar, modificar y desactivar productos. |
 | **Verificable** | Sí | Se puede probar creando, modificando y desactivando productos.  |
 
 
