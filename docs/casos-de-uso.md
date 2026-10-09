@@ -4,7 +4,7 @@
 
 ## CU-01 — Iniciar sesión
 
-**Actor:** Usuario
+**Actor:** Usuario del sistema (moza, encargada, dueño o administrador)
 
 **Objetivo:** Permitir que un usuario registrado acceda al sistema mediante sus credenciales y que el sistema identifique su rol.
 
@@ -31,102 +31,97 @@
 
 ### Flujos alternativos
 
+* **3a. Cancelación:** el usuario puede cancelar el inicio de sesión.
 * **4a. Credenciales incorrectas:** el sistema informa que los datos ingresados no son válidos y solicita intentar nuevamente.
 * **5a. Usuario inactivo:** el sistema rechaza el acceso e informa que el usuario no se encuentra habilitado.
-* **3a. Cancelación:** el usuario puede cancelar el inicio de sesión.
 * **Inactividad:** luego del período establecido de inactividad, el sistema cierra automáticamente la sesión.
 
-**Requisitos funcionales relacionados:** RF-01, RF-22.
+**Requisitos funcionales relacionados:** RF-01 y RF-22.
 
-**Requisitos no funcionales relacionados:** RNF-05, RNF-06, RNF-07, RNF-19 y RNF-23.
+**Requisitos no funcionales relacionados:** RNF-05, RNF-07, RNF-19 y RNF-23.
 
 ---
 
 ## CU-02 — Gestionar usuarios y roles
 
-**Actor:** Encargada
+**Actor:** Administrador del sistema
 
-**Objetivo:** Permite gestionar los usuarios del sistema y asignar o modificar sus roles según corresponda.
+**Objetivo:** Permitir que el administrador registre, modifique y dé de baja usuarios, y les asigne el rol que determina las
+funciones a las que pueden acceder.
 
 ### Precondiciones
 
 * La encargada debe haber iniciado sesión.
-* Debe contar con los permisos necesarios para gestionar usuarios y roles.
 * El sistema debe estar disponible.
+* Debe contar con los permisos necesarios para gestionar usuarios y roles.
 
 ### Postcondiciones
 
-* El usuario registrado, modificado o desactivado queda actualizado en el sistema.
-* El rol asignado o modificado queda registrado.
-* La información necesaria para el acceso y los permisos quedan actualizados.
+* El usuario queda creado, modificado o dado de baja, según la operación realizada.
+* La operación queda registrada con usuario, fecha y hora.
+* Un usuario dado de baja no puede iniciar sesión y conserva su historial operativo.
 
 ### Flujo principal
 
-1. La encargada accede a la gestión de usuarios.
+1. El administrador accede a la gestión de usuarios.
 2. El sistema muestra los usuarios registrados.
-3. La encargada selecciona la operación que desea realizar: registrar, modificar o desactivar un usuario.
-4. Para registrar un usuario, la encargada ingresa los datos solicitados.
-5. El sistema valida la información ingresada.
-6. La encargada asigna el rol correspondiente al usuario.
-7. El sistema registra el usuario y el rol asignado.
-8. Para modificar un usuario o su rol, la encargada realiza los cambios correspondientes.
-9. El sistema valida y guarda los cambios.
-10. La encargada puede seleccionar un usuario para desactivarlo.
-11. El sistema solicita confirmación.
-12. La encargada confirma la desactivación.
-13. El sistema actualiza el estado del usuario.
+3. El administrador selecciona la opción de crear un nuevo usuario.
+4. El sistema solicita nombre, usuario, contraseña inicial y rol.
+5. El administrador ingresa los datos y confirma.
+6. El sistema valida la información ingresada.
+7. El sistema valida que los datos estén completos y que el usuario no exista.
+7. El sistema guarda la contraseña de forma segura (hash) y crea el usuario activo con el rol asignado.
+8. El sistema informa que el usuario fue creado.
 
 ### Flujos alternativos
 
 * **5a. Nombre de usuario ya existente:** el sistema informa que el nombre de usuario no puede repetirse y solicita ingresar otro.
-* **10a. Cancelación de desactivación:** si la encargada cancela la operación, el usuario no se desactiva.
-* **9a. Datos inválidos:** el sistema informa el error y solicita corregir la información.
+* **10a. Cancelación de desactivación:** si el administrador cancela la operación y no se guardan los cambios.
+* **9a. Datos inválidos:** el sistema informa el error e indica qué corregir.
 * **3a. Cancelación:** la encargada puede cancelar la operación antes de confirmarla.
+* Acceso no autorizado:** si un usuario sin rol de administrador intenta acceder al módulo, el sistema rechaza el
+acceso.
 
-**Requisitos funcionales relacionados:** RF-02, RF-22.
+**Requisitos funcionales relacionados:** RF-02 y RF-22.
 
-**Requisitos no funcionales relacionados:** RNF-06, RNF-08, RNF-10.
+**Requisitos no funcionales relacionados:** RNF-06 y RNF-07
 
 ---
 
-## CU-03 — Visualizar y abrir mesa
+## CU-03 — Gestionar mesas
 
-**Actores:** Encargada
+**Actores:**  Moza o encargada
 
-**Objetivo:** Permitir visualizar las 24 mesas y abrir una mesa disponible para iniciar la atención.
+**Objetivo:** Permitir consultar el estado de las 24 mesas para saber cuáles están disponibles.
 
 ### Precondiciones
 
 * El usuario debe haber iniciado sesión.
-* Debe contar con los permisos correspondientes.
 * El sistema debe estar disponible.
+* Debe contar con los permisos correspondientes.
 
 ### Postcondiciones
 
-* La mesa seleccionada queda en estado **Ocupada**.
-* La apertura de la mesa queda asociada a un pedido activo.
+* El usuario conoce el estado actual de cada mesa.
 * La operación queda registrada con usuario, fecha y hora.
 
 ### Flujo principal
 
-1. El usuario accede a la visualización de mesas.
-2. El sistema muestra las 24 mesas y su estado actual.
-3. El usuario selecciona una mesa en estado **Disponible**.
-4. El sistema solicita confirmación para abrir la mesa.
-5. El usuario confirma la operación.
-6. El sistema cambia el estado de la mesa a **Ocupada**.
-7. El sistema registra el usuario, la fecha y la hora de la operación.
-8. El sistema actualiza la visualización del estado de la mesa.
+1. El usuario accede al tablero de las mesas.
+2. El sistema muestra las 24 mesas numeradas del 1 al 24.
+3. El sistema muestra el estado de cada mesa de forma diferenciada: Disponible, Ocupada o Pendiente de cierre.
+4. Cuando una mesa cambia de estado desde otro dispositivo, el sistema actualiza el tablero automáticamente.
+5. El usuario identifica la mesa que necesita.
 
 ### Flujos alternativos
 
-* **3a. Mesa no disponible:** el sistema informa que no es posible abrir la mesa.
-* **4a. Cancelación:** si el usuario cancela la confirmación, la mesa mantiene su estado actual.
-* **6a. Error durante la operación:** el sistema mantiene el estado anterior de la mesa y evita guardar una operación incompleta.
+* **3a. Consulta simultánea:** si dos usuarios consultan a la vez, ambos ven el mismo estado actualizado, sin
+inconsistencias.
+* **4a. Falla de conexión:** si se pierde la conexión, el sistema informa que el tablero no se está actualizando.
 
-**Requisitos funcionales relacionados:** RF-03, RF-04, RF-05, RF-23, RF-24 y RF-25.
+**Requisitos funcionales relacionados:** RF-03, RF-04 y RF-23.
 
-**Requisitos no funcionales relacionados:** RNF-01, RNF-03, RNF-04, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18.
+**Requisitos no funcionales relacionados:** RNF-03, RNF-04, RNF-11 y RNF-20
 
 ---
 
