@@ -7,7 +7,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 1 — [Login - Inicio de sesion]
 
-**Wireframe:** `diagramas/wireframes/[01-login.png]`
+**Wireframe:** `diagramas/wireframes/[01-login.svg]`
 
 **Patrones de diseño utilizados:** _( Formulario simple centrado en una sola columna, mensaje de error en línea (online validation), foco automático en el primer campo )_
 
@@ -22,7 +22,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 2 — [Tableros de mesas]
 
-**Wireframe:** `diagramas/wireframes/[02-tableros-de-mesa.png]`
+**Wireframe:** `diagramas/wireframes/[02-tableros-mesas.svg]`
 
 **Patrones de diseño utilizados:**  Grilla de cards (una por mesa), código de estado con color + texto + ícono, leyenda fija, modal de confirmación, actualización en vivo del tablero.
 
@@ -37,7 +37,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 3 — [Pedido y consumo de la mesa]
 
-**Wireframe:** `diagramas/wireframes/[03-pedido-mesas.png]`
+**Wireframe:** `diagramas/wireframes/[03-pedidos-mesas.svg]`
 
 **Patrones de diseño utilizados:** Vista dividida maestro-detalle (catálogo a la izquierda, pedido a la derecha), pestañas de categorías, cards de producto de un solo toque, stepper de cantidad (-/+), total fijo siempre visible, modal de confirmación para eliminar.
 
@@ -52,7 +52,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 4 — [Cobro y comprobante]
 
-**Wireframe:** `diagramas/wireframes/[04-cobro comprobante.png]`
+**Wireframe:** `diagramas/wireframes/[04-cobro-comprobante.svg]`
 
 **Patrones de diseño utilizados:** Selector de opciones exclusivas en formato botones grandes (radio cards), resumen de solo lectura, modal de confirmación, estado de carga con botón deshabilitado, pantalla de éxito con siguiente acción clara, vista de comprobante imprimible.
 
@@ -67,7 +67,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 5 — [Historial de ventas]
 
-**Wireframe:** `diagramas/wireframes/[05-Historial-ventas.png]`
+**Wireframe:** `diagramas/wireframes/[05-Historial-ventas.svg]`
 
 **Patrones de diseño utilizados:** Filtros en la parte superior, tarjeta de resumen, tabla con paginación, vista de detalle de solo lectura.
 
