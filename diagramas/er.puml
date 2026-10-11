@@ -9,6 +9,7 @@ entity Usuario {
     usuario : VARCHAR
     contraseña : VARCHAR
     rol : VARCHAR
+    activo : BOOLEAN
 }
 
 entity Mesa {
@@ -18,12 +19,21 @@ entity Mesa {
     estado : VARCHAR
 }
 
+entity Cuenta {
+    * id_cuenta : INT <<PK>>
+    --
+    fecha_apertura : DATETIME
+    fecha_cierre : DATETIME
+    estado : VARCHAR
+    id_mesa : INT <<FK>>
+}
+
 entity Pedido {
     * id_pedido : INT <<PK>>
     --
     fecha : DATETIME
     subtotal : DECIMAL
-    id_mesa : INT <<FK>>
+    id_cuenta : INT <<FK>>
     id_usuario : INT <<FK>>
 }
 
@@ -31,6 +41,7 @@ entity Detalle_Pedido {
     * id_detalle : INT <<PK>>
     --
     cantidad : INT
+    precio_unitario : DECIMAL
     subtotal : DECIMAL
     id_pedido : INT <<FK>>
     id_producto : INT <<FK>>
@@ -41,7 +52,8 @@ entity Producto {
     --
     nombre : VARCHAR
     precio : DECIMAL
-    stock : INT
+    categoria : VARCHAR
+    activo : BOOLEAN
 }
 
 entity Pago {
@@ -50,14 +62,14 @@ entity Pago {
     metodo_pago : VARCHAR
     total : DECIMAL
     fecha : DATETIME
-    id_mesa : INT <<FK>>
+    id_cuenta : INT <<FK>>
 }
 
 entity Ticket {
     * id_ticket : INT <<PK>>
     --
     fecha_emision : DATETIME
-    id_pago : INT <<FK>>
+    id_pago : INT <<FK, UNIQUE>>
 }
 
 entity Trazabilidad {
@@ -66,14 +78,19 @@ entity Trazabilidad {
     accion : VARCHAR
     fecha_hora : DATETIME
     id_usuario : INT <<FK>>
+    id_mesa : INT <<FK, NULL>>
+    entidad_afectada : VARCHAR
+    id_registro_afectado : INT
 }
 
+Mesa ||--o{ Cuenta : registra ocupaciones
+Cuenta ||--o{ Pedido : agrupa
 Usuario ||--o{ Pedido : registra
-Mesa ||--o{ Pedido : tiene
 Pedido ||--|{ Detalle_Pedido : contiene
 Producto ||--o{ Detalle_Pedido : corresponde
-Mesa ||--o| Pago : recibe
+Cuenta ||--o| Pago : recibe
 Pago ||--|| Ticket : emite
 Usuario ||--o{ Trazabilidad : realiza
+Mesa ||--o{ Trazabilidad : se asocia
 
 @enduml
