@@ -162,9 +162,9 @@ Los requisitos no funcionales establecen las características y condiciones de c
 
 ### Compatibilidad y presentación
 
-**RNF-11. Compatibilidad:** El sistema deberá ser compatible con los dispositivos utilizados por el personal del bar, incluyendo computadoras y tablets.
+**RNF-11. Compatibilidad:** El sistema deberá ser compatible con computadoras y tablets, permitiendo realizar las operaciones habituales con un tiempo de respuesta inferior a **3 segundos**.
 
-**RNF-12. Legibilidad:** La información deberá visualizarse de manera clara, ordenada y legible, sin pérdida de información en los dispositivos compatibles.
+**RNF-12. Legibilidad:** La interfaz deberá presentar los textos con un contraste mínimo de **4,5:1** entre el texto y el fondo, y los botones deberán tener un tamaño mínimo de **44 × 44 píxeles**, para facilitar la lectura y la interacción en computadoras y tablets.
 
 **RNF-20. Interfaz adaptable:** La interfaz deberá adaptarse correctamente a los diferentes tamaños de pantalla de computadoras y tablets, manteniendo visibles las funciones principales sin desplazamiento horizontal.
 
