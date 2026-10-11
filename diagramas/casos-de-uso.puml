@@ -1,4 +1,4 @@
-
+```plantuml
 @startuml
 
 title Diagrama de Casos de Uso - Sistema POS - Bar Carrefour
@@ -39,44 +39,50 @@ rectangle "Sistema POS Bar Carrefour" {
 
 }
 
-' Inicio de sesión
+' Inicio de sesión: todos los roles
 USU --> UC01
 
 ' Gestión de usuarios y roles
 ADM --> UC02
 
-' Gestión y apertura de mesas
+' Consulta del tablero de mesas
 ENC --> UC03
 MOZ --> UC03
+
+' Apertura de mesa: solo encargada
 ENC --> UC04
 
-' Pedidos y consumo
+' Pedidos y productos del pedido
 ENC --> UC05
 ENC --> UC06
+
+' Consulta del consumo
 MOZ --> UC07
 ENC --> UC07
 
-' Cobro y cierre
+' Cobro, comprobante y cierre
 ENC --> UC08
 ENC --> UC09
 ENC --> UC10
 
-' Consultas de ventas
+' Historial de ventas
 DUE --> UC11
 ENC --> UC11
 CON --> UC11
 
+' Resumen de ventas
 DUE --> UC12
 CON --> UC12
 
-' Auditoría
+' Auditoría y trazabilidad
 DUE --> UC13
 ADM --> UC13
 
-' Catálogo de productos
+' Gestión de productos
 ENC --> UC14
 
-' Respaldo y recuperación
+' Respaldo y recuperación de datos
 ADM --> UC15
 
 @enduml
+```
