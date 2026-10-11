@@ -1,51 +1,82 @@
+
 @startuml
 
 title Diagrama de Casos de Uso - Sistema POS - Bar Carrefour
 
 left to right direction
 
-actor "Usuario" as USU
+actor "Usuario del sistema" as USU
 actor "Encargada" as ENC
 actor "Moza" as MOZ
 actor "Dueño" as DUE
+actor "Contable" as CON
 actor "Administrador del sistema" as ADM
+
+' Los roles específicos son tipos de usuario del sistema
+ENC --|> USU
+MOZ --|> USU
+DUE --|> USU
+CON --|> USU
+ADM --|> USU
 
 rectangle "Sistema POS Bar Carrefour" {
 
-    usecase "Iniciar sesión" as UC01
-    usecase "Gestionar usuarios\ny roles" as UC02
-    usecase "Visualizar y abrir mesa" as UC03
-    usecase "Registrar y gestionar\npedido" as UC04
-    usecase "Consultar consumo" as UC05
-    usecase "Registrar pago" as UC06
-    usecase "Emitir comprobante" as UC07
-    usecase "Cerrar y liberar mesa" as UC08
-    usecase "Consultar historial\ny ventas" as UC09
-    usecase "Consultar trazabilidad" as UC10
-    usecase "Gestionar productos" as UC11
+    usecase "CU-01\nIniciar sesión" as UC01
+    usecase "CU-02\nGestionar usuarios y roles" as UC02
+    usecase "CU-03\nGestionar mesas" as UC03
+    usecase "CU-04\nAbrir una mesa" as UC04
+    usecase "CU-05\nAsociar pedidos a una mesa" as UC05
+    usecase "CU-06\nAgregar, modificar y eliminar\nproductos del pedido" as UC06
+    usecase "CU-07\nConsultar consumo y total" as UC07
+    usecase "CU-08\nRegistrar pago" as UC08
+    usecase "CU-09\nEmitir comprobante" as UC09
+    usecase "CU-10\nCerrar y liberar una mesa" as UC10
+    usecase "CU-11\nConsultar historial de ventas" as UC11
+    usecase "CU-12\nConsultar resumen de ventas" as UC12
+    usecase "CU-13\nAuditoría y trazabilidad" as UC13
+    usecase "CU-14\nGestionar productos" as UC14
+    usecase "CU-15\nRespaldo y recuperación de datos" as UC15
 
 }
 
-' Relaciones del actor Usuario
+' Inicio de sesión
 USU --> UC01
 
-' Relaciones de la Encargada
-ENC --> UC02
+' Gestión de usuarios y roles
+ADM --> UC02
+
+' Gestión y apertura de mesas
 ENC --> UC03
-ENC --> UC04
-ENC --> UC06
-ENC --> UC07
-ENC --> UC08
-ENC --> UC11
-
-' Relaciones de la Moza
 MOZ --> UC03
-MOZ --> UC05
+ENC --> UC04
 
-' Relaciones del Dueño
-DUE --> UC09
+' Pedidos y consumo
+ENC --> UC05
+ENC --> UC06
+MOZ --> UC07
+ENC --> UC07
 
-' Relaciones del Administrador
-ADM --> UC10
+' Cobro y cierre
+ENC --> UC08
+ENC --> UC09
+ENC --> UC10
+
+' Consultas de ventas
+DUE --> UC11
+ENC --> UC11
+CON --> UC11
+
+DUE --> UC12
+CON --> UC12
+
+' Auditoría
+DUE --> UC13
+ADM --> UC13
+
+' Catálogo de productos
+ENC --> UC14
+
+' Respaldo y recuperación
+ADM --> UC15
 
 @enduml
