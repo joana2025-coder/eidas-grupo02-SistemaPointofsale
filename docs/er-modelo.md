@@ -2,102 +2,120 @@
 
 ## Diagrama
 
-
-
-**Diagrama ER:** [Ver diagrama ER](https://www.plantuml.com/plantuml/svg/ZLJDRjim3BxhANGUu1S8Yg9Pac71bYr8lLq3Hc9ReROPKFHXZVTGmnwXBpPPZXV5jOVvOkWZnU_ZZtZd1LZgib1Ad1IeDsIn8Bsgn5cmsGuBCExrTwKpVU-yO0bw-_LUlmVM2s361wfPAGpkyaD_ypMm8trIEdpljBFx-WpDzFfBhczkjfzkRwCro-AlelB06CpVvxl5n_akWfTBAMge4WQFhxzWO64g4kJdNpqRz92AATlpf9AwHAR49w8O2cHfDFeMhRDNoHuxP8hX0SrJ6tivprVvUhEAeAyFGW9j0ilLOhsPVuxmKEs7FjP8JQFjeck98Lo1-xVwR6UP56YWQtkI_xIyGRAfm2EJhOrCAjpszhHsmpl_DIb7HXChaOhpGkRvd4D22e_NXErvYgn48KkzJyeuLetHnevsy28dT-OP9HKa7VBFwTbZwRoZQeJiAfyX6SCB75mHcvjIflWKCHZJCQPbwDGy4O_bFJMW_NvecYoZK_-0PfhnCUmM1XKVxD0g3YjKvsDhR4x36P_5vT3vzNDq3ZFY6TQMFr9bCU5hklbejHXt267QKoHh-bRDT2Y-u32B_Bg6Z52u5r3g3YiR5kiV)
-
+**Diagrama ER:** [Ver diagrama ER](../diagramas/er.puml)
 
 ## Entidades
 
 | Entidad | Descripción | Relaciones clave |
-|----------|-------------|------------------|
-| Usuario | Representa a los usuarios que utilizan el sistema y registra los pedidos realizados. | 1\:N con Pedido; 1\:N con Trazabilidad |
-| Mesa | Representa las mesas disponibles del bar y permite conocer su estado. | 1\:N con Pedido; 1:0..1 con Pago |
-| Pedido | Representa la orden realizada por un cliente y registra sus datos principales. | N:1 con Usuario y Mesa; 1\:N con Detalle_Pedido |
-| Detalle_Pedido | Representa cada producto incluido dentro de un pedido, junto con su cantidad y subtotal. | N:1 con Pedido y Producto |
-| Producto | Representa los productos ofrecidos por el bar, incluyendo precio y stock disponible. | 1:N con Detalle_Pedido |
-| Pago | Representa el pago asociado al consumo de una mesa y registra el método, total y fecha. | 1:0..1 con Mesa; 1:1 con Ticket |
+|---|---|---|
+| Usuario | Representa a los usuarios que utilizan el sistema y registran los pedidos. El atributo `activo` permite desactivar usuarios sin eliminar sus registros históricos. | 1:N con Pedido; 1:N con Trazabilidad |
+| Mesa | Representa las mesas disponibles del bar y permite conocer su estado. | 1:N con Cuenta; 1:N con Trazabilidad |
+| Cuenta | Representa cada ocupación o consumo de una mesa, desde su apertura hasta su cierre. | N:1 con Mesa; 1:N con Pedido; 1:0..1 con Pago |
+| Pedido | Representa la orden realizada durante una ocupación de mesa y registra sus datos principales. | N:1 con Usuario y Cuenta; 1:N con Detalle_Pedido |
+| Detalle_Pedido | Representa cada producto incluido en un pedido, junto con su cantidad, precio unitario y subtotal. | N:1 con Pedido y Producto |
+| Producto | Representa los productos ofrecidos por el bar, incluyendo su precio, categoría y estado de disponibilidad. | 1:N con Detalle_Pedido |
+| Pago | Representa el pago correspondiente a una cuenta y registra el método, total y fecha. | N:1 con Cuenta; 1:1 con Ticket |
 | Ticket | Representa el comprobante emitido como resultado del pago. | 1:1 con Pago |
-| Trazabilidad | Registra las operaciones realizadas en el sistema, identificando al usuario, la fecha y la hora. | N:1 con Usuario |
-## Descripción de atributos principales
+| Trazabilidad | Registra las operaciones realizadas en el sistema, identificando al usuario, la fecha, la hora y el registro afectado. | N:1 con Usuario; asociación opcional con Mesa |
 
-_Para cada entidad, describir brevemente los atributos más relevantes y su propósito._
+## Descripción de atributos principales
 
 ### Usuario
 
-- `id_usuario` (PK): Identifica de manera única a cada usuario del sistema.
-- `nombre`: Nombre del usuario.
-- `usuario`: Nombre de usuario utilizado para iniciar sesión.
-- `contraseña`: Credencial utilizada para la autenticación.
-- `rol`: Indica el tipo de usuario y sus permisos dentro del sistema.
+- `id_usuario` (PK): identifica de manera única a cada usuario.
+- `nombre`: nombre del usuario.
+- `usuario`: nombre utilizado para iniciar sesión.
+- `contraseña`: credencial utilizada para la autenticación.
+- `rol`: indica el tipo de usuario y sus permisos dentro del sistema.
+- `activo`: indica si el usuario está habilitado para utilizar el sistema.
 
 ### Mesa
 
-- `id_mesa` (PK): Identifica de manera única a cada mesa.
-- `numero_mesa`: Número que identifica la mesa dentro del bar.
-- `estado`: Indica si la mesa se encuentra libre u ocupada.
+- `id_mesa` (PK): identifica de manera única a cada mesa.
+- `numero_mesa`: número que identifica la mesa dentro del bar.
+- `estado`: indica el estado de la mesa, por ejemplo, disponible, ocupada o pendiente de cierre.
+
+### Cuenta
+
+- `id_cuenta` (PK): identifica de manera única cada ocupación de una mesa.
+- `fecha_apertura`: registra cuándo comienza la ocupación.
+- `fecha_cierre`: registra cuándo finaliza la ocupación; puede quedar sin valor mientras la cuenta esté abierta.
+- `estado`: indica la situación de la cuenta.
+- `id_mesa` (FK): identifica la mesa a la que corresponde la cuenta.
 
 ### Pedido
 
-- `id_pedido` (PK): Identifica de manera única a cada pedido.
-- `fecha`: Registra la fecha y hora en que se realiza el pedido.
-- `subtotal`: Representa el importe subtotal del pedido.
-- `id_mesa` (FK): Identifica la mesa asociada al pedido.
-- `id_usuario` (FK): Identifica al usuario que registra el pedido.
+- `id_pedido` (PK): identifica de manera única a cada pedido.
+- `fecha`: registra la fecha y hora en que se realiza el pedido.
+- `subtotal`: representa el importe subtotal del pedido.
+- `id_cuenta` (FK): identifica la cuenta a la que pertenece el pedido.
+- `id_usuario` (FK): identifica al usuario que registra el pedido.
 
 ### Detalle_Pedido
 
-- `id_detalle` (PK): Identifica de manera única cada detalle del pedido.
-- `cantidad`: Indica la cantidad de unidades del producto solicitado.
-- `subtotal`: Representa el importe correspondiente a ese detalle.
-- `id_pedido` (FK): Identifica el pedido al que pertenece el detalle.
-- `id_producto` (FK): Identifica el producto incluido en el detalle.
+- `id_detalle` (PK): identifica de manera única cada detalle del pedido.
+- `cantidad`: indica la cantidad de unidades del producto solicitado.
+- `precio_unitario`: conserva el precio del producto al momento de registrar el pedido.
+- `subtotal`: representa el importe correspondiente a ese detalle.
+- `id_pedido` (FK): identifica el pedido al que pertenece el detalle.
+- `id_producto` (FK): identifica el producto incluido en el detalle.
 
 ### Producto
 
-- `id_producto` (PK): Identifica de manera única cada producto.
-- `nombre`: Nombre del producto ofrecido por el bar.
-- `precio`: Precio del producto.
-- `stock`: Cantidad disponible del producto.
+- `id_producto` (PK): identifica de manera única cada producto.
+- `nombre`: nombre del producto ofrecido por el bar.
+- `precio`: precio vigente del producto.
+- `categoria`: categoría a la que pertenece el producto.
+- `activo`: indica si el producto está habilitado para su uso en el sistema.
 
 ### Pago
 
-- `id_pago` (PK): Identifica de manera única cada pago.
-- `metodo_pago`: Indica el medio utilizado para realizar el pago.
-- `total`: Importe total abonado.
-- `fecha`: Registra la fecha y hora del pago.
-- `id_mesa` (FK): Identifica la mesa cuyo consumo corresponde al pago.
+- `id_pago` (PK): identifica de manera única cada pago.
+- `metodo_pago`: indica el medio utilizado para realizar el pago.
+- `total`: importe total abonado.
+- `fecha`: registra la fecha y hora del pago.
+- `id_cuenta` (FK): identifica la cuenta cuyo consumo corresponde al pago.
 
 ### Ticket
 
-- `id_ticket` (PK): Identifica de manera única cada ticket.
-- `fecha_emision`: Registra la fecha y hora en que se emite el ticket.
-- `id_pago` (FK): Identifica el pago asociado al ticket.
+- `id_ticket` (PK): identifica de manera única cada ticket.
+- `fecha_emision`: registra la fecha y hora en que se emite el ticket.
+- `id_pago` (FK, UNIQUE): identifica el pago asociado al ticket y evita asociar varios tickets a un mismo pago.
+
 ### Trazabilidad
 
-- `id_trazabilidad` (PK): Identifica de manera única cada registro de trazabilidad.
-- `accion`: Describe la operación realizada en el sistema.
-- `fecha_hora`: Registra la fecha y hora en que se realizó la operación.
-- `id_usuario` (FK): Identifica al usuario que realizó la operación.
-## Decisiones de diseño
+- `id_trazabilidad` (PK): identifica de manera única cada registro de trazabilidad.
+- `accion`: describe la operación realizada en el sistema.
+- `fecha_hora`: registra la fecha y hora de la operación.
+- `id_usuario` (FK): identifica al usuario que realizó la operación.
+- `id_mesa` (FK, opcional): identifica la mesa relacionada con la operación, cuando corresponda.
+- `entidad_afectada`: indica el tipo de entidad sobre la que se realizó la operación.
+- `id_registro_afectado`: identifica el registro afectado por la operación.
 
-_Justificar al menos dos decisiones de diseño relevantes: por qué se modeló de esa manera,
-qué alternativas se consideraron y por qué se descartaron._
+## Decisiones de diseño
 
 ### Decisión 1 — Separación entre Pedido y Detalle_Pedido
 
-Se decidió modelar `Pedido` y `Detalle_Pedido` como entidades separadas porque un mismo pedido puede contener varios productos. `Pedido` almacena la información general de la orden, mientras que `Detalle_Pedido` permite registrar cada producto, su cantidad y su subtotal.
+Se decidió modelar `Pedido` y `Detalle_Pedido` como entidades separadas porque un mismo pedido puede contener varios productos. `Pedido` almacena la información general de la orden, mientras que `Detalle_Pedido` permite registrar cada producto, su cantidad, el precio unitario y el subtotal.
 
-Como alternativa, se podría haber almacenado directamente la información de los productos dentro de `Pedido`, pero esta opción dificultaría registrar varios productos y sus cantidades dentro de una misma orden. Por este motivo, se descartó y se optó por una relación 1:N entre `Pedido` y `Detalle_Pedido`.
+Como alternativa, se podría haber almacenado directamente la información de los productos dentro de `Pedido`, pero esto dificultaría registrar varios productos y sus cantidades dentro de una misma orden. Por este motivo, se optó por una relación 1:N entre `Pedido` y `Detalle_Pedido`.
 
 ### Decisión 2 — Separación entre Pago y Ticket
 
 Se decidió separar las entidades `Pago` y `Ticket` para diferenciar la información correspondiente a la operación de pago de la información del comprobante emitido. `Pago` registra el método de pago, el total y la fecha, mientras que `Ticket` registra la fecha de emisión y el pago asociado.
 
-Como alternativa, se podría haber incluido la información del ticket directamente dentro de `Pago`, pero mantenerlas separadas permite diferenciar claramente ambas responsabilidades y facilita futuras modificaciones. Por este motivo, se optó por una relación 1:1 entre `Pago` y `Ticket`.
+Como alternativa, se podría haber incluido la información del ticket directamente dentro de `Pago`. Sin embargo, mantenerlas separadas permite diferenciar ambas responsabilidades. Se establece una relación 1:1 entre `Pago` y `Ticket`.
 
-### Decisión 3 — Asociación del Pago con la Mesa
+### Decisión 3 — Incorporación de Cuenta entre Mesa, Pedido y Pago
 
-Se decidió asociar `Pago` con `Mesa` porque en el sistema el pago corresponde al consumo de una mesa y se registra antes de cerrar y liberar la mesa. De esta manera, una mesa puede tener un pago registrado al finalizar su consumo.
+Se decidió incorporar la entidad `Cuenta` para representar cada ocupación o consumo de una mesa. Una misma mesa puede utilizarse muchas veces, por lo que relacionar directamente `Mesa` con `Pago` limitaría incorrectamente el registro de pagos a lo largo del tiempo.
 
-Como alternativa, se podría haber asociado `Pago` directamente con `Pedido`, pero esto no representa correctamente el funcionamiento definido en los casos de uso, donde la encargada selecciona una mesa para registrar el pago correspondiente a su consumo. Por este motivo, se optó por relacionar `Pago` con `Mesa`. 
+La entidad `Cuenta` permite asociar los pedidos y el pago correspondiente a una ocupación específica. De esta manera, se conserva el historial de consumos de cada mesa y se evita confundir pagos de distintas ocupaciones.
+
+Como alternativa, se podría haber relacionado `Pago` directamente con `Mesa` o con un único `Pedido`, pero estas opciones no representan adecuadamente una cuenta que agrupa varios pedidos. Por ese motivo, se optó por relacionar `Mesa` con `Cuenta`, y `Cuenta` con `Pedido` y `Pago`.
+
+### Decisión 4 — Conservación del historial y trazabilidad
+
+Se incorporó el atributo `activo` en `Usuario` y `Producto` para permitir su desactivación sin eliminar los registros históricos relacionados. Además, se agregó `precio_unitario` en `Detalle_Pedido` para conservar el precio aplicado al momento de registrar cada pedido, aunque el precio vigente del producto cambie posteriormente.
+
+Por otra parte, `Trazabilidad` incluye la entidad y el registro afectados, además de la mesa cuando corresponde. Esto permite identificar con mayor precisión qué operación se realizó y sobre qué registro.
