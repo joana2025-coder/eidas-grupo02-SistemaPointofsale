@@ -2,8 +2,6 @@
 
 ## Diagrama
 
-## Diagrama
-
 [![Ver diagrama ER](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/main/diagramas/er.puml)](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/joana2025-coder/eidas-grupo02-SistemaPointofsale/main/diagramas/er.puml)
 
 ## Entidades
