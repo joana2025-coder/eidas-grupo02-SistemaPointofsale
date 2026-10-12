@@ -57,7 +57,7 @@ propia checklist. Es esperable —y deseable— que alguna no pase._
 | 8 | SÍ | No cuenta con decisiones comerciales de negocio pendientes de definición |
 ---
 
-### Historia 3 — [ H-U 10 / Registro de pago ]
+### Historia 3 — [ H-U 8 / Registro de pago ]
 
 | Ítem (según checklist) | ¿Pasa? | Qué le falta (si no pasa) |
 |-------------------------|--------|-----------------------------|
