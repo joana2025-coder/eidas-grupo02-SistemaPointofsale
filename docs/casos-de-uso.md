@@ -4,7 +4,7 @@
 
 ## CU-01 — Iniciar sesión
 
-**Actor:** Usuario del sistema (moza, encargada, dueño o administrador)
+**Actor:** Usuario del sistema (moza, encargada, dueño, contable o administrador)
 
 **Objetivo:** Permitir que un usuario registrado acceda al sistema mediante sus credenciales y que el sistema identifique su rol.
 
@@ -51,7 +51,7 @@ funciones a las que pueden acceder.
 
 ### Precondiciones
 
-* La encargada debe haber iniciado sesión.
+* El administrador del sistema debe haber iniciado sesión.
 * El sistema debe estar disponible.
 * Debe contar con los permisos necesarios para gestionar usuarios y roles.
 
@@ -69,18 +69,17 @@ funciones a las que pueden acceder.
 4. El sistema solicita nombre, usuario, contraseña inicial y rol.
 5. El administrador ingresa los datos y confirma.
 6. El sistema valida la información ingresada.
-7. El sistema valida que los datos estén completos y que el usuario no exista.
+7. El sistema verifica que el nombre de usuario no esté registrado previamente.
 7. El sistema guarda la contraseña de forma segura (hash) y crea el usuario activo con el rol asignado.
 8. El sistema informa que el usuario fue creado.
 
 ### Flujos alternativos
 
-* **2a. Nombre de usuario ya existente:** el sistema informa que el nombre de usuario no puede repetirse y solicita ingresar otro.
+* - **7a. Nombre de usuario ya existente:** el sistema informa que el nombre de usuario no puede repetirse y solicita ingresar otro.
 * **6a. Datos inválidos:** el sistema informa el error e indica qué corregir.
-* **5a. Cancelación:** la encargada puede cancelar la operación antes de confirmarla.
-* Cancelación de desactivación:** si el administrador cancela la operación y no se guardan los cambios.
-* Acceso no autorizado:** si un usuario sin rol de administrador intenta acceder al módulo, el sistema rechaza el
-acceso.
+* **5a. Cancelación:** el administrador puede cancelar la operación antes de confirmarla.
+* **Cancelación de desactivación:** si el administrador cancela la operación, no se guardan los cambios.
+* **Acceso no autorizado:** si un usuario sin rol de administrador intenta acceder al módulo, el sistema rechaza el acceso.
 
 **Requisitos funcionales relacionados:** RF-02 y RF-22.
 
@@ -436,7 +435,7 @@ pago.
 ### Flujos alternativos
 
 * **5a.	Sin	resultados:**	el	sistema	informa	«No	se	encontraron	operaciones	registradas».
-* **Rol	contable:	el	contable	solo	puede	consultar;	no	puede	modificar	datos.
+* **Rol contable:** el contable solo puede consultar; no puede modificar datos.
 
 **Requisitos funcionales relacionados:** RF-18; RF-19; RF-28 y RF-29.
 
@@ -505,7 +504,7 @@ del	bar.
 4.	El	sistema	busca	las	operaciones	que	cumplen	el	filtro.
 5.	El	sistema	muestra	fecha,	hora,	usuario	responsable,	acción	realizada	y	mesa	asociada.
 6.	El	usuario	revisa	los	registros.
-7.	
+7. El sistema finaliza la consulta sin modificar los registros de trazabilidad.	
 ### Flujos alternativos
 
 * **5a.	Sin	resultados:** el	sistema	informa	que	no	hay	operaciones	para	el	filtro.
@@ -590,7 +589,7 @@ información	histórica.
 
 * **2a.	Respaldo	fallido:** el	sistema	marca	el	respaldo	con	error	para	que	el	administrador	lo	vea.
 * **5a.	Sin	respaldo	disponible:**	el	sistema	informa	que	no	hay	respaldos	para	restaurar.
-* **Mantenimiento	y	actualizaciones:	se	programan	fuera	del	horario	operativo	y	preservan	los	datos	históricos.
+* **Mantenimiento y actualizaciones:** se programan fuera del horario operativo y preservan los datos históricos.
   
 **Requisitos funcionales relacionados:** no	aplica;	este	caso	se	sustenta	en	requisitos	no	funcionales.
 

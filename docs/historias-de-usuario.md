@@ -2,9 +2,8 @@
 ---
 # HU - 1 — Iniciar sesión
 
-**Como** empleado del bar (moza, encargada o administrador),   
-**quiero** iniciar sesión mediante mi usuario y contraseña, 
-**para** acceder de forma segura a las funcionalidades que me corresponden según mi rol. 
+**Como** usuario del sistema (moza, encargada, dueño, contable o administrador),  
+**quiero** iniciar sesión mediante mi usuario y contraseña, **para** acceder de forma segura a las funcionalidades que me corresponden según mi rol. 
 
 **Módulo:** Iniciar sesión
 

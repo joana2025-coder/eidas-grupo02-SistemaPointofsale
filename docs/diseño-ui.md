@@ -7,7 +7,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 1 — [Login - Inicio de sesion]
 
-**Wireframe:** `diagramas/wireframes/[01-login.svg]`
+**Wireframe:** `diagramas/wireframes/01.login.svg`
 
 **Patrones de diseño utilizados:** _( Formulario simple centrado en una sola columna, mensaje de error en línea (online validation), foco automático en el primer campo )_
 
