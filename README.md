@@ -19,15 +19,22 @@ El objetivo principal del sistema POS es gestionar de manera rápida, ordenada y
 
 ## Caso de estudio
 
-_Nombre del organismo o empresa comitente y contexto del problema que el sistema resuelve._
+**Negocio:** Bar Carrefour.
+
+El proyecto consiste en desarrollar un Sistema Point of Sale (POS) para el bar Carrefour, con el objetivo de mejorar la gestión de las mesas, los pedidos y los pagos. Antes de implementar el sistema, estas tareas podían requerir registros manuales y dificultar el seguimiento del estado de las mesas y de las cuentas pendientes de cierre.
+
+El sistema permitirá al personal autorizado consultar la disponibilidad de las 24 mesas, registrar y gestionar pedidos, controlar el estado de las cuentas y registrar los pagos realizados mediante efectivo, tarjeta o QR. Además, contará con acceso mediante usuario y contraseña y roles diferenciados para controlar las operaciones según las responsabilidades de cada integrante del personal.
+## Entregas
 
 ## Entregas
 
 | Entrega | Descripción | Fecha | Estado |
-|---------|-------------|-------|--------|
-| EP-01 | Presentación preliminar | | |
-| EP-02 | | | |
-| Final | Versión definitiva | | |
+|---|---|---|---|
+| EP-01 | Requisitos, historias de usuario y casos de uso | 04/09/2026 | Realizada |
+| EP-02 | Modelo ER y diseño UI / wireframes | 25/09/2026 | Realizada |
+| Entrega del repositorio | Cierre completo y entrega del repositorio | 30/09/2026 | Realizada |
+| Parcial - Parte A | Presentación final grupal | 09/10/2026 | Realizada |
+| Final | Versión definitiva del proyecto POS para el Bar Carrefour | Pendiente de última corrección docente | En revisión |
 
 ## Estructura del repositorio
 

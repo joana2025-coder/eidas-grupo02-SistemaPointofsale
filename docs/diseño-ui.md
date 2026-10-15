@@ -5,11 +5,11 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ---
 
-## Pantalla / Módulo 1 — [Login - Inicio de sesion]
+## Pantalla / Módulo 1 — [Login - Inicio de sesión]
 
-**Wireframe:** `diagramas/wireframes/01.login.svg`
+**Wireframe:** [Login - Inicio de sesión](../diagramas/wireframes/01-login.svg)
 
-**Patrones de diseño utilizados:** _( Formulario simple centrado en una sola columna, mensaje de error en línea (online validation), foco automático en el primer campo )_
+**Patrones de diseño utilizados:** Formulario simple centrado en una sola columna, mensaje de error en línea y foco automático en el primer campo.
 
 **Justificación:** _¿ Es la puerta de entrada de RF 01 y RNF 05. Como la sesion se cierra tras 10 minutos de inactividad (RNF 19), el personal va a haber esta pantalla varias veces por turno, así que debe ser mínima: dos campos por turno, un botón y nada más. El foco automático y el envío con Enter reducen el tiempo de reingreso. El mesaje de error es genérico ( "Usuario o contraseñas incorrectos"), para no relevar cual de los dos datos falló Tras el login el sistema identifica el rol (RF-22) y muestra solo las opciones que corresponden a la moza, la encargada o el dueño._
 
@@ -22,7 +22,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 2 — [Tableros de mesas]
 
-**Wireframe:** `diagramas/wireframes/[02-tableros-mesas.svg]`
+**Wireframe:** [Tablero de mesas](../diagramas/wireframes/02-tablero-mesas.svg)
 
 **Patrones de diseño utilizados:**  Grilla de cards (una por mesa), código de estado con color + texto + ícono, leyenda fija, modal de confirmación, actualización en vivo del tablero.
 
@@ -37,7 +37,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 3 — [Pedido y consumo de la mesa]
 
-**Wireframe:** `diagramas/wireframes/[03-pedidos-mesas.svg]`
+**Wireframe:** [Pedido y consumo de la mesa](../diagramas/wireframes/03-pedidos-mesa.svg)
 
 **Patrones de diseño utilizados:** Vista dividida maestro-detalle (catálogo a la izquierda, pedido a la derecha), pestañas de categorías, cards de producto de un solo toque, stepper de cantidad (-/+), total fijo siempre visible, modal de confirmación para eliminar.
 
@@ -52,7 +52,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 4 — [Cobro y comprobante]
 
-**Wireframe:** `diagramas/wireframes/[04-cobro-comprobante.svg]`
+**Wireframe:** [Cobro y comprobante](../diagramas/wireframes/04-cobro-comprobante.svg)
 
 **Patrones de diseño utilizados:** Selector de opciones exclusivas en formato botones grandes (radio cards), resumen de solo lectura, modal de confirmación, estado de carga con botón deshabilitado, pantalla de éxito con siguiente acción clara, vista de comprobante imprimible.
 
@@ -67,7 +67,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 5 — [Historial de ventas]
 
-**Wireframe:** `diagramas/wireframes/[05-Historial-ventas.svg]`
+**Wireframe:** [Historial de ventas](../diagramas/wireframes/05-historial-ventas.svg)
 
 **Patrones de diseño utilizados:** Filtros en la parte superior, tarjeta de resumen, tabla con paginación, vista de detalle de solo lectura.
 
