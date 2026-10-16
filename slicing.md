@@ -11,10 +11,11 @@ Como encargada, quiero gestionar una mesa desde su apertura hasta su cierre, cob
 
 ### Historia 1 — [Visualizar y dar apertura a una mesa disponible]
 
-|Como encargada, quiero visualizar las mesas y abrir una mesa disponible, para comenzar la atención.|
+**Historia de usuario:** Como encargada, quiero visualizar las mesas y abrir una mesa disponible, para comenzar la atención.
 
-| Requisitos relacionados: * RF-03, RF-04, RF-05, RF-06, RF-21, RF-23, RF-24 y RF-25.  
-* RNF-01, RNF-02, RNF-03, RNF-04, RNF-08, RNF-10, RNF-16 y RNF-18. |
+**Requisitos relacionados:** RF-03, RF-04, RF-05, RF-06, RF-21, RF-23, RF-24 y RF-25.
+
+**Requisitos no funcionales:** RNF-01, RNF-02, RNF-03, RNF-04, RNF-08, RNF-10, RNF-16 y RNF-18.
 
 **Criterios de aceptación**
 1- El sistema muestra las 24 mesas y su estado actual.
@@ -27,10 +28,11 @@ Como encargada, quiero gestionar una mesa desde su apertura hasta su cierre, cob
 
 ### Historia 2 — [Registrar y modificar un pedido]
 
-| Como encargada, quiero asociar un pedido a una mesa y agregar, modificar o eliminar sus productos, para registrar correctamente el consumo solicitado por los clientes. | 
+ **Historia de usuario:** Como encargada, quiero asociar un pedido a una mesa y agregar, modificar o eliminar sus productos, para registrar correctamente el consumo solicitado por los clientes.
 
-| Requisitos relacionados: * RF-06, RF-07, RF-08, RF-09, RF-10, RF-21, RF-24, RF-25 y RF-26. 
- * RNF-01, RNF-02, RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18. | 
+**Requisitos relacionados:** RF-06, RF-07, RF-08, RF-09, RF-10, RF-21, RF-24, RF-25 y RF-26.
+
+**Requisitos no funcionales:** RNF-01, RNF-02, RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18.
 
 **Criterios de aceptación**
 1- La encargada puede asociar un pedido a una mesa abierta.
@@ -44,10 +46,11 @@ Como encargada, quiero gestionar una mesa desde su apertura hasta su cierre, cob
 
 ### Historia 3 — [Consultar el consumo y el importe]
 
-| Como moza, quiero consultar el detalle y el total actualizado del consumo de una mesa, para informar al cliente el importe que debe abonar. | 
+**Historia de usuario:** Como moza, quiero consultar el detalle y el total actualizado del consumo de una mesa, para informar al cliente el importe que debe abonar.
 
-| Requisitos relacionados: * RF-10, RF-11 y RF-14. 
- * RNF-01, RNF-03, RNF-08, RNF-12, RNF-16 y RNF-18. | 
+**Requisitos relacionados:** RF-10, RF-11 y RF-14.
+
+**Requisitos no funcionales:** RNF-01, RNF-03, RNF-08, RNF-12, RNF-16 y RNF-18.
 
 **Criterios de aceptación**
 1- El sistema muestra el detalle del consumo: productos, cantidades, precios unitarios y subtotales.
