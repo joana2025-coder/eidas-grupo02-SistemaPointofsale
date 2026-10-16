@@ -33,11 +33,7 @@ Espera que la información se encuentre actualizada y que las operaciones puedan
 
 ### 3.3 Mozo/a
 
-Interactúa directamente con el sistema durante la atención de los clientes.
-
-Necesita visualizar el estado de las mesas y disponer de una forma sencilla de registrar y modificar los pedidos, manteniendo actualizada la información del consumo.
-
-Espera que el sistema sea claro, rápido y fácil de utilizar durante la atención.
+| **Mozo/a** | Usuario directo / operativo | Registrar y gestionar correctamente la atención de los clientes y mantener actualizada la información de los pedidos. | Visualizar el estado de las mesas, registrar pedidos, modificar pedidos y consultar consumos. | **Alto** | Su trabajo depende directamente del sistema durante la atención, ya que lo utiliza para gestionar pedidos y consultar consumos. |
 
 ### 3.4 Administrador/a del sistema
 
@@ -65,8 +61,8 @@ Los stakeholders se relacionan con diferentes etapas del flujo principal del sis
 
 **Mesa → Pedido → Consumo → Cálculo del total → Pago → Comprobante → Cierre → Mesa disponible**
 
-* El **mozo/a** participa principalmente en la gestión de mesas, pedidos y consumos.
-* El **encargado/a** gestiona y supervisa las operaciones del turno.
+* El **mozo/a** participa principalmente en el registro y modificación de pedidos y en la consulta de consumos.
+* El **encargado/a** gestiona las mesas y supervisa las operaciones del turno.
 * El **administrador/a del sistema** administra usuarios, roles y permisos.
 * El **dueño/responsable** consulta información relacionada con las ventas y el funcionamiento del negocio.
 * El **área administrativa/contable** utiliza la información generada por las operaciones para el control administrativo.
