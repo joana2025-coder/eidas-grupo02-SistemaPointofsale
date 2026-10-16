@@ -63,10 +63,11 @@ Como encargada, quiero gestionar una mesa desde su apertura hasta su cierre, cob
 
 ### Historia 4 — [Registrar el pago y generar la venta]
 
-| Como encargada, quiero registrar el pago de una mesa, para confirmar el cobro y generar la venta correspondiente. | 
+ **Historia de usuario:** Como encargada, quiero registrar el pago de una mesa, para confirmar el cobro y generar la venta correspondiente.
 
-| Requisitos relacionados: * RF-12, RF-13, RF-14, RF-15, RF-21 y RF-24. 
-* RNF-03, RNF-08, RNF-10, RNF-13, RNF-16, RNF-18 y RNF-22. | 
+**Requisitos relacionados:** RF-12, RF-13, RF-14, RF-15, RF-21 y RF-24.
+
+**Requisitos no funcionales:** RNF-03, RNF-08, RNF-10, RNF-13, RNF-16, RNF-18 y RNF-22.
 
 **Criterios de aceptación**
 1- Solo se puede registrar un pago para una mesa que tenga un consumo registrado.
@@ -80,10 +81,11 @@ Como encargada, quiero gestionar una mesa desde su apertura hasta su cierre, cob
 
 ### Historia 5 — [Emitir el comprobante]
 
-| Como encargada, quiero emitir el comprobante de una venta confirmada, para entregar al cliente una constancia del pago realizado. | 
+**Historia de usuario:** Como encargada, quiero emitir el comprobante de una venta confirmada, para entregar al cliente una constancia del pago realizado.
 
-| Requisitos relacionados: * RF-27. 
-* RNF-01, RNF-03, RNF-12 y RNF-18. | 
+**Requisitos relacionados:** RF-27.
+
+**Requisitos no funcionales:** RNF-01, RNF-03, RNF-12 y RNF-18.
 
 **Criterios de aceptación**
 1- El sistema permite emitir comprobantes únicamente para ventas confirmadas.
@@ -95,10 +97,11 @@ Como encargada, quiero gestionar una mesa desde su apertura hasta su cierre, cob
 
 ### Historia 6 — [Cerrar una mesa pagada]
 
-| Como encargada, quiero cerrar una mesa con pago confirmado, para dejarla disponible para una nueva atención. | 
+**Historia de usuario:** Como encargada, quiero cerrar una mesa con pago confirmado, para dejarla disponible para una nueva atención.
 
-| Requisitos relacionados: * RF-16, RF-17, RF-21, RF-24 y RF-25. 
-* RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18. | 
+**Requisitos relacionados:** RF-16, RF-17, RF-21, RF-24 y RF-25.
+
+**Requisitos no funcionales:** RNF-03, RNF-08, RNF-10, RNF-13, RNF-16 y RNF-18.
 
 **Criterios de aceptación**
 1- Solo se puede cerrar una mesa en estado Pendiente de cierre.
