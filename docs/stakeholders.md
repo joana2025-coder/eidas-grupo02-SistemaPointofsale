@@ -33,7 +33,9 @@ Espera que la información se encuentre actualizada y que las operaciones puedan
 
 ### 3.3 Mozo/a
 
-| **Mozo/a** | Usuario directo / operativo | Registrar y gestionar correctamente la atención de los clientes y mantener actualizada la información de los pedidos. | Visualizar el estado de las mesas, registrar pedidos, modificar pedidos y consultar consumos. | **Alto** | Su trabajo depende directamente del sistema durante la atención, ya que lo utiliza para gestionar pedidos y consultar consumos. |
+El mozo/a participa principalmente en el registro y modificación de pedidos y en la consulta de consumos.
+
+Necesita consultar el estado de las mesas y mantener actualizada la información de los pedidos para brindar una atención ágil y correcta.
 
 ### 3.4 Administrador/a del sistema
 
