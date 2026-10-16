@@ -2,7 +2,7 @@
 
 ## La épica
 
-> Como moza, quiero gestionar una mesa desde su apertura hasta su cierre, para registrar el consumo del cliente, cobrarlo correctamente y dejar la mesa disponible para una nueva atención. 
+Como encargada, quiero gestionar una mesa desde su apertura hasta su cierre, cobrarlo correctamente y dejar la mesa disponible para una nueva atención. 
 
 ---
 

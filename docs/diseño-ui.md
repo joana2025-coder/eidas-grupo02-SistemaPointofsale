@@ -22,7 +22,7 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ## Pantalla / Módulo 2 — [Tableros de mesas]
 
-**Wireframe:** [Tablero de mesas](../diagramas/wireframes/02-tablero-mesas.svg)
+**Wireframe:** [Tablero de mesas](../diagramas/wireframes/02-tableros-mesas.svg)
 
 **Patrones de diseño utilizados:**  Grilla de cards (una por mesa), código de estado con color + texto + ícono, leyenda fija, modal de confirmación, actualización en vivo del tablero.
 

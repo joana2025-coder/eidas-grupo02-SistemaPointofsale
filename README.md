@@ -32,7 +32,7 @@ El sistema permitirá al personal autorizado consultar la disponibilidad de las 
 | EP-01 | Requisitos, historias de usuario y casos de uso | 04/09/2026 | Realizada |
 | EP-02 | Modelo ER y diseño UI / wireframes | 25/09/2026 | Realizada |
 | Entrega del repositorio | Cierre completo y entrega del repositorio | 30/09/2026 | Realizada |
-| Parcial - Parte A | Presentación final grupal | 09/10/2026 | Realizada |
+| Parcial - Parte A | Presentación grupal | 09/10/2026 | No realizada |
 | Final | Versión definitiva del proyecto POS para el Bar Carrefour | Pendiente de última corrección docente | En revisión |
 
 ## Estructura del repositorio
